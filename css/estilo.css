@@ -1,0 +1,33 @@
+/* Configuração inicial */
+*
+{
+    margin: opx;
+    padding: opx;
+}
+
+/* classes do top */
+.top_logo
+{
+    max-width: 200px; /*impedir que a imagem ultrapasse das limitações da div */
+    max-height: 150px; /*impedir que a imagem ultrapasse das limitações da div */
+}
+
+
+/* classes testes */
+.teste1
+{
+    background-color: red;
+    height: 150px;
+}
+.teste2
+{
+    background-color: blue;
+    height: 150px;
+}
+.fonte_teste
+{
+    /* font-family: FontAwesome; */
+    /* font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; */
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family:Arial,Baskerville,monospace;
+}
