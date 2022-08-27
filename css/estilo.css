@@ -15,9 +15,8 @@
 /* classes do top-descontos */
 .top_descontos
 {
-    padding-top: 0px;
     height: 130px; 
-    text-align: center;
+    /* text-align: center; */
 }
 .top_descontos_d1
 {
@@ -25,11 +24,11 @@
 }
 .top_descontos_d2
 {
-    background-color: red;
+    margin-top: 40px;
 }
 .top_descontos_d3
 {
-    background-color: black;
+    margin-top: 40px;
 }
 
 /* classes testes */
