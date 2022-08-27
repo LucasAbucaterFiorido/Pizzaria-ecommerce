@@ -1,32 +1,43 @@
 /* Configuração inicial */
+@import '../css/font-awesome.min.css';
 *
 {
     margin: opx;
     padding: opx;
+    /* font-family: FontAwesome; */
 }
 
 /* classes do top */
-.top_logo
+.top
+{
+    height: 150px; 
+}
+.top_logo /* classe que dita as diretrizes da div, limitando o espaço controlorá qual será o tamanho da imagem */
 {
     max-width: 200px; /*impedir que a imagem ultrapasse das limitações da div */
     max-height: 150px; /*impedir que a imagem ultrapasse das limitações da div */
 }
+.top_nav
+{
+    margin-top: 45px;
+    /* font-size: large; */
+}
 
 /* classes do top-descontos */
-.top_descontos
+.top_descontos /* classe que caracteriza todas células de descontos */
 {
     height: 130px; 
     /* text-align: center; */
 }
-.top_descontos_d1
+.top_descontos_d1 /* classe que caracteriza apenas a 1º célula dos descontos */
 {
     margin-top: 40px;
 }
-.top_descontos_d2
+.top_descontos_d2 /* classe que caracteriza apenas a 2º célula dos descontos */
 {
     margin-top: 40px;
 }
-.top_descontos_d3
+.top_descontos_d3 /* classe que caracteriza apenas a 3º célula dos descontos */
 {
     margin-top: 40px;
 }
@@ -48,4 +59,31 @@
     /* font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; */
     /* font-family: 'Open Sans', sans-serif; */
     font-family:Arial,Baskerville,monospace;
+}
+.karl-level {
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #ff084e;
+    padding: 3px 10px;
+    top: -30px;
+    left: 10px;
+}
+
+.karl-level:after {
+    position: absolute;
+    z-index: 2;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent #ff084e transparent;
+    bottom: -2px;
+    left: -6px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }

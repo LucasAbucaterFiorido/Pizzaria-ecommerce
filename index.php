@@ -7,48 +7,73 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css_Slider/core-style.css">
+    <link rel="icon" type="img/png" href="img/logo/pizzalogo.png">
+    <?php include_once('conexao.php'); ?>
     <title>Ouroborus</title>
 </head>
 <body>
-    <div class="container-fluid teste1">
+    <div class="container-fluid">
         <!-- ****** top ****** -->
         <div class="row">
             <div class="col-12">
-                <div class="container teste2 fonte_teste">
+                <div class="container top fonte_teste">
                     <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-2">
+
+                        <div class="col-1" style="background-color: lightgray;">
+                            <!-- margem visual -->
+                        </div> 
+                        
+                        <div class="col-1" style="background-color: salmon;">
                             <!-- logo -->
                             <a href="#" id="top_logotipo">
                                 <img class="top_logo" src="img/logo/pizzalogo.png" alt="Logotipo Ouroborus">
                             </a>
                         </div>
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="nav-tabs card-header-tabs">
-                                        <a href="#" class="nav-link">
-                                            Cardápio
-                                        </a>
-                                        <a href="#" class="nav-link">
-                                            Quem Somos ?
-                                        </a>
-                                        <a href="#" class="nav-link">
+
+                        <div class="col-5" style="background-color: violet;">
+                            <!-- NavBar-top -->
+                            <nav class="navbar navbar-expand justify-content-center top_nav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="filtro_tudo"><b>Cardápio</b></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="filtro_pizza"><b>Quem Somos ?</b></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <span class="karl-level">hot</span>
                                             Contato
                                         </a>
-                                        <a href="#" class="nav-link">
-                                            Cardápio
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="filtro_bebidas"><b>Contato</b></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="col-2" style="background-color: yellowgreen;">
+                            <!-- Carrinho-top -->
+                            <nav class="navbar navbar-expand justify-content-center top_nav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="filtro_promo">
+                                            <!-- <i class="ti-bag"></i> -->Carrinho
                                         </a>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <p>Cardápio</p>
+                                    </li>
+                                </ul>
+                            </nav>
+
                         </div>
-                        <div class="col-2">
-                            <!-- <i class="ti-bag"></i> --><p>Carrinho</p>
+                        <div class="col-2" style="background-color: orangered;">
+                            <!-- Login-top -->
                         </div>
-                        <div class="col-1"></div>
+
+                        <div class="col-1" style="background-color: lightgray;">
+                            <!-- margem visual -->
+                        </div> 
+                        
                     </div>
                 </div>
             </div>
@@ -91,37 +116,84 @@
 
         <!-- ****** Cardápio Pizzas ****** -->
         <div class="row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="text-center">
-                            <h1>Cardápio</h1>
+            <div class="col-12">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-1"><!-- margem visual --></div>
+                        <div class="col-10">
+                            <div class="text-center">
+                                <h1>Cardápio</h1>
+                            </div>
                         </div>
+                        <div class="col-1"><!-- margem visual --></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <nav class="navbar navbar-expand justify-content-center">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" id="filtro_tudo">Tudo</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" id="filtro_pizza">Pizza</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" id="filtro_bebidas">Bebidas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" id="filtro_promo">Promoções</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>    
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        
+
+                    <div class="row">
+                        <div class="col-1"><!-- margem visual --></div>
+                        <div class="col-10">
+                            <nav class="navbar navbar-expand justify-content-center">
+                                <ul class="navbar-nav">
+                                    <?php
+                                        try 
+                                        {
+                                            $data = $cone->query('SELECT * FROM Categoria');
+                                            
+                                            foreach($data as $linha)
+                                            {
+                                                echo "
+                                                    <li class='nav-item'>
+                                                        <a class='nav-link' href='#' id='filtro_tudo'>".$linha['nome_categoria']."</a>
+                                                    </li>";
+                                            }
+                                        }
+                                        catch ( PDOException $erro) 
+                                        {
+                                            echo 'Erro: ' .$erro->getMessage();
+                                        }
+                                    ?>
+                                </ul>
+                            </nav>
+                        </div> 
+                        <div class="col-1"><!-- margem visual --></div>   
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1"><!-- margem visual --></div>
+                        <div class="col-10">
+                            <?php
+                                try 
+                                {
+                                    $data = $cone->query('SELECT * FROM Produto');
+
+                                    foreach($data as $linha)
+                                    {
+                                        echo "<!-- Primeira galeria de item -->
+                                            <div class='col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig' data-wow-delay='0.2s'>
+                                                <!-- Imagem do produto -->
+                                                <div class='product-img'>
+                                                    <img src='" .$linha['imagem_produto']."' alt=''>
+                                                    <div class='product-quicview'>
+                                                        <a href='#' data-toggle='modal' data-target='#quickview'><i class='ti-plus'></i></a>
+                                                    </div>
+                                                </div>
+                                                <!-- Descrição do produto -->
+                                                <div class='product-description'>
+                                                    <h4 class='product-price'>R$".$linha['valor_produto']."</h4>
+                                                    <p>".$linha['nome_produto']."</p>
+                                                    <!-- Adicionar ao Carrinho -->
+                                                    <a href='#' class='add-to-cart-btn'>+Adicionar Carrinho</a>
+                                                </div>
+                                            </div>";
+                                    }
+                                }
+                                catch ( PDOException $erro) 
+                                {
+                                    echo 'Erro: ' .$erro->getMessage();
+                                }
+                            ?>
+                        </div>
+                            <div class="col-1"><!-- margem visual --></div>
                     </div>
                 </div>
             </div>
