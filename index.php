@@ -16,7 +16,7 @@
         <!-- ****** top ****** -->
         <div class="row">
             <div class="col-12">
-                <div class="container top fonte_teste">
+                <div class="container top">
                     <div class="row">
 
                         <div class="col-1" style="background-color: lightgray;">
@@ -30,7 +30,7 @@
                             </a>
                         </div>
 
-                        <div class="col-5" style="background-color: violet;">
+                        <div class="col-7" style="background-color: violet;">
                             <!-- NavBar-top -->
                             <nav class="navbar navbar-expand top_nav"> <!-- 'justify-content-center' centraliza a nav-bar -->
                                 <ul class="navbar-nav">
@@ -41,36 +41,62 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="filtro_pizza"><b>Quem Somos ?</b></a>
+                                        <a class="nav-link" href="#" id=""><b>Quem Somos ?</b></a>
                                     </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link" href="#">
-                                            <span class="karl-level">hot</span>
-                                            Contato
-                                        </a>
-                                    </li> -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="filtro_bebidas"><b>Contato</b></a>
+                                        <a class="nav-link" href="#" id=""><b>Contato</b></a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="">
+                                            <span class="karl-level">Compartilhe</span> 
+                                            <div class="icone_redes"><i class="fa fa-facebook"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="#" id="">
+                                            <div class="icone_redes"><i class="fa fa-pinterest"></i></div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="">
+                                            <div class="icone_redes"><i class="fa fa-twitter"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="#" id="">
+                                            <div class="icone_redes"><i class="fa fa-linkedin"></i></div>
+                                        </a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
 
-                        <div class="col-2" style="background-color: yellowgreen;">
+                        <div class="col-1" style="background-color: yellowgreen;">
                             <!-- Carrinho-top -->
                             <nav class="navbar navbar-expand justify-content-center top_nav">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="filtro_promo">
-                                            <!-- <i class="ti-bag"></i> -->Carrinho
+                                        <a class="nav-link" href="#" id="">
+                                            <span class="cart_quantity">5</span> 
+                                            <div class="icone_carrinho"><i class="ti-bag">$</i></div>
                                         </a>
                                     </li>
                                 </ul>
                             </nav>
-
                         </div>
-                        <div class="col-2" style="background-color: orangered;">
+
+                        <div class="col-1" style="background-color: orangered;">
                             <!-- Login-top -->
+                            <nav class="navbar navbar-expand justify-content-center top_nav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="">
+                                            <div class="icone_usuario"><i class="ti-user"></i></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
 
                         <div class="col-1" style="background-color: lightgray;">
@@ -120,22 +146,22 @@
         <!-- ****** Cardápio Pizzas ****** -->
         <div class="row">
             <div class="col-12">
-                <div class="container">
+                <div class="container mid">
 
                     <div class="row">
                         <div class="col-1"><!-- margem visual --></div>
                         <div class="col-10">
-                            <div class="text-center">
-                                <h1>Cardápio</h1>
+                            <div class="text-center mid_cardapio">
+                                <h1 class="">Cardápio</h1>
                             </div>
                         </div>
                         <div class="col-1"><!-- margem visual --></div>
                     </div>
 
-                    <div class="row">
+                    <div class="row mt-4">
                         <div class="col-1"><!-- margem visual --></div>
                         <div class="col-10">
-                            <nav class="navbar navbar-expand justify-content-center">
+                            <nav class="navbar navbar-expand justify-content-center mid_cardapio">
                                 <ul class="navbar-nav">
                                     <?php
                                         try 

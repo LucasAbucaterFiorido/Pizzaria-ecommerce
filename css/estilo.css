@@ -1,11 +1,66 @@
 /* Configuração inicial */
 @import '../css/font-awesome.min.css';
+@import '../css/themify-icons.css';
 *
 {
     margin: opx;
     padding: opx;
-    /* font-family: FontAwesome; */
 }
+body
+{
+    /* font-family: FontAwesome; */
+    
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; /* aumenta a grossura das letras */
+}
+h1,h2,h3,h4,h5,h6 
+{
+    color: #3a3a3a;
+    line-height: 1.2;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    /* font-family: Arial,Baskerville,monospace; */
+    font-weight: 700;
+}
+.navbar-expand .navbar-nav .nav-link {
+    padding-right: 15px;
+    padding-left: 10px;
+    margin-right: 10px;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 550;
+    text-transform: uppercase;
+}
+
+/* classes de Icones */
+.icone_carrinho
+{
+    font-size: 20px;
+    
+    /* 
+    link de tags:
+    https://yookits.com/demo/materialx-pro/icons/themify-icons.html
+
+    ti-power-off  icone de DESLIGAR (logoff)
+    ti-shift-right  icone de SAIR (logoff)
+    ti-user  icone de Usuario (login)
+    ti-trash  icone de LIXO (excluir)
+    ti-headphone-alt  icone de CONTATO (headset)
+
+    */
+    
+
+}
+.icone_usuario
+{
+    font-size: 30px;
+}
+.icone_redes
+{
+    font-size: 20px;
+    margin-right: -100px;
+}
+
 
 /* classes do top */
 .top
@@ -20,14 +75,25 @@
 .top_nav
 {
     margin-top: 45px;
-    /* font-size: large; */
+    font-weight: 400;
+    text-transform: uppercase; /* deixa o texto em caps lock */
 }
 
 /* classes do top-descontos */
 .top_descontos /* classe que caracteriza todas células de descontos */
 {
-    height: 130px; 
+    height: 130px;
     /* text-align: center; */
+}
+.top_descontos h5
+{
+    color: #fff; 
+    font-size: 20px;
+}
+.top_descontos h6
+{
+    color: #fff; 
+    font-size: 12px;
 }
 .top_descontos_d1 /* classe que caracteriza apenas a 1º célula dos descontos */
 {
@@ -41,6 +107,21 @@
 {
     margin-top: 40px;
 }
+
+/* classes do mid-cardapio */
+.mid
+{
+    margin-top: 100px;
+}
+.mid_cardapio
+{
+    text-transform: uppercase; /* deixa o texto em caps lock */
+}
+.mid_cardapio h1
+{
+    font-size: 50px;
+}
+
 
 /* classes testes */
 .teste1
@@ -70,7 +151,7 @@
     background-color: #ff084e;
     padding: 3px 10px;
     top: -15px;
-    left: 10px;
+    left: 33px;
 }
 
 .karl-level:after {
@@ -86,4 +167,21 @@
     left: -6px;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+}
+.cart_quantity {
+    background-color: #ff084e;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    left: -5px;
+    text-align: center;
+    top: 5px;
+    width: 20px;
+    z-index: 2;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    font-weight: 600;
 }
