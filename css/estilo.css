@@ -12,6 +12,25 @@
     max-height: 150px; /*impedir que a imagem ultrapasse das limitações da div */
 }
 
+/* classes do top-descontos */
+.top_descontos
+{
+    padding-top: 0px;
+    height: 130px; 
+    text-align: center;
+}
+.top_descontos_d1
+{
+    margin-top: 40px;
+}
+.top_descontos_d2
+{
+    background-color: red;
+}
+.top_descontos_d3
+{
+    background-color: black;
+}
 
 /* classes testes */
 .teste1
