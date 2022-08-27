@@ -32,20 +32,23 @@
 
                         <div class="col-5" style="background-color: violet;">
                             <!-- NavBar-top -->
-                            <nav class="navbar navbar-expand justify-content-center top_nav">
+                            <nav class="navbar navbar-expand top_nav"> <!-- 'justify-content-center' centraliza a nav-bar -->
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="filtro_tudo"><b>Cardápio</b></a>
+                                        <a class="nav-link" href="#" id="filtro_tudo">
+                                            <span class="karl-level">hot</span>
+                                            <b>Cardápio</b>
+                                        </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="filtro_pizza"><b>Quem Somos ?</b></a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="nav-link" href="#">
                                             <span class="karl-level">hot</span>
                                             Contato
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="filtro_bebidas"><b>Contato</b></a>
                                     </li>
