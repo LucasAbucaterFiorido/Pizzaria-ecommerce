@@ -19,24 +19,24 @@
                 <div class="container top">
                     <div class="row">
 
-                        <div class="col-1" style="background-color: lightgray;">
+                        <div class="col-1"> <!-- style="background-color: lightgray;" -->
                             <!-- margem visual -->
                         </div> 
                         
-                        <div class="col-1" style="background-color: salmon;">
+                        <div class="col-1"> <!-- style="background-color: salmon;"-->
                             <!-- logo -->
                             <a href="#" id="top_logotipo">
                                 <img class="top_logo" src="img/logo/pizzalogo.png" alt="Logotipo Ouroborus">
                             </a>
                         </div>
 
-                        <div class="col-7" style="background-color: violet;">
+                        <div class="col-7"> <!-- style="background-color: violet;"-->
                             <!-- NavBar-top -->
                             <nav class="navbar navbar-expand top_nav"> <!-- 'justify-content-center' centraliza a nav-bar -->
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="filtro_tudo">
-                                            <span class="karl-level">hot</span>
+                                            <span class="karl-level" id="msg_hot">hot</span>
                                             <b>Cardápio</b>
                                         </a>
                                     </li>
@@ -49,7 +49,7 @@
                                     
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="">
-                                            <span class="karl-level">Compartilhe</span> 
+                                            <span class="karl-level" id="msg_compartilhe">Compartilhe</span> 
                                             <div class="icone_redes"><i class="fa fa-facebook"></i></div>
                                         </a>
                                     </li>
@@ -72,34 +72,36 @@
                             </nav>
                         </div>
 
-                        <div class="col-1" style="background-color: yellowgreen;">
+                        <div class="col-2"> <!-- style="background-color: orangered;"-->
                             <!-- Carrinho-top -->
                             <nav class="navbar navbar-expand justify-content-center top_nav">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="">
-                                            <span class="cart_quantity">5</span> 
-                                            <div class="icone_carrinho"><i class="ti-bag">$</i></div>
+                                            <div class="cart_quantity">
+                                                <span style="font-size: 11px;">
+                                                    5
+                                                </span> 
+                                            </div>
+                                            <div style="font-size: 15px;">
+                                                <i class="ti-bag icone_carrinho"></i>
+                                                R$
+                                            </div>
                                         </a>
                                     </li>
                                 </ul>
-                            </nav>
-                        </div>
-
-                        <div class="col-1" style="background-color: orangered;">
                             <!-- Login-top -->
-                            <nav class="navbar navbar-expand justify-content-center top_nav">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_usuario"><i class="ti-user"></i></div>
+                                            <div class="icone_login"><i class="ti-user"></i></div>
                                         </a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
 
-                        <div class="col-1" style="background-color: lightgray;">
+                        <div class="col-1">  <!-- style="background-color: lightgray;" -->
                             <!-- margem visual -->
                         </div> 
                         

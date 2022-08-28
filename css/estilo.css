@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5,h6
 /* classes de Icones */
 .icone_carrinho
 {
-    font-size: 20px;
+    font-size: 24px;
     
     /* 
     link de tags:
@@ -48,10 +48,12 @@ h1,h2,h3,h4,h5,h6
     ti-headphone-alt  icone de CONTATO (headset)
 
     */
-    
-
 }
-.icone_usuario
+.icone_login
+{
+    font-size: 25px;
+}
+.icone_logoff
 {
     font-size: 30px;
 }
@@ -59,6 +61,7 @@ h1,h2,h3,h4,h5,h6
 {
     font-size: 20px;
     margin-right: -100px;
+    padding: 0 10px;
 }
 
 
@@ -77,6 +80,10 @@ h1,h2,h3,h4,h5,h6
     margin-top: 45px;
     font-weight: 400;
     text-transform: uppercase; /* deixa o texto em caps lock */
+}
+.top_nav a
+{
+    color: #000000;
 }
 
 /* classes do top-descontos */
@@ -98,6 +105,10 @@ h1,h2,h3,h4,h5,h6
 .top_descontos_d1 /* classe que caracteriza apenas a 1º célula dos descontos */
 {
     margin-top: 40px;
+}
+.top_descontos_d1 a
+{
+    color: #ff084e;
 }
 .top_descontos_d2 /* classe que caracteriza apenas a 2º célula dos descontos */
 {
@@ -151,6 +162,13 @@ h1,h2,h3,h4,h5,h6
     background-color: #ff084e;
     padding: 3px 10px;
     top: -15px;
+}
+#msg_compartilhe
+{
+    left: 490px;
+}
+#msg_hot
+{
     left: 33px;
 }
 
@@ -172,16 +190,43 @@ h1,h2,h3,h4,h5,h6
     background-color: #ff084e;
     border-radius: 50%;
     color: #fff;
-    font-size: 11px;
+    font-size: 9px;
     height: 20px;
     line-height: 20px;
     position: absolute;
-    left: -5px;
     text-align: center;
-    top: 5px;
+    top: 30px;
+    left: 35px;
     width: 20px;
     z-index: 2;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     font-weight: 600;
 }
+
+
+/* CLASSES SLIDER AINDA NAO TESTEI */
+/* eu acho que o slider é feito totalmente em CSS é apenas analisar as classes da tela slider que vc ja vai entender */
+
+.karl-btn {
+    display: inline-block;
+    min-width: 170px;
+    height: 55px;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 2px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 49px;
+}
+
+.karl-btn:hover,
+.karl-btn:focus {
+    font-weight: 700;
+    color: #fff;
+    background-color: #ff084e;
+    border-color: #ff084e;
+}
+/* FIM CLASSES SLIDER AINDA NAO TESTEI */
