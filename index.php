@@ -80,10 +80,10 @@
                                         <a class="nav-link" href="#" id="">
                                             <div class="cart_quantity">
                                                 <span style="font-size: 11px;">
-                                                    5
+                                                    Nº
                                                 </span> 
                                             </div>
-                                            <div style="font-size: 15px;">
+                                            <div style="font-size: 14px;">
                                                 <i class="ti-bag icone_carrinho"></i>
                                                 R$
                                             </div>
