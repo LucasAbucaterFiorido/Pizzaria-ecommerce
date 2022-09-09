@@ -141,7 +141,7 @@
 
         <!-- ****** Area dos Slides ****** -->
         <div class="row">
-
+            
         </div>
         <!-- ****** FIM Area dos Slides ****** -->
 
@@ -240,5 +240,8 @@
 
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/jquery-3.6.0.js"></script>
+    <script>
+        
+    </script>
 </body>
 </html>
