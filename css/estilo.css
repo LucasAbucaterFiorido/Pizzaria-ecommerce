@@ -133,6 +133,36 @@ h1,h2,h3,h4,h5,h6
     font-size: 50px;
 }
 
+/* classes dos detalhes dos produtos */
+.img_pos_detalhesProduto
+{
+    background: #3a3a3a;
+    height: 500px;
+    width: 635px;
+}
+.btt_detalhesProduto
+{
+    text-decoration: none;
+    color: inherit;
+    /* color: #000000; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* classes testes */
 .teste1
