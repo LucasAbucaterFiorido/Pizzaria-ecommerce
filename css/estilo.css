@@ -1,3 +1,11 @@
+/*
+ANOTAÇÃO
+
+cores->
+    #ff084e
+    #585656
+
+*/
 /* Configuração inicial */
 @import '../css/font-awesome.min.css';
 @import '../css/themify-icons.css';
@@ -9,20 +17,28 @@
 body
 {
     /* font-family: FontAwesome; */
-    
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'themify'; */
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    /* font-family: Arial,Baskerville,monospace; */
     font-weight: 400; /* aumenta a grossura das letras */
+}
+.body_config
+{
+    background-color: rgb(16, 16, 16);
+    color: #e4e4e4;
 }
 h1,h2,h3,h4,h5,h6 
 {
-    color: #3a3a3a;
+    /* color: #b3b1b1; */
     line-height: 1.2;
     /* font-family: 'Open Sans', sans-serif; */
     font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
     /* font-family: Arial,Baskerville,monospace; */
     font-weight: 700;
 }
-.navbar-expand .navbar-nav .nav-link {
+.navbar-expand .navbar-nav .nav-link 
+{
     padding-right: 15px;
     padding-left: 10px;
     margin-right: 10px;
@@ -30,6 +46,13 @@ h1,h2,h3,h4,h5,h6
     font-size: 14px;
     font-weight: 550;
     text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif; 
+    color: #b3b3b3;
+}
+.navbar-expand .navbar-nav .nav-link:hover
+{
+    color: #ff084e;
+    transition: 350ms;
 }
 
 /* classes de Icones */
@@ -81,9 +104,40 @@ h1,h2,h3,h4,h5,h6
     font-weight: 400;
     text-transform: uppercase; /* deixa o texto em caps lock */
 }
-.top_nav a
+#msg_compartilhe
 {
-    color: #000000;
+    left: 490px;
+}
+#msg_hot
+{
+    left: 33px;
+}
+.msg /* karl */
+{
+    position: absolute;
+    /* z-index: 2; */
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #ff084e;
+    padding: 3px 10px;
+    top: -15px;
+}
+.msg:after  /* karl */
+{
+    position: absolute;
+    /* z-index: 2; */
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent #ff084e transparent;
+    bottom: -2px;
+    left: -6px;
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
 }
 
 /* classes do top-descontos */
@@ -124,28 +178,195 @@ h1,h2,h3,h4,h5,h6
 {
     margin-top: 100px;
 }
-.mid_cardapio
+.titulo-cardapio_mid
 {
     text-transform: uppercase; /* deixa o texto em caps lock */
 }
-.mid_cardapio h1
+.titulo-cardapio_mid h1
 {
     font-size: 50px;
 }
+.catalogo_mid
+{
+    background-color: #383333;
+}
 
-/* classes dos detalhes dos produtos */
-.img_pos_detalhesProduto
+/* classes dos detalhes dos produtos DP*/
+.estrelas_dp
+{
+    text-decoration: none;
+    color: rgb(219, 170, 9);
+}
+.estrelas_dp:hover
+{
+    color: rgb(206, 160, 8);
+}
+
+.img_pos_dp /* posicionamento da imagem do produto */
 {
     background: #3a3a3a;
     height: 500px;
     width: 635px;
 }
-.btt_detalhesProduto
+.imgs-list_dp
+{
+    background-color: red;
+    height: 100px;
+    width: 150px;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 15px;
+    margin-left: 7px;
+}
+
+.quantidade-config_dp /* Configuração geral da area do botao 'quantidade' */
+{
+    width: 130px;
+}
+.quantidade-config_dp span /* muda a configuração de cores da borda dos botoes 'bttmenos' e 'bttmais' */
+{
+    background-color: #585656;
+    border-top-color: #585656;
+    border-bottom-color: #585656;
+}
+.btt-MaisMenos_dp /* Retira a decoração padrao do botao */
 {
     text-decoration: none;
-    color: inherit;
-    /* color: #000000; */
+    box-shadow: inherit;
+    color: black;
 }
+.btt-MaisMenos_dp:hover
+{
+    color: #a30935;
+    transition: 200ms;
+}
+
+#bttMais /* muda a cor esquerda da borda do botao 'bttmais' */
+{
+    border-left-color: #585656;
+}
+#bttMenos /* muda a cor direita da borda do botao 'bttmenos' */
+{
+    border-right-color: #585656;
+}
+
+/* Retira setas de numero do input no navegador Firefox */
+#txtqtd /* #txtqtd pode não ser trocado por uma classe mas sim por input[type=number] */
+{
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    background-color: #bdbdbd; /* muda a cor de fundo do input de quantidade */
+    box-shadow: inherit; /* retira o sombreamento quando o input está ativo */
+}
+/* '::-webkit-outer-spin-button,::-webkit-inner-spin-button' Retira setas de numero do input no navegador Chrome, Safari, Edge, Opera */
+#txtqtd::-webkit-outer-spin-button,::-webkit-inner-spin-button /* #txtqtd pode ser trocado por uma classe */
+{
+    -webkit-appearance: none;
+}
+/* 
+.testInput::-webkit-outer-spin-button,::-webkit-inner-spin-button 
+{
+    -webkit-appearance: none; 
+} 
+*/
+
+.btt-addCart_dp
+{
+    background-color: #ff084e;
+    border: medium none;
+    color: rgb(231, 230, 230);
+    font-size: 14px;
+    height: 40px;
+    text-transform: uppercase;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 0;
+
+}
+.btt-addCart_dp:hover
+{
+    background-color: #e00040;
+    color: #fff;
+}
+
+.btt-opcoes_dp
+{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.titulo_dp
+{
+    color: #bdbdbd;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.btt-opcoes_dp ul
+{
+    padding: 0px;
+}
+.btt-opcoes_dp li
+{
+    display: inline-block;
+}
+
+.btt-opcoes_dp a
+{
+    border: 2px solid #b3b3b3;
+    padding: 10px;
+    text-align: center;
+    line-height: 33px;
+    text-decoration: none;
+    font-weight: 600;
+    color: inherit;
+    color: #d6d3d3;
+}
+.btt-opcoes_dp a:hover,btt-opcoes_dp a:focus
+{
+    background-color: #ff084e;
+    color: rgb(26, 26, 26);
+    border-color: #ff084e;
+    transition: 500ms;
+    border-radius: 2px;
+}
+
+.acordeao-item_dp /* Muda a cor do Acordeao quando desativado */ 
+{
+    background-color: rgb(99, 90, 94);
+}
+.acordeao-btt_dp /* Muda a cor do botao do Acordeao quando desativado */
+{
+    background-color: rgb(49, 47, 48);
+}
+.accordion-button /* Retira a mudança de tamanho do Acordeao */
+{
+    font-size: inherit;
+    
+}
+.accordion-item /* Muda a cor da borda Acordeao */
+{
+    border: 1px solid #818181;
+}
+.accordion-button:not(.collapsed) /* Muda a cor do Acordeao quando ativo */
+{
+    color: inherit;
+    background: #3a3a3a;
+    color: #b3b3b3;
+}
+.accordion-button:not(.collapsed)::after  /* Muda a cor da seta do Acordeao para preto ou branco */
+{
+    filter: brightness(0%) invert(90%);
+}
+.accordion-button:focus
+{
+    box-shadow: inherit;
+}
+
+
+
+
 
 
 
@@ -182,40 +403,8 @@ h1,h2,h3,h4,h5,h6
     /* font-family: 'Open Sans', sans-serif; */
     font-family:Arial,Baskerville,monospace;
 }
-.karl-level {
-    position: absolute;
-    z-index: 2;
-    color: #fff;
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 700;
-    background-color: #ff084e;
-    padding: 3px 10px;
-    top: -15px;
-}
-#msg_compartilhe
-{
-    left: 490px;
-}
-#msg_hot
-{
-    left: 33px;
-}
 
-.karl-level:after {
-    position: absolute;
-    z-index: 2;
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 9px 9px 9px;
-    border-color: transparent transparent #ff084e transparent;
-    bottom: -2px;
-    left: -6px;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
+
 .cart_quantity {
     background-color: #ff084e;
     border-radius: 50%;
@@ -228,7 +417,7 @@ h1,h2,h3,h4,h5,h6
     top: 30px;
     left: 35px;
     width: 20px;
-    z-index: 2;
+    /* z-index: 2; */
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     font-weight: 600;

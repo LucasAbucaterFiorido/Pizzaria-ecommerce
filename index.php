@@ -11,7 +11,7 @@
     <?php include_once('conexao.php'); ?>
     <title>Ouroborus</title>
 </head>
-<body>
+<body class="body_config">
     <div class="container-fluid">
         <!-- ****** top ****** -->
         <div class="row">
@@ -35,21 +35,21 @@
                             <nav class="navbar navbar-expand top_nav"> <!-- 'justify-content-center' centraliza a nav-bar -->
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="filtro_tudo">
-                                            <span class="karl-level" id="msg_hot">hot</span>
-                                            <b>Cardápio</b>
+                                        <a class="nav-link" href="#" id="btt_cardapio">
+                                            <span class="msg" id="msg_hot">hot</span>
+                                            Cardápio
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id=""><b>Quem Somos ?</b></a>
+                                        <a class="nav-link" href="#" id="btt_quemsomos">Quem Somos ?</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" id=""><b>Contato</b></a>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#' id='btt_contato'>Contato</a>
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="">
-                                            <span class="karl-level" id="msg_compartilhe">Compartilhe</span> 
+                                        <a class="nav-link" href="#" id="btt_compartilhe">
+                                            <span class="msg" for: id="msg_compartilhe">Compartilhe</span> 
                                             <div class="icone_redes"><i class="fa fa-facebook"></i></div>
                                         </a>
                                     </li>
@@ -118,7 +118,7 @@
             <div class="col-4" style="background-color: #b8b8b8;">
                 <div class="top_descontos_d1">
                     <h5>Free Shipping &amp; Returns</h5>
-                    <h6><a href="#">BUY NOW</a></h6>
+                    <h6><a href="Paginas/detalhesProdutos.php">BUY NOW</a></h6>
                 </div>
             </div>
             <!-- Area desconto 2 -->
@@ -153,7 +153,7 @@
                     <div class="row">
                         <div class="col-1"><!-- margem visual --></div>
                         <div class="col-10">
-                            <div class="text-center mid_cardapio">
+                            <div class="text-center titulo-cardapio_mid">
                                 <h1 class="">Cardápio</h1>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                     <div class="row mt-4">
                         <div class="col-1"><!-- margem visual --></div>
                         <div class="col-10">
-                            <nav class="navbar navbar-expand justify-content-center mid_cardapio">
+                            <nav class="navbar navbar-expand justify-content-center titulo-cardapio_mid">
                                 <ul class="navbar-nav">
                                     <?php
                                         try 
@@ -186,45 +186,55 @@
                                 </ul>
                             </nav>
                         </div> 
-                        <div class="col-1"><!-- margem visual --></div>   
+                        <div class="col-1"><!-- margem visual --></div>  
                     </div>
 
-                    <div class="row">
-                        <div class="col-1"><!-- margem visual --></div>
+                    <div class="row mt-5">
+                        <div class="col-1"><!-- Coluna visual --></div>
                         <div class="col-10">
-                            <?php
-                                try 
-                                {
-                                    $data = $cone->query('SELECT * FROM Produto');
-
-                                    foreach($data as $linha)
-                                    {
-                                        echo "<!-- Primeira galeria de item -->
-                                            <div class='col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig' data-wow-delay='0.2s'>
-                                                <!-- Imagem do produto -->
-                                                <div class='product-img'>
-                                                    <img src='" .$linha['imagem_produto']."' alt=''>
-                                                    <div class='product-quicview'>
-                                                        <a href='#' data-toggle='modal' data-target='#quickview'><i class='ti-plus'></i></a>
-                                                    </div>
+                            <div class="container">
+                                <div class="row row-cols-3">
+                                    <div class="col mt-5 mb-5">
+                                        <div class="card-group">
+                                            <div class="card catalogo_mid">
+                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"></h5>
+                                                    <p class="card-text">Teste</p>
+                                                    <p class="card-text"><small>Teste</small></p>
                                                 </div>
-                                                <!-- Descrição do produto -->
-                                                <div class='product-description'>
-                                                    <h4 class='product-price'>R$".$linha['valor_produto']."</h4>
-                                                    <p>".$linha['nome_produto']."</p>
-                                                    <!-- Adicionar ao Carrinho -->
-                                                    <a href='#' class='add-to-cart-btn'>+Adicionar Carrinho</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mt-5 mb-5">
+                                        <div class="card-group">
+                                            <div class="card catalogo_mid">
+                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"></h5>
+                                                    <p class="card-text">Teste</p>
+                                                    <p class="card-text"><small>Teste</small></p>
                                                 </div>
-                                            </div>";
-                                    }
-                                }
-                                catch ( PDOException $erro) 
-                                {
-                                    echo 'Erro: ' .$erro->getMessage();
-                                }
-                            ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mt-5 mb-5">
+                                        <div class="card-group">
+                                            <div class="card catalogo_mid">
+                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"></h5>
+                                                    <p class="card-text">Teste</p>
+                                                    <p class="card-text"><small>Teste</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1"><!-- Coluna visual --></div>
                         </div>
-                            <div class="col-1"><!-- margem visual --></div>
+                        </div>
                     </div>
                 </div>
             </div>
