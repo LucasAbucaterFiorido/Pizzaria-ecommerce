@@ -139,6 +139,36 @@ h1,h2,h3,h4,h5,h6
     -webkit-transform: rotate(-40deg);
     transform: rotate(-40deg);
 }
+.transicao-up:hover
+{
+	-webkit-animation: transicao-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: transicao-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes transicao-up 
+{
+    0% 
+    {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% 
+    {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+@keyframes transicao-up 
+{
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+  
 
 /* classes do top-descontos */
 .top_descontos /* classe que caracteriza todas células de descontos */
@@ -189,7 +219,14 @@ h1,h2,h3,h4,h5,h6
 .catalogo_mid
 {
     background-color: #383333;
-}
+} 
+
+
+
+
+
+
+
 
 /* classes dos detalhes dos produtos DP*/
 .estrelas_dp
@@ -409,13 +446,13 @@ h1,h2,h3,h4,h5,h6
     background-color: #ff084e;
     border-radius: 50%;
     color: #fff;
-    font-size: 9px;
+    font-size: 10px;
     height: 20px;
     line-height: 20px;
     position: absolute;
     text-align: center;
-    top: 30px;
-    left: 35px;
+    top: 10px;
+    left: 20px;
     width: 20px;
     /* z-index: 2; */
     -webkit-transition-duration: 500ms;

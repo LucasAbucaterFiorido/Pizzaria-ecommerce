@@ -26,7 +26,7 @@
                         <div class="col-1"> <!-- style="background-color: salmon;"-->
                             <!-- logo -->
                             <a href="#" id="top_logotipo">
-                                <img class="top_logo" src="img/logo/pizzalogo.png" alt="Logotipo Ouroborus">
+                                <img class="top_logo transicao-up" src="img/logo/pizzalogo.png" alt="Logotipo Ouroborus">
                             </a>
                         </div>
 
@@ -50,22 +50,22 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="btt_compartilhe">
                                             <span class="msg" for: id="msg_compartilhe">Compartilhe</span> 
-                                            <div class="icone_redes"><i class="fa fa-facebook"></i></div>
+                                            <div class="icone_redes transicao-up"><i class="fa fa-facebook"></i></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_redes"><i class="fa fa-pinterest"></i></div>
+                                            <div class="icone_redes transicao-up"><i class="fa fa-pinterest"></i></div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_redes"><i class="fa fa-twitter"></i></div>
+                                            <div class="icone_redes transicao-up"><i class="fa fa-twitter"></i></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_redes"><i class="fa fa-linkedin"></i></div>
+                                            <div class="icone_redes transicao-up"><i class="fa fa-linkedin"></i></div>
                                         </a>
                                     </li>
                                 </ul>
@@ -79,13 +79,13 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="">
                                             <div class="cart_quantity">
-                                                <span style="font-size: 11px;">
-                                                    Nº
+                                                <span style="font-size: 10px;">
+                                                    Nº  
                                                 </span> 
                                             </div>
-                                            <div style="font-size: 14px;">
-                                                <i class="ti-bag icone_carrinho"></i>
-                                                R$
+                                            <div>
+                                                <i class="ti-shopping-cart icone_carrinho" style="font-size: 24px;"></i>
+                                                <span style="font-size: 15px;">R$</span>
                                             </div>
                                         </a>
                                     </li>
@@ -118,7 +118,7 @@
             <div class="col-4" style="background-color: #b8b8b8;">
                 <div class="top_descontos_d1">
                     <h5>Free Shipping &amp; Returns</h5>
-                    <h6><a href="Paginas/detalhesProdutos.php">BUY NOW</a></h6>
+                    <h6><a href="Paginas/Carrinho.php">BUY NOW</a></h6>
                 </div>
             </div>
             <!-- Area desconto 2 -->
@@ -195,73 +195,115 @@
                             <div class="container">
                                 <div class="row row-cols-3">
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group">
+                                        <div class="card-group ">
                                             <div class="card catalogo_mid">
-                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <a href="Paginas/detalhesProdutos.php">
+                                                    <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                </a>
                                                 <div class="card-body">
-                                                    <h5 class="card-title"></h5>
-                                                    <p class="card-text">Teste</p>
-                                                    <p class="card-text"><small>Teste</small></p>
+                                                    <a href="Paginas/detalhesProdutos.php">
+                                                        <h5 class="card-title">Titulo</h5>
+                                                    </a>
+                                                    <a href="Paginas/detalhesProdutos.php">
+                                                        <p class="card-text">Preço</p>
+                                                    </a>
+                                                    <br>
+                                                    <button class="btn btn-danger" ><i class="ti-bag"></i> Comprar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group">
+                                        <div class="card-group teste">
                                             <div class="card catalogo_mid">
-                                                <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
+                                                <a href="#">
+                                                    <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
+                                                </a>
                                                 <div class="card-body">
-                                                    <h5 class="card-title"></h5>
-                                                    <p class="card-text">Teste</p>
-                                                    <p class="card-text"><small>Teste</small></p>
+                                                    <a href="#">
+                                                        <h5 class="card-title">Titulo</h5>
+                                                    </a>
+                                                    <a href="#">
+                                                        <p class="card-text">Preço</p>
+                                                    </a>
+                                                    <br>
+                                                    <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group">
+                                        <div class="card-group teste">
                                             <div class="card catalogo_mid">
-                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <a href="#">
+                                                    <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                </a>
                                                 <div class="card-body">
-                                                    <h5 class="card-title"></h5>
-                                                    <p class="card-text">Teste</p>
-                                                    <p class="card-text"><small>Teste</small></p>
+                                                    <a href="#">
+                                                        <h5 class="card-title">Titulo</h5>
+                                                    </a>
+                                                    <a href="#">
+                                                        <p class="card-text">Preço</p>
+                                                    </a>
+                                                    <br>
+                                                    <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group">
+                                        <div class="card-group teste">
                                             <div class="card catalogo_mid">
-                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <a href="#">
+                                                    <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                </a>
                                                 <div class="card-body">
-                                                    <h5 class="card-title"></h5>
-                                                    <p class="card-text">Teste</p>
-                                                    <p class="card-text"><small>Teste</small></p>
+                                                    <a href="#">
+                                                        <h5 class="card-title">Titulo</h5>
+                                                    </a>
+                                                    <a href="#">
+                                                        <p class="card-text">Preço</p>
+                                                    </a>
+                                                    <br>
+                                                    <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group">
+                                        <div class="card-group teste">
                                             <div class="card catalogo_mid">
-                                                <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
+                                                <a href="#">
+                                                    <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
+                                                </a>
                                                 <div class="card-body">
-                                                    <h5 class="card-title"></h5>
-                                                    <p class="card-text">Teste</p>
-                                                    <p class="card-text"><small>Teste</small></p>
+                                                    <a href="#">
+                                                        <h5 class="card-title">Titulo</h5>
+                                                    </a>
+                                                    <a href="#">
+                                                        <p class="card-text">Preço</p>
+                                                    </a>
+                                                    <br>
+                                                    <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group">
+                                        <div class="card-group teste">
                                             <div class="card catalogo_mid">
-                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <a href="#">
+                                                    <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                </a>
                                                 <div class="card-body">
-                                                    <h5 class="card-title"></h5>
-                                                    <p class="card-text">Teste</p>
-                                                    <p class="card-text"><small>Teste</small></p>
+                                                    <a href="#">
+                                                        <h5 class="card-title">Titulo</h5>
+                                                    </a>
+                                                    <a href="#">
+                                                        <p class="card-text">Preço</p>
+                                                    </a>
+                                                    <br>
+                                                    <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
                                                 </div>
                                             </div>
                                         </div>
