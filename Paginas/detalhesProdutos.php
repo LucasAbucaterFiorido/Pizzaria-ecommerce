@@ -69,7 +69,7 @@
                                     </a>  
                                 </div>
                                 <div id="Opcoes_tipo" class="btt-opcoes_dp mt-5">
-                                    <p class="titulo_dp">Opções/Tipo</p> <!--  Opçoes de tamanhos ou tipos de sabores -->
+                                    <p class="titulo_dp">Opções/Tipo:</p> <!--  Opçoes de tamanhos ou tipos de sabores -->
                                     <ul>
                                         <li><a href="#">Broto</a></li>
                                         <li><a href="#">Média</a></li>
@@ -85,7 +85,7 @@
                                     
                                 
                                 <div class="mt-5">
-                                    <p class="titulo_dp">Opções/Tipo</p>
+                                    <p class="titulo_dp">Quantidade:</p>
                                 <div class="input-group quantidade-config_dp">
                                     <span class="input-group-text" id="bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
                                     <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="">

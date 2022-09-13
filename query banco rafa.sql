@@ -16,6 +16,32 @@ create table Usuario
 
 select * from Usuario;
 
+create table Venda
+(
+	codigo_venda int auto_increment primary key not null,
+    cadastro_venda timestamp not null,
+	qtdTotal_venda int not null,
+    valorTotal_venda decimal(10,2),
+	status_venda varchar(10) not null,
+    codigo_usuario int not null,
+    constraint FK_codigo_usuario_venda foreign key (codigo_usuario) references Usuario (codigo_usuario)
+);
+
+select * from Venda;
+
+create table Item
+(
+	codigo_item int auto_increment primary key not null,
+	qtdProd_item int not null,
+    valorProd_item decimal(10,2),
+    codigo_produto int not null,
+    codigo_venda int not null,
+	constraint FK_codigo_produto_item foreign key (codigo_produto) references Produto (codigo_produto),
+    constraint FK_codigo_venda_item foreign key (codigo_venda) references Venda (codigo_venda)
+);
+
+select * FROM Item;
+
 create table Categoria
 (
 	codigo_categoria int auto_increment primary key not null,

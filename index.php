@@ -209,7 +209,43 @@
                                     <div class="col mt-5 mb-5">
                                         <div class="card-group">
                                             <div class="card catalogo_mid">
+                                                <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"></h5>
+                                                    <p class="card-text">Teste</p>
+                                                    <p class="card-text"><small>Teste</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mt-5 mb-5">
+                                        <div class="card-group">
+                                            <div class="card catalogo_mid">
                                                 <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"></h5>
+                                                    <p class="card-text">Teste</p>
+                                                    <p class="card-text"><small>Teste</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mt-5 mb-5">
+                                        <div class="card-group">
+                                            <div class="card catalogo_mid">
+                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"></h5>
+                                                    <p class="card-text">Teste</p>
+                                                    <p class="card-text"><small>Teste</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mt-5 mb-5">
+                                        <div class="card-group">
+                                            <div class="card catalogo_mid">
+                                                <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title"></h5>
                                                     <p class="card-text">Teste</p>
