@@ -214,7 +214,7 @@
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group teste">
+                                        <div class="card-group">
                                             <div class="card catalogo_mid">
                                                 <a href="#">
                                                     <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
@@ -233,7 +233,7 @@
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group teste">
+                                        <div class="card-group">
                                             <div class="card catalogo_mid">
                                                 <a href="#">
                                                     <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
@@ -252,7 +252,7 @@
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group teste">
+                                        <div class="card-group">
                                             <div class="card catalogo_mid">
                                                 <a href="#">
                                                     <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
@@ -271,7 +271,7 @@
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group teste">
+                                        <div class="card-group">
                                             <div class="card catalogo_mid">
                                                 <a href="#">
                                                     <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
@@ -290,7 +290,7 @@
                                         </div>
                                     </div>
                                     <div class="col mt-5 mb-5">
-                                        <div class="card-group teste">
+                                        <div class="card-group">
                                             <div class="card catalogo_mid">
                                                 <a href="#">
                                                     <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
@@ -310,9 +310,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-1"><!-- Coluna visual --></div>
                         </div>
-                        </div>
+                        <div class="col-1"><!-- Coluna visual --></div>
                     </div>
                 </div>
             </div>

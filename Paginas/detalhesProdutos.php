@@ -87,9 +87,9 @@
                                 <div class="mt-5">
                                     <p class="titulo_dp">Quantidade:</p>
                                 <div class="input-group quantidade-config_dp">
-                                    <span class="input-group-text" id="bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
+                                    <span class="input-group-text bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
                                     <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="">
-                                    <span class="input-group-text" id="bttMenos"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
+                                    <span class="input-group-text bttMenos"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
                                 </div>
                                 </div>
 

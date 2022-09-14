@@ -404,6 +404,50 @@ h1,h2,h3,h4,h5,h6
 
 
 
+/* classes dos Carrinho*/
+.top-table_cart
+{
+    background-color: #44353b;
+    border-bottom-color: #e00040;
+    color: #ffffff;
+}
+.body-table_cart
+{
+    /* background-color: #44353b; */
+    color: #d3cece;
+    border-bottom-color: #e00040;
+    /* line-height: 100px; */
+}
+.img-table_cart
+{
+    background-color: blue;
+    width: 150px;
+    height: 100px;
+}
+.input-qtd_cart
+{
+    width: 60px;
+    height: 30px;
+    text-align: center;
+}
+.btt-qtd_cart
+{
+    width: 40px;
+    height: 30px;
+    background-color: #585656;
+    border-bottom-color: #585656;
+    border-top-color: #585656;
+}
+.bttMais /* muda a cor esquerda da borda do botao 'bttmais' */
+{
+    border-left-color: #585656;
+}
+.bttMenos /* muda a cor direita da borda do botao 'bttmenos' */
+{
+    border-right-color: #585656;
+}
+
+
 
 
 
@@ -423,6 +467,10 @@ h1,h2,h3,h4,h5,h6
 
 
 /* classes testes */
+.teste
+{
+    background-color: blue;
+}
 .teste1
 {
     background-color: red;
