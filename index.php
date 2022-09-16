@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css_Slider/core-style.css">
     <link rel="icon" type="img/png" href="img/logo/pizzalogo.png">
     <?php include_once('conexao.php'); ?>
-    <title>Ouroborus</title>
+    <title>Pizzaria</title>
 </head>
 <body class="body_config">
     <div class="container-fluid">
@@ -26,7 +26,7 @@
                         <div class="col-1"> <!-- style="background-color: salmon;"-->
                             <!-- logo -->
                             <a href="#" id="top_logotipo">
-                                <img class="top_logo transicao-up" src="img/logo/pizzalogo.png" alt="Logotipo Ouroborus">
+                                <img class="pos_logo" src="img/logo/pizzalogo.png" alt="Logotipo Ouroborus">
                             </a>
                         </div>
 
@@ -50,22 +50,22 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="btt_compartilhe">
                                             <span class="msg" for: id="msg_compartilhe">Compartilhe</span> 
-                                            <div class="icone_redes transicao-up"><i class="fa fa-facebook"></i></div>
+                                            <div class="icone_redes"><i class="fa fa-facebook"></i></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_redes transicao-up"><i class="fa fa-pinterest"></i></div>
+                                            <div class="icone_redes"><i class="fa fa-pinterest"></i></div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_redes transicao-up"><i class="fa fa-twitter"></i></div>
+                                            <div class="icone_redes"><i class="fa fa-twitter"></i></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_redes transicao-up"><i class="fa fa-linkedin"></i></div>
+                                            <div class="icone_redes"><i class="fa fa-linkedin"></i></div>
                                         </a>
                                     </li>
                                 </ul>

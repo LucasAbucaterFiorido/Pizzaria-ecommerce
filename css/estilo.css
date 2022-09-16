@@ -11,8 +11,8 @@ cores->
 @import '../css/themify-icons.css';
 *
 {
-    margin: opx;
-    padding: opx;
+    margin: 0px;
+    padding: 0px;
 }
 body
 {
@@ -87,13 +87,27 @@ h1,h2,h3,h4,h5,h6
     padding: 0 10px;
 }
 
+/* classes de Login */
+.pos_login
+{
+    background-color: #585656;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    margin-top: 80px;
+}
+.pos-input-login
+{
+    margin-left: 20px;
+}
+
 
 /* classes do top */
 .top
 {
     height: 150px; 
 }
-.top_logo /* classe que dita as diretrizes da div, limitando o espaço controlorá qual será o tamanho da imagem */
+.pos_logo /* classe que dita as diretrizes da div, limitando o espaço controlorá qual será o tamanho da imagem */
 {
     max-width: 200px; /*impedir que a imagem ultrapasse das limitações da div */
     max-height: 150px; /*impedir que a imagem ultrapasse das limitações da div */
@@ -139,35 +153,7 @@ h1,h2,h3,h4,h5,h6
     -webkit-transform: rotate(-40deg);
     transform: rotate(-40deg);
 }
-.transicao-up:hover
-{
-	-webkit-animation: transicao-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: transicao-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-@-webkit-keyframes transicao-up 
-{
-    0% 
-    {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    100% 
-    {
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-    }
-}
-@keyframes transicao-up 
-{
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    100% {
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-    }
-}
+
   
 
 /* classes do top-descontos */
@@ -465,7 +451,6 @@ h1,h2,h3,h4,h5,h6
 
 
 
-
 /* classes testes */
 .teste
 {
@@ -474,7 +459,7 @@ h1,h2,h3,h4,h5,h6
 .teste1
 {
     background-color: red;
-    height: 150px;
+    height: 500px;
 }
 .teste2
 {
