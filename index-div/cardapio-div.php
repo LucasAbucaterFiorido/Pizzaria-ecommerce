@@ -47,120 +47,44 @@
                     <div class="col-10">
                         <div class="container">
                             <div class="row row-cols-3">
-                                <div class="col mt-5 mb-5">
-                                    <div class="card-group ">
-                                        <div class="card catalogo_mid">
-                                            <a href="Paginas/detalhesProdutos.php">
-                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <a href="Paginas/detalhesProdutos.php">
-                                                    <h5 class="card-title">Titulo</h5>
-                                                </a>
-                                                <a href="Paginas/detalhesProdutos.php">
-                                                    <p class="card-text">Preço</p>
-                                                </a>
-                                                <br>
-                                                <button class="btn btn-danger" ><i class="ti-bag"></i> Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col mt-5 mb-5">
-                                    <div class="card-group">
-                                        <div class="card catalogo_mid">
-                                            <a href="#">
-                                                <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <a href="#">
-                                                    <h5 class="card-title">Titulo</h5>
-                                                </a>
-                                                <a href="#">
-                                                    <p class="card-text">Preço</p>
-                                                </a>
-                                                <br>
-                                                <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col mt-5 mb-5">
-                                    <div class="card-group">
-                                        <div class="card catalogo_mid">
-                                            <a href="#">
-                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <a href="#">
-                                                    <h5 class="card-title">Titulo</h5>
-                                                </a>
-                                                <a href="#">
-                                                    <p class="card-text">Preço</p>
-                                                </a>
-                                                <br>
-                                                <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col mt-5 mb-5">
-                                    <div class="card-group">
-                                        <div class="card catalogo_mid">
-                                            <a href="#">
-                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <a href="#">
-                                                    <h5 class="card-title">Titulo</h5>
-                                                </a>
-                                                <a href="#">
-                                                    <p class="card-text">Preço</p>
-                                                </a>
-                                                <br>
-                                                <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col mt-5 mb-5">
-                                    <div class="card-group">
-                                        <div class="card catalogo_mid">
-                                            <a href="#">
-                                                <img src="img/produtos/pizza6.jpg" class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <a href="#">
-                                                    <h5 class="card-title">Titulo</h5>
-                                                </a>
-                                                <a href="#">
-                                                    <p class="card-text">Preço</p>
-                                                </a>
-                                                <br>
-                                                <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col mt-5 mb-5">
-                                    <div class="card-group">
-                                        <div class="card catalogo_mid">
-                                            <a href="#">
-                                                <img src="img/produtos/pizza5.jpg" class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <a href="#">
-                                                    <h5 class="card-title">Titulo</h5>
-                                                </a>
-                                                <a href="#">
-                                                    <p class="card-text">Preço</p>
-                                                </a>
-                                                <br>
-                                                <button class="btn btn-danger"><i class="ti-bag"></i> Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php
+                                    try 
+                                    {
+                                        // echo "<pre>"; print_r($_SESSION);echo "</pre>";
+                                        // echo "<pre>"; print_r($_POST);echo "</pre>";
+
+                                        $dadosP = $cone->query('SELECT *FROM Produto');
+
+                                        foreach($dadosP as $linha)
+                                        {
+                                            echo "
+                                                <div class='col mt-5 mb-5'>
+                                                    <div class='card-group'>
+                                                        <div class='card catalogo_mid'>
+                                                            <a href='Paginas/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
+                                                                <img src='" .$linha['imagem_produto']."' class='card-img-top' alt='...'>
+                                                            </a>
+                                                            <div class='card-body'>
+                                                                <a href='Paginas/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
+                                                                    <h5 class='card-title'>".$linha['nome_produto']."</h5>
+                                                                </a>
+                                                                <a href='Paginas/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
+                                                                    <p class='card-text'>R$:".$linha['valor_produto']."</p>
+                                                                </a>
+                                                                <br>
+                                                                <a href='Paginas/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."' class='btn btn-danger'><i class='ti-bag'></i> Comprar</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ";
+                                        }
+                                    }
+                                    catch ( PDOException $erro) 
+                                    {
+                                        echo 'Erro: ' .$erro->getMessage();
+                                    }
+                                ?>
                             </div>
                         </div>
                     </div>

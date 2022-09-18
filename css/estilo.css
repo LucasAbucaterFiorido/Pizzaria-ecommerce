@@ -436,6 +436,18 @@ h1,h2,h3,h4,h5,h6
 
 
 
+/* classes dos Formulario produto*/
+.input_formP 
+{
+    background-color: #3a3a3a;
+}
+.input_formP input, textarea, select
+{
+    background-color: #989898;
+    border-color: #a30935;
+}
+
+
 
 
 
