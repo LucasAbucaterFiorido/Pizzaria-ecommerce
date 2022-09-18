@@ -24,16 +24,19 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text"><i class="ti-user"></i></span>
-                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            <form action="" method="POST" class="text-center">
+                                <div class="col-12">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"><i class="ti-user"></i></span>
+                                        <input type="text" class="form-control" placeholder="Login" id="txtlogin" name="txtlogin">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"><i class="ti-lock"></i></span>
+                                        <input type="text" class="form-control" placeholder="Senha" id="txtsenha" name="txtsenha">
+                                    </div>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text"><i class="ti-lock"></i></span>
-                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
+                                <button type="submit" class="btn btn-success col-3">Entrar</button>
+                            </form>
                         </div>
                     </div>
                 </div>
