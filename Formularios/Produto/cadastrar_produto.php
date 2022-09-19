@@ -1,5 +1,5 @@
 <?php
-    // include_once('../conexao.php');
+    include_once('../../conexao.php');
     
     $nome_produto = $_POST['txtnome'];
     $imagem_produto = $_POST['arquivoimg'];
@@ -12,7 +12,7 @@
 
     try
     {
-        $dados = $cone->prepare("INSERT INTO produto(
+        $dadosP = $cone->prepare("INSERT INTO Produto(
             nome_produto,
             imagem_produto,
             descricao_produto, 
@@ -21,8 +21,7 @@
             codigo_categoria,
             obs_produto,
             status_produto 
-        ) 
-        VALUES(
+        ) VALUES(
             :nome_produto,
             :imagem_produto,
             :descricao_produto,
@@ -33,7 +32,7 @@
             :status_produto
         )");
 
-        $dados->execute(array(
+        $dadosP->execute(array(
             ':nome_produto' => $nome_produto,
             ':imagem_produto' => $imagem_produto,
             ':descricao_produto' => $descricao_produto,
@@ -44,9 +43,11 @@
             ':status_produto' => $status_produto
         ));
 
-        if($dados->rowCount() == 1)
+        if($dadosP->rowCount() == 1)
         {
-            header('location: frm_produto.php');
+            // header('location: frm_produto.php');
+            echo "<p>Cadastro efetuado com sucesso!!</p>";
+            echo "<p id='CodCadastrado'>".$cone->lastInsertId()."</p>";
         }
     }
     catch(PDOException $erro)

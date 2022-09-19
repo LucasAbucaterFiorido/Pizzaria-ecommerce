@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/estilo.css">
-    <link rel="stylesheet" href="../../css_Slider/core-style.css">
     <link rel="icon" type="img/png" href="../../img/logo/pizzalogo.png">
     <?php include_once('../../conexao.php'); ?>
     <title>Produto</title>
@@ -23,7 +22,7 @@
                             <br>
                         </div>
                     </div>
-                    <form action="" method="POST" id="form_produto" name="form_produto">
+                    <form action="" method="POST" id="form_produto" name="form_produto" onsubmit="return false;">
                         <div class="row">
                             <div class="col-sm-3">
                                 <label class="form-label" for="txtcod">Código:</label>
@@ -32,7 +31,7 @@
                             </div>
                             <div class="col-sm-2">
                                 <p>&nbsp;</p>
-                                <p><button id="btoPesquisar" formaction="pesquisar_produto.php" class="btn btn-secondary">&#128269;</button></p>
+                                <p><button id="btt_pesquisar" class="btn btn-secondary">&#128269;</button></p>
                             </div>
                             <div class="col-sm-3">
                             </div>
@@ -81,7 +80,7 @@
                             <div class="col-sm-8">
                                 <label class="form-label" for="arquivoimg">Foto do Produto:</label>
                                 <br>
-                                <input class="form-control" type="file" id="arquivoimg" name="arquivoimg">
+                                <input class="form-control" type="file" id="arquivoimg" name="arquivoimg" onchange="previewImg(this)">
                             </div>
                             <div class="col-sm-4">
                                 <label for="selectcateg">Categoria:</label>
@@ -131,7 +130,7 @@
                         <br>
                         <div class="row">
                             <div class="col-sm-12">
-                                <div id="callback"></div>
+                                <div id="callback"></div> <!-- resposta das requisiçoes via javascript -->
                             </div>
                         </div>
                         <br>
@@ -154,9 +153,157 @@
 
 
     <script src="../../js/bootstrap.bundle.js"></script>
-    <script src="../../js/jquery-3.6.0.js"></script>
-    <script>
-        
+    <script src="../../js/jquery-3.6.1.js"></script>
+
+    <script> // IMAGEM
+        function previewImg(imagem) 
+        {
+            var preview = document.getElementById("preImg");
+            var file = document.getElementById("arquivoimg").files[0];
+            
+            let leitor = new FileReader();
+
+            leitor.onloadend = function()
+            {
+                let caminho = leitor.result;
+
+                preview.src = caminho;
+                $("#base64Code").val(caminho);
+            }
+
+            if(file)
+            {
+                leitor.readAsDataURL(file);
+            }
+            else
+            {
+                preview.src = "";
+            }
+        }
+    </script>
+    <script> //FORMULARIO
+        $(function()
+        {
+            var callback = $("#callback");
+            var action = "";
+
+            function carregando(datas)
+            {
+                callback.empty().html('Carregando..');
+            };
+
+            function sucesso(datas)
+            {
+                callback.empty().html('<pre>'+datas+'</pre>'); //se obtiver sucesso, ele mostrará os dados puxados
+                $('#txtcod').val($("#cod_pesquisa").html()); //ja organiza a informação trazida para seu input
+            }
+            
+            function erro_enviar()
+            {
+                callback.empty().html("Erro ao enviar");
+            }
+
+            function sucessoPesquisa(datas)
+            {
+                callback.empty().html('<pre>'+datas+'</pre>');
+
+                $("#txtcod").val($("#cod_pesquisa").html());
+                $("#txtnome").val($("#nome_pesquisa").html());
+                $('#txtdata').val($('#cadastro_pesquisa').html());
+                $('#base64Code').val($('#imagem_pesquisa').html());
+                // $("#arquivoimg").val($("#imagem_pesquisa").html());
+                $("#txtdesc").val($("#descricao_pesquisa").html());
+                $("#txtqtd").val($("#quantidade_pesquisa").html());
+                $("#txtvalor").val($("#valor_pesquisa").html());
+                $("#selectcateg").val($("#codCategoria_pesquisa").html());
+                $("#txtobs").val($("#obs_pesquisa").html());
+                $("#selectsts").val($("#status_pesquisa").html());
+
+                var preview = document.getElementById("preImg")
+
+                $("#base64Code").val($("#imagem_pesquisa").html());
+                preview.src = $("#imagem_pesquisa").html();
+            }
+
+            $.ajaxSetup({
+                type:       'POST',
+                beforeSend: carregando,
+                error:      erro_enviar,
+                success:    sucesso
+            });
+
+            $("#btt_pesquisar").click(function()
+            {
+                action = 'pesquisar_produto.php';
+                // console.log('teste');
+                $.ajax({
+                    url:        action,
+                    data:{
+                        txtcod: $("#txtcod").val()
+                    },
+                    success:    sucessoPesquisa
+                });
+            });
+
+            $("#btt_cadastrar").click(function()
+            {
+                action = 'cadastrar_produto.php';
+                console.log("teste");
+                $.ajax({
+                    URL:        action,
+                    data:{
+                        txtnome: $("#txtnome").val(),
+                        arquivoimg: $("#base64Code").val(),
+                        txtdesc: $("#txtdesc").val(),
+                        txtqtd: $("#txtqtd").val(),
+                        txtvalor: $("#txtvalor").val(),
+                        selectcateg: $("#selectcateg").val(),
+                        txtobs: $("#txtobs").val(),
+                        selectsts: $("#selectsts").val()
+                    },
+                    success:    sucessoPesquisa
+                });
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            $("#btt_alterar").click(function()
+            {
+                action = 'alterar_produto.php';
+
+                $.ajax({
+                    URL:        action,
+                    data:{
+                        txtcod: $("#txtcod").val()
+                    },
+                    success:    sucessoPesquisa
+                });
+            });
+
+            $("#btt_limpar").click(function()
+            {
+
+            });
+            $("#btt_excluir").click(function()
+            {
+
+            });
+            
+            
+            
+            
+        });
     </script>
 </body>
 </html>
