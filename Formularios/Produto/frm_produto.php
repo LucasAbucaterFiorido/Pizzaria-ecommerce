@@ -248,9 +248,9 @@
             $("#btt_cadastrar").click(function()
             {
                 action = 'cadastrar_produto.php';
-                console.log("teste");
+                // console.log("teste");
                 $.ajax({
-                    URL:        action,
+                    url:        action,
                     data:{
                         txtnome: $("#txtnome").val(),
                         arquivoimg: $("#base64Code").val(),
@@ -260,8 +260,7 @@
                         selectcateg: $("#selectcateg").val(),
                         txtobs: $("#txtobs").val(),
                         selectsts: $("#selectsts").val()
-                    },
-                    success:    sucessoPesquisa
+                    }
                 });
             });
 
