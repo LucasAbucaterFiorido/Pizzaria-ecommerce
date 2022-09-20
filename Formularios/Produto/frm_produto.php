@@ -152,7 +152,7 @@
 
 
 
-    <script src="../../js/bootstrap.bundle.js"></script>
+
     <script src="../../js/jquery-3.6.1.js"></script>
 
     <script> // IMAGEM
@@ -194,8 +194,9 @@
 
             function sucesso(datas)
             {
-                callback.empty().html('<pre>'+datas+'</pre>'); //se obtiver sucesso, ele mostrará os dados puxados
-                $('#txtcod').val($("#cod_pesquisa").html()); //ja organiza a informação trazida para seu input
+                callback.empty().html(datas); //se obtiver sucesso, ele mostrará os dados puxados
+                //callback.empty().html('aksdjlkajskldjklasjlkdjaslkjdklasjklsda');
+                //$('#txtcod').val($("#cod_pesquisa").html()); //ja organiza a informação trazida para seu input
             }
             
             function erro_enviar()
@@ -265,18 +266,6 @@
             });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
             $("#btt_alterar").click(function()
             {
                 action = 'alterar_produto.php';
@@ -292,16 +281,21 @@
 
             $("#btt_limpar").click(function()
             {
-
+                
             });
+
             $("#btt_excluir").click(function()
             {
+                action = 'deletar_produto.php';                
+                // console.log("alalal");
 
+                $.ajax({
+                    url:        action,
+                    data:{
+                        txtcod: $('#txtcod').val()
+                    }                
+                });
             });
-            
-            
-            
-            
         });
     </script>
 </body>

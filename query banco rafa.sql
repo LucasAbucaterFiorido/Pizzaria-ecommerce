@@ -73,7 +73,7 @@ create table Produto
 	codigo_produto int auto_increment primary key not null,
     nome_produto varchar(25) not null,
 	cadastro_produto timestamp not null,
-    imagem_produto blob not null,
+    imagem_produto longblob not null,
     descricao_produto varchar(200) not null,
     qtd_produto int not null,
     valor_produto int not null,
