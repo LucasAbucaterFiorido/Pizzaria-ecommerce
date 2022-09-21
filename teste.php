@@ -1,5 +1,18 @@
-//<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div>
+  <input type="file" name="arquivoimg" id="arquivoimg" accept="image/*">
+</div>
+<div>
+  <br/>
+  <img src="" alt="" id="preimg">
+
+</div>
+<br/>
+<p id="output"></p>
+<textarea name="" id="joaquim" cols="30" rows="10"></textarea>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 <script src="https://compressjs.herokuapp.com/compress.js"></script>
+<script>
 
 const compress = new Compress()
 const preview = document.getElementById('preimg')
@@ -35,3 +48,5 @@ upload.addEventListener('change', (evt) => {
     output.innerHTML = `<b>Start Size:</b> ${initialSizeInMb} MB <br/><b>End Size:</b> ${endSizeInMb} MB <br/><b>Compression Cycles:</b> ${iterations} <br/><b>Size Reduced:</b> ${sizeReducedInPercent} % <br/><b>File Name:</b> ${alt}`
   })
 }, false)
+
+</script>
