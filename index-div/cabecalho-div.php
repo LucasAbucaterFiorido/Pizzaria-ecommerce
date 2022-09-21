@@ -33,8 +33,10 @@
                                 </li>
                                 
                                 <li class="nav-item">
+                                    <a href="#">
+                                        <span class="msg" id="msg_compartilhe">Compartilhe</span>
+                                    </a>
                                     <a class="nav-link" href="#" id="btt_compartilhe">
-                                        <span class="msg" for: id="msg_compartilhe">Compartilhe</span> 
                                         <div class="icone_redes"><i class="fa fa-facebook"></i></div>
                                     </a>
                                 </li>

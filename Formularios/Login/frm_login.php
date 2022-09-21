@@ -11,7 +11,44 @@
     <?php include_once('../../conexao.php'); ?>
     <title>Pizzaria</title>
 </head>
-<body class="body_config">  
+<body class="body_config">
+    <?php
+        include_once('../../conexao.php');
+        if($_POST)
+        {
+            //echo "<pre>"; print_r($_POST); echo "</pre>";
+            
+            $login = $_POST['txtlogin'];
+            $senha = $_POST['txtsenha'];
+
+            try 
+            {
+                $dadosU = $cone->query("SELECT * FROM Usuario WHERE login_usuario = '$login' and senha_usuario = $senha"); //valida se as o login está correto
+
+                if($dadosU->rowCount() == 1)
+                {
+                    session_start();
+
+                    foreach ($dadosU as $linhaU) 
+                    {
+                        $_SESSION['codUser_sessao'] = $linhaU['codigo_usuario']; //declarando codigo do usuario em variavel de sessao
+                        $_SESSION['nomeUser_sessao'] = $linhaU['nome_usuario']; //declarando nome do usuario em variavel de sessao
+                        $_SESSION['loginUser_sessao'] = $linhaU['login_usuario']; //declarando login do usuario em variavel de sessao
+
+                        header("location: ../../index.php");
+                    }
+                }
+                else
+                {
+                    echo "Login ou senha inválido";
+                }
+            } 
+            catch (PDOException $erro) 
+            {
+                echo "Erro: ".$erro->getMessage();
+            }
+        }
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-12">
