@@ -92,8 +92,11 @@
                                 </div>
                                 </div>
 
-                                <div id="botao_add_carrinho" class="mt-5">
-                                    <button class="btt-addCart_dp" id="addCart">Comprar</button>
+                                <div id="bttComprar_carrinho" class="mt-5">
+                                    <button class="btt-addCart_dp" id="comprar-Cart">Comprar</button>
+                                </div>
+                                <div id="add_carrinho" class="mt-5">
+                                    <a class="btt-addCart_dp" id="add-Cart"><i id="icone_carrinho" class="ti-shopping-cart" style="font-size: 30px;"></i></a> 
                                 </div>
                             </div>
                         </div>
@@ -131,5 +134,23 @@
         </div>
     </div>
     <script src="../js/bootstrap.bundle.js"></script>
+    <script>
+        //ti-shopping-cart
+        //ti-shopping-cart-full
+        var bttAdd = $("#add-Cart");
+        var icone_cart = $("#icone_carrinho");
+        
+        $("#aba_usuario").addClass("active");
+        $("#aba_fornecedor").removeClass("active");
+
+        bttAdd.click(function()
+        {
+            alert("asa")
+            //icone_cart.removeClass("ti-shopping-cart")&& icone_cart.addClass("ti-shopping-cart-full")
+            //icone_cart.removeClass("ti-shopping-cart");
+            //icone_cart.addClass("ti-shopping-cart-full");
+        }
+        ); 
+    </script>
 </body>
 </html>
