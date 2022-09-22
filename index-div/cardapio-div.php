@@ -53,7 +53,7 @@
                                         // echo "<pre>"; print_r($_SESSION);echo "</pre>";
                                         // echo "<pre>"; print_r($_POST);echo "</pre>";
 
-                                        $dadosP = $cone->query('SELECT *FROM Produto');
+                                        $dadosP = $cone->query("SELECT * FROM Produto WHERE status_produto = 'Ativo' ");
 
                                         foreach($dadosP as $linha)
                                         {

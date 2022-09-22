@@ -93,7 +93,31 @@
                                 </div>
 
                                 <div id="bttComprar_carrinho" class="mt-5">
-                                    <button class="btt-addCart_dp" id="comprar-Cart">Comprar</button>
+                                    <?php
+                                        include_once("../conexao.php");
+                                        $codProduto = $_GET['codigoProduto'];
+                                        
+                                        try 
+                                        {
+                                            $dadosP = $cone->query("SELECT * FROM Produto WHERE codigo_produto = $codProduto");
+                                            
+                                            foreach ($dadosP as $linhaP) 
+                                            {
+                                                echo "
+                                                    <form action='Carrinho.php' method='POST'>
+                                                        <input type='hidden' name='txtAdd' id='txtAdd' value='".$linhaP['codigo_produto']."'>
+                                                        <button type='submit' class='btt-addCart_dp' id='comprar-Cart'>Comprar</button>
+                                                    </form>";
+                                            }
+                                        } 
+                                        catch (PDOException $erro) 
+                                        {
+                                            echo "Erro: ".$erro->getMessage();
+                                        }
+                                        
+
+                                        
+                                    ?>
                                 </div>
                                 <div id="add_carrinho" class="mt-5">
                                     <a class="btt-addCart_dp" id="add-Cart"><i id="icone_carrinho" class="ti-shopping-cart" style="font-size: 30px;"></i></a> 
@@ -134,21 +158,28 @@
         </div>
     </div>
     <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/jquery-3.6.1.js"></script>
     <script>
         //ti-shopping-cart
         //ti-shopping-cart-full
         var bttAdd = $("#add-Cart");
         var icone_cart = $("#icone_carrinho");
-        
-        $("#aba_usuario").addClass("active");
-        $("#aba_fornecedor").removeClass("active");
 
         bttAdd.click(function()
         {
-            alert("asa")
             //icone_cart.removeClass("ti-shopping-cart")&& icone_cart.addClass("ti-shopping-cart-full")
-            //icone_cart.removeClass("ti-shopping-cart");
-            //icone_cart.addClass("ti-shopping-cart-full");
+
+            if (icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
+            {
+                icone_cart.removeClass("ti-shopping-cart"); //remove uma classe no DOM '<i>'
+                icone_cart.addClass("ti-shopping-cart-full"); //adciona uma classe no DOM '<i>'
+                
+            }
+            else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
+            {
+                icone_cart.removeClass("ti-shopping-cart-full"); //remove uma classe no DOM '<i>'
+                icone_cart.addClass("ti-shopping-cart"); //adciona uma classe no DOM '<i>'
+            }
         }
         ); 
     </script>

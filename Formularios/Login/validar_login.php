@@ -25,12 +25,12 @@
                     {
                         echo "<pre>"; print_r($linhaV); echo "</pre>";
                         $_SESSION['codVenda_sessao'] = $linhaV['codigo_venda'];
-                        $codVenda_sessao = $_SESSION['codVenda_sessao'];
+                        $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
                     }
 
                     if($_POST)
                     {
-                        echo "<pre>"; print_r($linhaV); echo "</pre>";
+                        echo "<pre>"; print_r($_POST); echo "</pre>";
                         $qtdTotal = $_POST[''];
                         $valorTotal = $_POST[''];
 

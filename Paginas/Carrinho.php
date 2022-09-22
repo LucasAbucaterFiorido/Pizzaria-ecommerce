@@ -41,12 +41,16 @@
                                         <tbody class="body-table_cart">
                                             <?php 
                                                 include_once('../conexao.php');
+                                                session_start();
 
-                                                $codUsuario = 1;
-                                                $codVenda = 7;
+                                                $codUser_sessao = $_SESSION['codUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+                                                $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+                                                $codProduto_post = $_POST['txtAdd'];
+                                                echo "<pre>"; print_r($_POST); echo "</pre>";
+
                                                 try
                                                 {
-                                                    $dadosI = $cone->query("SELECT * FROM Item WHERE codigo_venda = $codVenda"); // seleciona todos os items do carrinho usando o codigo de venda vinculado ao usario
+                                                    $dadosI = $cone->query("SELECT * FROM Item WHERE codigo_venda = $codVenda_sessao"); // seleciona todos os items do carrinho usando o codigo de venda vinculado ao usario
                                                     $valorTotal = 0; //declarando variavel do valor total da Compra
                                                     $qtdTotal = 0; //declarando variavel do quantidade total da Compra
 
