@@ -168,7 +168,7 @@
         bttAdd.click(function()
         {
             //icone_cart.removeClass("ti-shopping-cart")&& icone_cart.addClass("ti-shopping-cart-full")
-
+            //togle ativca e desativa
             if (icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
             {
                 icone_cart.removeClass("ti-shopping-cart"); //remove uma classe no DOM '<i>'
