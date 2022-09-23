@@ -61,18 +61,18 @@
                                                 <div class='col mt-5 mb-5'>
                                                     <div class='card-group'>
                                                         <div class='card catalogo_mid'>
-                                                            <a href='Paginas/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
+                                                            <a href='Paginas/Produtos/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
                                                                 <img src='" .$linha['imagem_produto']."' class='card-img-top' alt='...'>
                                                             </a>
                                                             <div class='card-body'>
-                                                                <a href='Paginas/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
+                                                                <a href='Paginas/Produtos/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
                                                                     <h5 class='card-title'>".$linha['nome_produto']."</h5>
                                                                 </a>
-                                                                <a href='Paginas/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
+                                                                <a href='Paginas/Produtos/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."'>
                                                                     <p class='card-text'>R$:".$linha['valor_produto']."</p>
                                                                 </a>
                                                                 <br>
-                                                                <a href='Paginas/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."' class='btn btn-danger'><i class='ti-bag'></i> Comprar</a>
+                                                                <a href='Paginas/Produtos/detalhesProdutos.php?codigoProduto=".$linha['codigo_produto']."' class='btn btn-danger'><i class='ti-bag'></i> Comprar</a>
                                                             </div>
                                                         </div>
                                                     </div>

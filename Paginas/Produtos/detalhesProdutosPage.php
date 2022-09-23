@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="icon" type="../img/png" href="../img/logo/pizzalogo.png">
-    <?php include_once('../conexao.php'); ?>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="icon" type="../../img/png" href="../../img/logo/pizzalogo.png">
+    <?php include_once('../../conexao.php'); $codProduto = $_GET['codigoProduto'];?>
+    
     <title>Produto "exemplo"</title>
 </head>
 <body class="body_config">
@@ -26,7 +27,7 @@
                     <div class="row">
                         <div class="col-6 p-0" style="height: 700px;"> <!-- Imagem do produto -->
                             <div class="img_pos_dp"> 
-                                <label for="">IMAGEM</label>
+                                <label for="">IMAGEM Principal</label>
                                 <img src="" alt="">
                             </div>
                             <div class="imgs-list_dp">
@@ -94,8 +95,8 @@
 
                                 <div id="bttComprar_carrinho" class="mt-5">
                                     <?php
-                                        include_once("../conexao.php");
-                                        $codProduto = $_GET['codigoProduto'];
+                                        //include_once("../../conexao.php");
+                                        //$codProduto = $_GET['codigoProduto'];
                                         
                                         try 
                                         {
@@ -157,9 +158,35 @@
             </div>
         </div>
     </div>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../../js/bootstrap.bundle.js"></script>
+    <script src="../../js/jquery-3.6.1.js"></script>
     <script>
+        $(function()
+        {
+            function carregando(datas)
+            {
+
+            }
+            function sucesso(datas)
+            {
+
+            }
+            function erro_enviar()
+            {
+
+            }
+
+            $.ajaxSetup({
+                type:       'POST',
+                beforeSend: carregando,
+                error:      erro_enviar,
+                success:    sucesso
+            });
+
+        });
+
+
+
         //ti-shopping-cart
         //ti-shopping-cart-full
         var bttAdd = $("#add-Cart");
@@ -171,9 +198,15 @@
             //togle ativca e desativa
             if (icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
             {
+                action = 'cadastrar_carrinho.php';
+                $.ajax({
+                    URL:                action,
+                    data:{
+                        txtCodProduto:  $codProduto
+                    } 
+                });
                 icone_cart.removeClass("ti-shopping-cart"); //remove uma classe no DOM '<i>'
                 icone_cart.addClass("ti-shopping-cart-full"); //adciona uma classe no DOM '<i>'
-                
             }
             else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
             {

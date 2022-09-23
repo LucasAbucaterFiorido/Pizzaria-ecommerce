@@ -228,8 +228,10 @@ h1,h2,h3,h4,h5,h6
 .img_pos_dp /* posicionamento da imagem do produto */
 {
     background: #3a3a3a;
-    height: 500px;
-    width: 635px;
+    /* height: 500px; */
+    /* width: 635px;*/
+    max-width: 635px; /*impedir que a imagem ultrapasse das limitações da div */
+    max-height: 500px; /*impedir que a imagem ultrapasse das limitações da div */
 }
 .imgs-list_dp
 {

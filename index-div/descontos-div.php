@@ -5,7 +5,7 @@
         <div class="col-4" style="background-color: #b8b8b8;">
             <div class="top_descontos_d1">
                 <h5>Free Shipping &amp; Returns</h5>
-                <h6><a href="Paginas/Carrinho.php">BUY NOW</a></h6>
+                <h6><a href="Paginas/Cart/Carrinho.php">BUY NOW</a></h6>
             </div>
         </div>
         <!-- Area desconto 2 -->
