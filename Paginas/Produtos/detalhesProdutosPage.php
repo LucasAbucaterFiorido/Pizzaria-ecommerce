@@ -160,43 +160,8 @@
     </div>
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.1.js"></script>
-    <script>
-        $(function()
-        {
-            function carregando(datas)
-            {
 
-            }
-            function sucesso(datas)
-            {
-
-            }
-            function erro_enviar()
-            {
-
-            }
-
-            $.ajaxSetup({
-                type:       'POST',
-                beforeSend: carregando,
-                error:      erro_enviar,
-                success:    sucesso
-            });
-
-        });
-
-
-
-        //ti-shopping-cart
-        //ti-shopping-cart-full
-        var bttAdd = $("#add-Cart");
-        var icone_cart = $("#icone_carrinho");
-
-        bttAdd.click(function()
-        {
-            //icone_cart.removeClass("ti-shopping-cart")&& icone_cart.addClass("ti-shopping-cart-full")
-            //togle ativca e desativa
-            if (icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
+    if (icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
             {
                 action = 'cadastrar_carrinho.php';
                 $.ajax({
@@ -213,8 +178,84 @@
                 icone_cart.removeClass("ti-shopping-cart-full"); //remove uma classe no DOM '<i>'
                 icone_cart.addClass("ti-shopping-cart"); //adciona uma classe no DOM '<i>'
             }
-        }
-        ); 
+
+
+
+
+    <script>
+        $(function()
+        {
+            //ti-shopping-cart
+            //ti-shopping-cart-full
+            var bttAdd = $("#add-Cart");
+            var icone_cart = $("#icone_carrinho");
+
+            function sucesso(datas)
+            {
+                if(icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
+                {
+                    action = 'cadastrar_carrinho.php';
+                    $.ajax({
+                        URL:                action,
+                        data:{
+                            txtCodProduto:  $codProduto
+                        } 
+                    });
+                    icone_cart.removeClass("ti-shopping-cart"); //remove uma classe no DOM '<i>'
+                    icone_cart.addClass("ti-shopping-cart-full"); //adciona uma classe no DOM '<i>'
+                }
+                else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
+                {
+                    action = 'delete_carrinho.php';
+                    $.ajax({
+                        URL:                action,
+                        data:{
+                            txtCodProduto:  $codProduto
+                        } 
+                    });
+                    icone_cart.removeClass("ti-shopping-cart-full"); //remove uma classe no DOM '<i>'
+                    icone_cart.addClass("ti-shopping-cart"); //adciona uma classe no DOM '<i>'
+                }
+            }
+            function erro_enviar()
+            {
+                alert("Erro ao enviar");
+            }
+
+            $.ajaxSetup({
+                type:       'POST',
+                error:      erro_enviar,
+                success:    sucesso
+            });
+
+        });
+
+        bttAdd.click(function()
+        {
+            //icone_cart.removeClass("ti-shopping-cart")&& icone_cart.addClass("ti-shopping-cart-full")
+            //togle ativca e desativa
+
+            if(icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
+            {
+                action = '../Cart/cadastrar_carrinho.php';
+                $.ajax({
+                    URL:                action,
+                    data:{
+                        txtCodProduto:  $codProduto
+                    } 
+                });
+            }
+            else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
+            {
+                action = '../Cart/delete_carrinho.php';
+                $.ajax({
+                    URL:                action,
+                    data:{
+                        txtCodProduto:  $codProduto
+                    }
+                });
+            }
+        }); 
     </script>
 </body>
 </html>
