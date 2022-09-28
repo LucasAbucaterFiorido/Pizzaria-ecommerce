@@ -1,3 +1,7 @@
+<?php
+    include_once("../../conexao.php");
+    include_once('../../Formularios/Login/validar_login.php'); 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +11,6 @@
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/estilo.css">
     <link rel="icon" type="../../img/png" href="../../img/logo/pizzalogo.png">
-    <?php include_once('../../conexao.php'); $codProduto = $_GET['codigoProduto'];?>
     
     <title>Produto "exemplo"</title>
 </head>
@@ -87,7 +90,7 @@
                                 <div class="mt-5">
                                     <p class="titulo_dp">Quantidade:</p>
                                 <div class="input-group quantidade-config_dp">
-                                    <span class="input-group-text bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
+                                    <span class="input-group-text bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>txtcallbacksfz<?php
                                     <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="">
                                     <span class="input-group-text bttMenos"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
                                 </div>
@@ -121,7 +124,7 @@
                                     ?>
                                 </div>
                                 <div id="add_carrinho" class="mt-5">
-                                    <a class="btt-addCart_dp" id="add-Cart"><i id="icone_carrinho" class="ti-shopping-cart" style="font-size: 30px;"></i></a> 
+                                    <a class="btt-addCart_dp" id="btt-cart"><i id="icone_carrinho" class="ti-shopping-cart" style="font-size: 30px;"></i></a> 
                                 </div>
                             </div>
                         </div>
@@ -161,58 +164,23 @@
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.1.js"></script>
 
-    if (icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
-            {
-                action = 'cadastrar_carrinho.php';
-                $.ajax({
-                    URL:                action,
-                    data:{
-                        txtCodProduto:  $codProduto
-                    } 
-                });
-                icone_cart.removeClass("ti-shopping-cart"); //remove uma classe no DOM '<i>'
-                icone_cart.addClass("ti-shopping-cart-full"); //adciona uma classe no DOM '<i>'
-            }
-            else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
-            {
-                icone_cart.removeClass("ti-shopping-cart-full"); //remove uma classe no DOM '<i>'
-                icone_cart.addClass("ti-shopping-cart"); //adciona uma classe no DOM '<i>'
-            }
-
-
-
-
     <script>
         $(function()
         {
             //ti-shopping-cart
             //ti-shopping-cart-full
-            var bttAdd = $("#add-Cart");
+            var bttCart= $("#btt-cart");
             var icone_cart = $("#icone_carrinho");
 
             function sucesso(datas)
             {
                 if(icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
-                {
-                    action = 'cadastrar_carrinho.php';
-                    $.ajax({
-                        URL:                action,
-                        data:{
-                            txtCodProduto:  $codProduto
-                        } 
-                    });
+                {   
                     icone_cart.removeClass("ti-shopping-cart"); //remove uma classe no DOM '<i>'
                     icone_cart.addClass("ti-shopping-cart-full"); //adciona uma classe no DOM '<i>'
                 }
                 else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
                 {
-                    action = 'delete_carrinho.php';
-                    $.ajax({
-                        URL:                action,
-                        data:{
-                            txtCodProduto:  $codProduto
-                        } 
-                    });
                     icone_cart.removeClass("ti-shopping-cart-full"); //remove uma classe no DOM '<i>'
                     icone_cart.addClass("ti-shopping-cart"); //adciona uma classe no DOM '<i>'
                 }
@@ -230,7 +198,7 @@
 
         });
 
-        bttAdd.click(function()
+        bttCart.click(function()
         {
             //icone_cart.removeClass("ti-shopping-cart")&& icone_cart.addClass("ti-shopping-cart-full")
             //togle ativca e desativa

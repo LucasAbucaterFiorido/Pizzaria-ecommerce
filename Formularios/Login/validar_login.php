@@ -1,5 +1,5 @@
-<?php
-    include_once("conexao.php");
+<?php 
+    
     session_start();
 
     if($_SESSION)
@@ -21,6 +21,26 @@
                         echo "<pre>"; print_r($linhaV); echo "</pre>";  //linha de teste
                         $_SESSION['codVenda_sessao'] = $linhaV['codigo_venda']; //cria variavel de sessao com o codigo de venda
                         $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+                    }
+
+                    if($_GET)
+                    {
+                        echo "<pre>"; print_r($_GET); echo "</pre>";   //linha de teste
+                        $codProduto = $_GET['codigoProduto'];   //declar uma variavel com a variavel com o código do produto pelo metodo GET da pagina 'detalhesProdutosPage.php'
+
+                        include_once("../../Paginas/Cart/validar_carrinho.php");
+                        if($validarDadosI->rowCount() == 1)
+                        {
+                            $callback = '1';
+                        }
+                        else if($validarDadosI->rowCount() > 1)
+                        {
+                            $callback = '+1';
+                        }
+                        else if($validarDadosI->rowCount() < 1)
+                        {
+                            $callback = '0';
+                        }
                     }
 
                     if($_POST)      //se houver dados enviados via POST então
@@ -118,5 +138,5 @@
         header("location: Formularios/Login/frm_login.php");
     }
 ?>
-
+<input type="hidden" id="txtcallback" name="txtcallback" value="<?= $callback ?>">
 <a href="Formularios/Login/log-off.php" class="btn btn-danger">Sair</a>

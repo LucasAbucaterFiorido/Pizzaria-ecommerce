@@ -1,4 +1,7 @@
-<?php include_once("Formularios/Login/validar_login.php"); ?>
+<?php 
+    include_once("conexao.php");
+    include_once("Formularios/Login/validar_login.php"); 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

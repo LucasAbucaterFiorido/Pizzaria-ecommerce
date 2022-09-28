@@ -1,5 +1,6 @@
 <?php
     include_once("../../conexao.php");
+    include_once("../../Formularios/Login/validar_login.php");
 
     $codProduto = $_POST['txtCodProduto'];
     $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
