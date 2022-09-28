@@ -1,5 +1,6 @@
 <?php 
     include_once("conexao.php");
+    session_start();
     include_once("Formularios/Login/validar_login.php"); 
 ?>
 <!DOCTYPE html>

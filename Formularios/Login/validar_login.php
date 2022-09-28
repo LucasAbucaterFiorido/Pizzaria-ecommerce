@@ -1,6 +1,4 @@
 <?php 
-    
-    session_start();
 
     if($_SESSION)
     {
@@ -35,7 +33,7 @@
                         }
                         else if($validarDadosI->rowCount() > 1)
                         {
-                            $callback = '+1';
+                            $callback = '1';
                         }
                         else if($validarDadosI->rowCount() < 1)
                         {
@@ -84,6 +82,11 @@
                                     ':codigo_usuario' => $codUser_sessao
                                 ));
                                 // FIM após a finalização de uma venda, criar 1 venda automaticamente
+
+                                if($dadosV->rowCount() == 1)    //if existente apenas para manter a variavel session atualizada caso o usuario deseje fazer + de 1 compra enquanto esteja logado.
+                                {
+                                    $_SESSION['codVenda_sessao'] = $cone->lastInsertId(); //atualizar variavel de sessao com o codigo de venda. codigo 'lastInsertId' chama o ultimo Id criado na tabela
+                                }
                             }
                         }
                         else        //se houver uma tentativa de finalizar venda e não há valor ou produtos, não finalizar

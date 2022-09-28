@@ -1,5 +1,6 @@
 <?php
     include_once("../../conexao.php");
+    session_start();
     include_once('../../Formularios/Login/validar_login.php'); 
 ?>
 <!DOCTYPE html>
@@ -58,6 +59,7 @@
                                 </div>
                                 <div id="preco_produto" class="mt-1">
                                     <h4>R$:Preço Produto</h4>
+                                    <input type="hidden" id="txtCodProduto" name="txtCodProduto" value="<?= $codProduto ?>">
                                 </div>
                                 <div id="estoque" class="mt-2">
                                     <p class="titulo_dp">ESTOQUE</p>
@@ -90,17 +92,14 @@
                                 <div class="mt-5">
                                     <p class="titulo_dp">Quantidade:</p>
                                 <div class="input-group quantidade-config_dp">
-                                    <span class="input-group-text bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>txtcallbacksfz<?php
+                                    <span class="input-group-text bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
                                     <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="">
                                     <span class="input-group-text bttMenos"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
                                 </div>
                                 </div>
 
                                 <div id="bttComprar_carrinho" class="mt-5">
-                                    <?php
-                                        //include_once("../../conexao.php");
-                                        //$codProduto = $_GET['codigoProduto'];
-                                        
+                                    <?php                                      
                                         try 
                                         {
                                             $dadosP = $cone->query("SELECT * FROM Produto WHERE codigo_produto = $codProduto");
@@ -118,13 +117,10 @@
                                         {
                                             echo "Erro: ".$erro->getMessage();
                                         }
-                                        
-
-                                        
                                     ?>
                                 </div>
-                                <div id="add_carrinho" class="mt-5">
-                                    <a class="btt-addCart_dp" id="btt-cart"><i id="icone_carrinho" class="ti-shopping-cart" style="font-size: 30px;"></i></a> 
+                                <div id="add_carrinho" class="mt-5"><?php echo $callback; ?>
+                                    <a class="btt-addCart_dp" id="btt-cart"><i id="icone_carrinho" class="<?= $callback == 1 ? "ti-shopping-cart-full" : "ti-shopping-cart" ?>" style="font-size: 30px;"></i></a> 
                                 </div>
                             </div>
                         </div>
@@ -209,7 +205,9 @@
                 $.ajax({
                     URL:                action,
                     data:{
-                        txtCodProduto:  $codProduto
+                        txtCodProduto:  $("#txtCodProduto").val(),
+                        txtqtd:         $("#txtqtd").val()
+                        //adicionar outras informações para adicionar ao cadastramento do produto
                     } 
                 });
             }
@@ -219,7 +217,7 @@
                 $.ajax({
                     URL:                action,
                     data:{
-                        txtCodProduto:  $codProduto
+                        txtCodProduto:  $("#txtCodProduto").val()
                     }
                 });
             }
