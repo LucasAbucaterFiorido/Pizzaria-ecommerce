@@ -16,14 +16,14 @@
                 {
                     foreach ($dadosV as $linhaV)
                     {
-                        echo "<pre>"; print_r($linhaV); echo "</pre>";  //linha de teste
+                        //echo "<pre> dadosVenda: "; print_r($linhaV); echo "</pre>";  //linha de teste
                         $_SESSION['codVenda_sessao'] = $linhaV['codigo_venda']; //cria variavel de sessao com o codigo de venda
                         $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
                     }
 
                     if($_GET)
                     {
-                        echo "<pre>"; print_r($_GET); echo "</pre>";   //linha de teste
+                        //echo "<pre> get:"; print_r($_GET); echo "</pre>";   //linha de teste
                         $codProduto = $_GET['codigoProduto'];   //declar uma variavel com a variavel com o código do produto pelo metodo GET da pagina 'detalhesProdutosPage.php'
 
                         include_once("../../Paginas/Cart/validar_carrinho.php");
@@ -41,9 +41,9 @@
                         }
                     }
 
-                    if($_POST)      //se houver dados enviados via POST então
+                    if(isset($_POST['qtdTotal']) && isset($_POST['valorTotal']))      //se houver dados enviados via POST então
                     {
-                        echo "<pre>"; print_r($_POST); echo "</pre>";   //linha de teste
+                        echo "<pre> post:"; print_r($_POST); echo "</pre>";   //linha de teste
                         $qtdTotal = $_POST[''];     //declara variavel com os dados da quantidade total de produtos
                         $valorTotal = $_POST[''];       //declara variavel com os dados da valor total de produtos
 

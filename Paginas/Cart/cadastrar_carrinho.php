@@ -1,4 +1,5 @@
 <?php
+
     include_once("../../conexao.php");
     session_start();
     include_once("../../Formularios/Login/validar_login.php");
@@ -22,8 +23,8 @@
                 //$codVenda = $linha['codigo_venda']; // variavel do codigo da VENDA
                 $qtdVenda = $linha['qtdTotal_venda']; // variavel da quantidade de produtos da VENDA
                 $valorVenda = $linha['valorTotal_venda']; //variavel do valor do produto
-                
-                // echo "<pre>";print_r($linha);echo "</pre>";
+
+                 echo "<pre>";print_r($linha);echo "</pre>";
             }
 
             // Adcionando item ao carrinho

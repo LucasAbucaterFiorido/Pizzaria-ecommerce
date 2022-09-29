@@ -40,7 +40,7 @@ create table Item
     constraint FK_codigo_venda_item foreign key (codigo_venda) references Venda (codigo_venda)
 );
 
-select * FROM Item;
+select * from Item
 
 create table Categoria
 (
