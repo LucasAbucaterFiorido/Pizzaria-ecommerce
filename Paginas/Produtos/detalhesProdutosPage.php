@@ -20,7 +20,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <h1><p class="text-center">Cabeçalho</p></h1>
+                <h1><p class="text-center">PEDRO LEGAL</p></h1>
                 <br>
                 <hr>
             </div>
@@ -92,6 +92,7 @@
                                 <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span> -->
 
                                     
+<<<<<<< HEAD
                               
                                <!--  onsubmit="return false;" /// "../Cart/cadastrar_carrinho.php" -->  
                                
@@ -101,6 +102,17 @@
                                         <span class="input-group-text bttMais" id="bttMais"><a href="" id="bttMais" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
                                         <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="" value="1" readonly>  <!-- input quantidade produto -->
                                         <span class="input-group-text bttMenos" id="bttMenos"><a href="" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
+=======
+                                <form action="" id="form_ProductDetail" method="POST" onsubmit="return false;"> <!--  onsubmit="return false;"  //  "../Cart/cadastrar_carrinho.php" -->
+                                    <div class="mt-5">
+                                        <p class="titulo_dp">Quantidade:</p>
+                                        <div class="input-group quantidade-config_dp">
+                                            <span class="input-group-text bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
+                                            <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="">
+                                            <span class="input-group-text bttMenos"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
+                                        </div>
+                                        <input type="hidden" id="txtCodProduto" name="txtCodProduto" value="<?= $codProduto ?>">
+>>>>>>> 05b8a54a8756700881434a8507a60555cf098f55
                                     </div>
                                 </div>
                                 <form action="../Cart/Carrinho.php" method="post">
@@ -160,6 +172,7 @@
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.1.js"></script>
     <script>
+<<<<<<< HEAD
         //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
         //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
         $(function()
@@ -170,13 +183,13 @@
             });
 
             //configuração botao comprar
-            $("#btt-comprar").click(function(){
+            //$("#btt-comprar").click(function(){
                 //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
                 //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
-                $("#btt-comprar").val()
-                $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');
+                //$("#btt-comprar").val()
+                //$(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');
 
-            });
+            //});
             
             var icone_cart = $("#icone_carrinho");
 
@@ -236,6 +249,92 @@
             });
         });
     </script>
+=======
+        $(function()
+        {
+            //ti-shopping-cart
+            //ti-shopping-cart-full
+            var bttComprar = $("#comprar-Cart");
+            var bttCart= $("#btt-cart");
+            var icone_cart = $("#icone_carrinho");
+            var resposta = $("#txtresposta");
+
+            function sucesso(datas)
+            {
+                // if(icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
+                // {   
+                //     icone_cart.removeClass("ti-shopping-cart"); //remove uma classe no DOM '<i>'
+                //     icone_cart.addClass("ti-shopping-cart-full"); //adciona uma classe no DOM '<i>'
+                // }
+                // else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
+                // {
+                //     icone_cart.removeClass("ti-shopping-cart-full"); //remove uma classe no DOM '<i>'
+                //     icone_cart.addClass("ti-shopping-cart"); //adciona uma classe no DOM '<i>'
+                // }
+                resposta.empty().html(datas);
+            }
+            function erro_enviar()
+            {
+                alert('Erro ao enviar');
+                resposta.empty().html(datas);
+            }
+
+            $.ajaxSetup({
+                type:       'POST',
+                error:      erro_enviar,
+                success:    sucesso
+            });
+
+            bttComprar.click(function()
+            {
+                alert('botao COMPRAR');
+            });
+
+            bttCart.click(function()
+            {
+                
+                //alert('botao CARRINHO');
+                //action = '../Cart/cadastrar_carrinho.php';
+                action = '';
+                $.ajax({
+                    URL:                action,
+                    data:{
+                        txtCodProduto:  $("#txtCodProduto").val(),
+                        txtqtd:         $("#txtqtd").val()
+                        //adicionar outras informações para adicionar ao cadastramento do produto
+                    }
+                });
+
+
+                // if(icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
+                // {
+                //     action = '../Cart/cadastrar_carrinho.php';
+                //     $.ajax({
+                //         URL:                action,
+                //         data:{
+                //             txtCodProduto:  $("#txtCodProduto").val(),
+                //             txtqtd:         $("#txtqtd").val()
+                //             //adicionar outras informações para adicionar ao cadastramento do produto
+                //         }
+                //     });
+                // }
+                // else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
+                // {
+                //    action = '../Cart/delete_carrinho.php';
+                //    $.ajax({
+                //         URL:            action,
+                //         data:{
+                //             txtCodProduto:  $("#txtCodProduto").val()
+                //             //adicionar outras informações para adicionar ao cadastramento do produto
+                //         }
+                //    });
+                // }
+            });
+            
+        });
+    </script>
+    
+>>>>>>> 05b8a54a8756700881434a8507a60555cf098f55
 
 </body>
 </html>
