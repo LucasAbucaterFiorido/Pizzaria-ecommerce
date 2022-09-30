@@ -64,7 +64,7 @@
                             if($dadosCompra->rowCount() == 1)   //se 1 linha da tabela venda foi atualizada, então
                             {
                                 // INICIO após a finalização de uma venda, criar 1 venda automaticamente
-                                $dadosV = $cone->prepare("INSERT INTO Venda(
+                                $cadastroV = $cone->prepare("INSERT INTO Venda(
                                     qtdTotal_venda,
                                     valorTotal_venda,
                                     status_venda,
@@ -75,7 +75,7 @@
                                     :status_venda,
                                     :codigo_usuario
                                 )");
-                                $dadosV->execute(array(
+                                $cadastroV->execute(array(
                                     ':qtdTotal_venda' => 0,
                                     ':valorTotal_venda' => 0,
                                     ':status_venda' => 'Ativo',
@@ -83,7 +83,7 @@
                                 ));
                                 // FIM após a finalização de uma venda, criar 1 venda automaticamente
 
-                                if($dadosV->rowCount() == 1)    //if existente apenas para manter a variavel session atualizada caso o usuario deseje fazer + de 1 compra enquanto esteja logado.
+                                if($cadastroV->rowCount() == 1)    //if existente apenas para manter a variavel session atualizada caso o usuario deseje fazer + de 1 compra enquanto esteja logado.
                                 {
                                     $_SESSION['codVenda_sessao'] = $cone->lastInsertId(); //atualizar variavel de sessao com o codigo de venda. codigo 'lastInsertId' chama o ultimo Id criado na tabela
                                 }
@@ -103,7 +103,7 @@
                 }
                 else if(!$dadosV->rowCount()) //se  não houver 1 venda ativa, criar uma
                 {
-                    $dadosV = $cone->prepare("INSERT INTO Venda(
+                    $cadastroV = $cone->prepare("INSERT INTO Venda(
                         qtdTotal_venda,
                         valorTotal_venda,
                         status_venda,
@@ -114,7 +114,7 @@
                         :status_venda,
                         :codigo_usuario
                     )");
-                    $dadosV->execute(array(
+                    $cadastroV->execute(array(
                         ':qtdTotal_venda' => 0,
                         ':valorTotal_venda' => 0,
                         ':status_venda' => 'Ativo',

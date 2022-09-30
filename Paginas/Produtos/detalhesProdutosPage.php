@@ -1,7 +1,8 @@
 <?php
     include_once("../../conexao.php");
     session_start();
-    include_once('../../Formularios/Login/validar_login.php'); 
+    include_once("../Cart/validar_carrinho.php");
+    //include_once("../../Formularios/Login/validar_teste.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -82,54 +83,49 @@
                                 </div>
                                 
 
-                                <!-- <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                <!-- <span class="qty-minus" 
+                                onclick="var effect = document.getElementById('qty'); 
+                                var qty = effect.value; 
+                                if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;">
+                                <i class="fa fa-minus" aria-hidden="true"></i></span>
                                 <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
                                 <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span> -->
 
                                     
-                                <form action="../Cart/cadastrar_carrinho.php" id="form_ProductDetail" method="POST"> <!--  onsubmit="return false;" -->
-                                    <div class="mt-5">
-                                        <p class="titulo_dp">Quantidade:</p>
-                                        <div class="input-group quantidade-config_dp">
-                                            <span class="input-group-text bttMais"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
-                                            <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="">
-                                            <span class="input-group-text bttMenos"><a href="#" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
-                                        </div>
-                                        <input type="hidden" id="txtCodProduto" name="txtCodProduto" value="<?= $codProduto ?>">
+                              
+                               <!--  onsubmit="return false;" /// "../Cart/cadastrar_carrinho.php" -->  
+                               
+                                <div class="mt-5">                                   
+                                    <p class="titulo_dp">Quantidade:</p>
+                                    <div class="input-group quantidade-config_dp">
+                                        <span class="input-group-text bttMais" id="bttMais"><a href="" id="bttMais" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
+                                        <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="" value="1" readonly>  <!-- input quantidade produto -->
+                                        <span class="input-group-text bttMenos" id="bttMenos"><a href="" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
                                     </div>
-                                
-
-
+                                </div>
+                                <form action="../Cart/Carrinho.php" method="post">
                                     <div id="bttComprar_carrinho" class="mt-5">
-                                        <?php                                      
-                                            try 
-                                            {
-                                                $dadosP = $cone->query("SELECT * FROM Produto WHERE codigo_produto = $codProduto");
-                                                
-                                                foreach ($dadosP as $linhaP) 
-                                                {
-                                                    echo "
-                                                        <input type='hidden' name='txtAdd' id='txtAdd' value='".$linhaP['codigo_produto']."'>
-                                                        <button type='submit' class='btt-addCart_dp' id='comprar-Cart'>Comprar</button>
-                                                    ";
-                                                }
-                                            } 
-                                            catch (PDOException $erro) 
-                                            {
-                                                echo "Erro: ".$erro->getMessage();
-                                            }
-                                        ?>
+                                        <input type="hidden" id="txtCodProduto" name="txtCodProduto" value="<?= $codProduto ?>">    <!-- input codigo produto -->
+                                        <button type="submit" class='btn btt-addCart_dp' id='btt-comprar'>Comprar</button>
                                     </div>
+                                </form>
+                                
+                                <form action="" id="" method="POST" onsubmit="return false;">
+                                    <input type="hidden" id="txtCodProduto" name="txtCodProduto" value="<?= $codProduto ?>">    <!-- input codigo produto -->
                                     <div id="add_carrinho" class="mt-5">
-                                        <?php echo $callback; ?>
-                                        <div name="txtresposta" id="txtresposta"></div>
-                                        <button type="submit" class="btt-addCart_dp" id="btt-cart"><i id="icone_carrinho" class="<?= $callback == 1 ? "ti-shopping-cart-full" : "ti-shopping-cart" ?>" style="font-size: 30px;"></i></button> 
+                                        <a  class="btn btt-addCart_dp" id="btt-cart">
+                                            <i id="icone_carrinho" class="<?= $autenticacaoInicial == 1 ? "ti-shopping-cart-full" : "ti-shopping-cart" ?>" style="font-size: 30px;"></i>
+                                        </a> 
                                     </div>
+                                    <div id="resposta"></div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+
+
+
+                    <!-- <div class="row">
                         <div class="col-12 p-0" style="height: auto;">
                             <div class="accordion accordion-flush" id="acordeao">
 
@@ -156,14 +152,90 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.1.js"></script>
-    
+    <script>
+        //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
+        //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
+        $(function()
+        {
+            //configuração botoes mais e menos
+            $("#bttMais").click(function(){
+                $("#txtqtd").val() + 1;
+            });
+
+            //configuração botao comprar
+            $("#btt-comprar").click(function(){
+                //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
+                //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
+                $("#btt-comprar").val()
+                $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');
+
+            });
+            
+            var icone_cart = $("#icone_carrinho");
+
+            function carregando(datas) //$("");
+            {
+                $("#resposta").empty().html("Carregando..");
+            }
+            function sucesso(datas)
+            {
+                if(icone_cart.hasClass("ti-shopping-cart")) //verifica se a classe na tag '<i>' há uma classe especifica
+                {
+                    icone_cart.removeClass("ti-shopping-cart"); //remove uma classe no DOM '<i>'
+                    icone_cart.addClass("ti-shopping-cart-full"); //adciona uma classe no DOM '<i>'
+                }
+                else if(icone_cart.hasClass("ti-shopping-cart-full")) //verifica se a classe na tag '<i>' há uma classe especifica
+                {
+                    icone_cart.removeClass("ti-shopping-cart-full"); //remove uma classe no DOM '<i>'
+                    icone_cart.addClass("ti-shopping-cart"); //adciona uma classe no DOM '<i>'
+                }
+                $("#resposta").empty().html("</pre>"+datas+"</pre>");
+            }
+            function erro_enviar()
+            {
+                $("#resposta").empty().html("Erro ao enviar");
+            }
+            $.ajaxSetup({
+                type:           'POST',
+                beforeSend:     carregando,
+                error:          erro_enviar,
+                success:           sucesso
+            });
+
+            $("#btt-cart").click(function()
+            {
+
+                if(icone_cart.hasClass("ti-shopping-cart"))
+                {
+                    action = '../Cart/cadastrar_carrinho.php'
+                    $.ajax({
+                        url:            action,
+                        data:{
+                            codProduto: $("#txtCodProduto").val(),
+                            qtdProduto: $("#txtqtd").val()
+                        }
+                    });
+                }
+                else if(icone_cart.hasClass("ti-shopping-cart-full"))
+                {
+                    action = '../Cart/delete_carrinho.php'
+                    $.ajax({
+                        url:            action,
+                        data:{
+                            codProduto: $("#txtCodProduto").val()
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

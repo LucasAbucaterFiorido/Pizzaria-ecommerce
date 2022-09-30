@@ -1,7 +1,8 @@
 <?php 
     include_once('../../conexao.php');
-    include_once("validar_carrinho.php");
+    //include_once("validar_carrinho.php");
     //include_once("");
+    echo "<pre>";print_r($_POST);echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/estilo.css">
     <link rel="icon" type="img/png" href="../../img/logo/pizzalogo.png">
-    <?php include_once('../../conexao.php'); ?>
     <title>Produto</title>
 </head>
 <body class="body_config">
