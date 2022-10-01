@@ -1,139 +1,112 @@
 <?php 
 
-    if($_SESSION)
+    if(isset($_SESSION['codUser_sessao']) && isset($_SESSION['nomeUser_sessao']) && isset($_SESSION['loginUser_sessao'])) //verifica se há 3 variaveis existentes, que são criadas quando um usuario se loga
     {
-        if(isset($_SESSION['codUser_sessao']) && isset($_SESSION['nomeUser_sessao']) && isset($_SESSION['loginUser_sessao'])) //verifica se há 3 variaveis existentes, que são criadas quando um usuario se loga
+        $codUser_sessao = $_SESSION['codUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+        $nomeUser_sessao = $_SESSION['nomeUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+        $loginUser_sessao = $_SESSION['loginUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+
+        try 
         {
-            $codUser_sessao = $_SESSION['codUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
-            $nomeUser_sessao = $_SESSION['nomeUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
-            $loginUser_sessao = $_SESSION['loginUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+            $dadosV = $cone->query("SELECT * FROM Venda WHERE codigo_usuario = $codUser_sessao AND status_venda = 'Ativo'"); // caso haja uma venda com o status 'Ativo' atrelado ao codigo de usuario puxar informaçoes da venda
 
-            try 
+            if($dadosV->rowCount() == 1)//se houver 1 venda ativa
             {
-                $dadosV = $cone->query("SELECT * FROM Venda WHERE codigo_usuario = $codUser_sessao AND status_venda = 'Ativo'"); // caso haja uma venda com o status 'Ativo' atrelado ao codigo de usuario puxar informaçoes da venda
-
-                if($dadosV->rowCount() == 1)//se houver 1 venda ativa
+                foreach ($dadosV as $linhaV)
                 {
-                    foreach ($dadosV as $linhaV)
-                    {
-                        //echo "<pre> dadosVenda: "; print_r($linhaV); echo "</pre>";  //linha de teste
-                        $_SESSION['codVenda_sessao'] = $linhaV['codigo_venda']; //cria variavel de sessao com o codigo de venda
-                        $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
-                    }
-
-                    if($_GET)
-                    {
-                        //echo "<pre> get:"; print_r($_GET); echo "</pre>";   //linha de teste
-                        $codProduto = $_GET['codigoProduto'];   //declar uma variavel com a variavel com o código do produto pelo metodo GET da pagina 'detalhesProdutosPage.php'
-
-                        include_once("../../Paginas/Cart/validar_carrinho.php");
-                        if($validarDadosI->rowCount() == 1)
-                        {
-                            $callback = '1';
-                        }
-                        else if($validarDadosI->rowCount() > 1)
-                        {
-                            $callback = '1';
-                        }
-                        else if($validarDadosI->rowCount() < 1)
-                        {
-                            $callback = '0';
-                        }
-                    }
-
-                    if(isset($_POST['qtdTotal']) && isset($_POST['valorTotal']))      //se houver dados enviados via POST então
-                    {
-                        echo "<pre> post:"; print_r($_POST); echo "</pre>";   //linha de teste
-                        $qtdTotal = $_POST[''];     //declara variavel com os dados da quantidade total de produtos
-                        $valorTotal = $_POST[''];       //declara variavel com os dados da valor total de produtos
-
-                        if($valorTotal && $qtdTotal >= 1)       //se valor total e quantidade total for maior ou igual a 1 então
-                        {   
-                            // INICIO atualiazando os dados da tabela venda como CONCLUIDO
-                            $dadosCompra = $cone->prepare("UPDATE Venda SET
-                                qtdTotal_venda = :qtdTotal_venda,
-                                valorTotal_venda = :valorTotal_venda,
-                                status_venda = :status_venda
-                                WHERE codigo_venda = $codVenda_sessao");
-                            $dadosCompra->execute(array(
-                                ':qtdTotal_venda' => $qtdTotal,
-                                ':valorTotal_venda' => $valorTotal,
-                                ':status_venda' => 'Concluido'
-                            ));
-                            // FIM atualiazando os dados da tabela venda como CONCLUIDO
-                            if($dadosCompra->rowCount() == 1)   //se 1 linha da tabela venda foi atualizada, então
-                            {
-                                // INICIO após a finalização de uma venda, criar 1 venda automaticamente
-                                $cadastroV = $cone->prepare("INSERT INTO Venda(
-                                    qtdTotal_venda,
-                                    valorTotal_venda,
-                                    status_venda,
-                                    codigo_usuario
-                                ) VALUES(
-                                    :qtdTotal_venda,
-                                    :valorTotal_venda,
-                                    :status_venda,
-                                    :codigo_usuario
-                                )");
-                                $cadastroV->execute(array(
-                                    ':qtdTotal_venda' => 0,
-                                    ':valorTotal_venda' => 0,
-                                    ':status_venda' => 'Ativo',
-                                    ':codigo_usuario' => $codUser_sessao
-                                ));
-                                // FIM após a finalização de uma venda, criar 1 venda automaticamente
-
-                                if($cadastroV->rowCount() == 1)    //if existente apenas para manter a variavel session atualizada caso o usuario deseje fazer + de 1 compra enquanto esteja logado.
-                                {
-                                    $_SESSION['codVenda_sessao'] = $cone->lastInsertId(); //atualizar variavel de sessao com o codigo de venda. codigo 'lastInsertId' chama o ultimo Id criado na tabela
-                                }
-                            }
-                        }
-                        else        //se houver uma tentativa de finalizar venda e não há valor ou produtos, não finalizar
-                        {
-                            echo "Erro: 'Não há produtos no carrinho.'";
-                        }
-                    }
-
-
+                    //echo "<pre> dadosVenda: "; print_r($linhaV); echo "</pre>";  //linha de teste
+                    $_SESSION['codVenda_sessao'] = $linhaV['codigo_venda']; //cria variavel de sessao com o codigo de venda
+                    $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
                 }
-                else if($dadosV->rowCount() > 1) //se houver mais de 1 venda ativa
-                {
-                    echo "Erro: 'Há mais de uma venda ativa.'";
-                }
-                else if(!$dadosV->rowCount()) //se  não houver 1 venda ativa, criar uma
-                {
-                    $cadastroV = $cone->prepare("INSERT INTO Venda(
-                        qtdTotal_venda,
-                        valorTotal_venda,
-                        status_venda,
-                        codigo_usuario
-                    ) VALUES(
-                        :qtdTotal_venda,
-                        :valorTotal_venda,
-                        :status_venda,
-                        :codigo_usuario
-                    )");
-                    $cadastroV->execute(array(
-                        ':qtdTotal_venda' => 0,
-                        ':valorTotal_venda' => 0,
-                        ':status_venda' => 'Ativo',
-                        ':codigo_usuario' => $codUser_sessao
-                    ));
-                }
-                else
-                {
-                    echo "Erro desconhecido.";
-                }
-            } 
-            catch (PDOException $erro) 
+
+                // if(isset($_POST['qtdTotal']) && isset($_POST['valorTotal']))      //se houver dados enviados via POST então
+                // {
+                //     echo "<pre> post:"; print_r($_POST); echo "</pre>";   //linha de teste
+                //     $qtdTotal = $_POST[''];     //declara variavel com os dados da quantidade total de produtos
+                //     $valorTotal = $_POST[''];       //declara variavel com os dados da valor total de produtos
+
+                //     if($valorTotal && $qtdTotal >= 1)       //se valor total e quantidade total for maior ou igual a 1 então
+                //     {   
+                //         // INICIO atualiazando os dados da tabela venda como CONCLUIDO
+                //         $dadosCompra = $cone->prepare("UPDATE Venda SET
+                //             qtdTotal_venda = :qtdTotal_venda,
+                //             valorTotal_venda = :valorTotal_venda,
+                //             status_venda = :status_venda
+                //             WHERE codigo_venda = $codVenda_sessao");
+                //         $dadosCompra->execute(array(
+                //             ':qtdTotal_venda' => $qtdTotal,
+                //             ':valorTotal_venda' => $valorTotal,
+                //             ':status_venda' => 'Concluido'
+                //         ));
+                //         // FIM atualiazando os dados da tabela venda como CONCLUIDO
+                //         if($dadosCompra->rowCount() == 1)   //se 1 linha da tabela venda foi atualizada, então
+                //         {
+                //             // INICIO após a finalização de uma venda, criar 1 venda automaticamente
+                //             $cadastroV = $cone->prepare("INSERT INTO Venda(
+                //                 qtdTotal_venda,
+                //                 valorTotal_venda,
+                //                 status_venda,
+                //                 codigo_usuario
+                //             ) VALUES(
+                //                 :qtdTotal_venda,
+                //                 :valorTotal_venda,
+                //                 :status_venda,
+                //                 :codigo_usuario
+                //             )");
+                //             $cadastroV->execute(array(
+                //                 ':qtdTotal_venda' => 0,
+                //                 ':valorTotal_venda' => 0,
+                //                 ':status_venda' => 'Ativo',
+                //                 ':codigo_usuario' => $codUser_sessao
+                //             ));
+                //             // FIM após a finalização de uma venda, criar 1 venda automaticamente
+
+                //             if($cadastroV->rowCount() == 1)    //if existente apenas para manter a variavel session atualizada caso o usuario deseje fazer + de 1 compra enquanto esteja logado.
+                //             {
+                //                 $_SESSION['codVenda_sessao'] = $cone->lastInsertId(); //atualizar variavel de sessao com o codigo de venda. codigo 'lastInsertId' chama o ultimo Id criado na tabela
+                //             }
+                //         }
+                //     }
+                //     else        //se houver uma tentativa de finalizar venda e não há valor ou produtos, não finalizar
+                //     {
+                //         echo "Erro: 'Não há produtos no carrinho.'";
+                //     }
+                // }
+
+            //}
+            //else 
+            if($dadosV->rowCount() > 1) //se houver mais de 1 venda ativa
             {
-                echo "Erro: ".$erro->getMessage();
+                echo "Erro: 'Há mais de uma venda ativa.'";
             }
-        }
-        else
+            else if(!$dadosV->rowCount()) //se  não houver 1 venda ativa, criar uma
+            {
+                $cadastroV = $cone->prepare("INSERT INTO Venda(
+                    qtdTotal_venda,
+                    valorTotal_venda,
+                    status_venda,
+                    codigo_usuario
+                ) VALUES(
+                    :qtdTotal_venda,
+                    :valorTotal_venda,
+                    :status_venda,
+                    :codigo_usuario
+                )");
+                $cadastroV->execute(array(
+                    ':qtdTotal_venda' => 0,
+                    ':valorTotal_venda' => 0,
+                    ':status_venda' => 'Ativo',
+                    ':codigo_usuario' => $codUser_sessao
+                ));
+            }
+            else
+            {
+                echo "Erro desconhecido.";
+            }
+        } 
+        catch (PDOException $erro) 
         {
-            header("location: Formularios/Login/frm_login.php");
+            echo "Erro: ".$erro->getMessage();
         }
     }
     else
@@ -141,5 +114,4 @@
         header("location: Formularios/Login/frm_login.php");
     }
 ?>
-<input type="hidden" id="txtcallback" name="txtcallback" value="<?= $callback ?>">
 <a href="Formularios/Login/log-off.php" class="btn btn-danger">Sair</a>

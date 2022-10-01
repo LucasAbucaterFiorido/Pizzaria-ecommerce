@@ -230,8 +230,8 @@ h1,h2,h3,h4,h5,h6
     background: #3a3a3a;
     /* height: 500px; */
     /* width: 635px;*/
-    max-width: 635px; /*impedir que a imagem ultrapasse das limitações da div */
-    max-height: 500px; /*impedir que a imagem ultrapasse das limitações da div */
+    max-width: 635px;   /*impedir que a imagem ultrapasse das limitações da div */
+    max-height: 500px;  /*impedir que a imagem ultrapasse das limitações da div */
 }
 .imgs-list_dp
 {
@@ -409,8 +409,8 @@ h1,h2,h3,h4,h5,h6
 .img-table_cart
 {
     background-color: blue;
-    width: 150px;
-    height: 100px;
+    max-width: 150px;
+    max-height: auto;
 }
 .input-qtd_cart
 {

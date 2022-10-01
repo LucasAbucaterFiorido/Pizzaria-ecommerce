@@ -1,8 +1,7 @@
 <?php 
     include_once('../../conexao.php');
-    //include_once("validar_carrinho.php");
-    //include_once("");
-    echo "<pre>";print_r($_POST);echo "</pre>";
+    include_once("validar_carrinho.php");
+    // echo "<pre>";print_r($_POST);echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,9 +9,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="icon" type="../img/png" href="../img/logo/pizzalogo.png">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="icon" type=" " href="../../img/logo/pizzalogo.png">
     <title>Produto "exemplo"</title>
 </head>
 <body class="body_config">
@@ -48,7 +47,7 @@
  
                                                 try
                                                 {
-                                                    //$dadosI = $cone->query("SELECT * FROM Item WHERE codigo_venda = $codVenda_sessao"); // seleciona todos os items do carrinho usando o codigo de venda vinculado ao usario
+                                                    $dadosI = $cone->query("SELECT * FROM Item WHERE codigo_venda = $codVenda_sessao"); // seleciona todos os items do carrinho usando o codigo de venda vinculado ao usario
                                                     $valorTotal = 0; //declarando variavel do valor total da Compra
                                                     $qtdTotal = 0; //declarando variavel do quantidade total da Compra
 
@@ -67,7 +66,7 @@
                                                             <tr>                                                 
                                                                 <td>
                                                                     <div class='img-table_cart'>
-                                                                        <img class='' src='".$linhaP['imagem_produto']."' alt='imgproduto'>
+                                                                        <img class='w-100' src='".$linhaP['imagem_produto']."' alt='imgproduto'>
                                                                     </div>
                                                                 </td>
                                                                 <td>" .$linhaP['nome_produto'] ."</td>
@@ -92,20 +91,17 @@
                                                 }
                                             ?>
                                         </tbody>
-                                                                        <span class='input-group-text' id='bttMais'><a href='#' class='btt-MaisMenos_dp'><i class='fa fa-plus'></i></a></span>
-                                                                        <input type='number' class='form-control testInput text-center' id='txtqtd' name='txtqtd step='1' min='1' max=''>
-                                                                        <span class='input-group-text' id='bttMenos'><a href='#' class='btt-MaisMenos_dp'><i class='fa fa-minus'></i></a></span>
                                     </table>
                                     <h3>
                                         <p>Total: R$<?= $valorTotal;?></p>
                                         <p>Quantidade de Produtos: <?= $qtdTotal;?></p>
                                     </h3>
-                                    <form action='../Cart/autenticarVenda.php' method='POST'>
+                                    <form action='validar_carrinho.php' method='POST'>
                                         <input type='hidden' name='txtvalorTotal' id='txtvalorTotal' value='<?= $valorTotal;?>'>
-                                        <input type='hidden' name='txtqtd' id='txtqtd' value='<?= $qtdTotal;?>'>
+                                        <input type='hidden' name='txtqtdTotal' id='txtqtdTotal' value='<?= $qtdTotal;?>'>
                                         <button class="btn btn-primary" type='submit'>Comprar</button>
                                     </form>
-                                    <a class='btn btn-success' href='../index.php'>Continuar comprando</a> <!-- ?acao=cadastrar-->
+                                    <a class='btn btn-success' href='../../index.php'>Continuar comprando</a> <!-- ?acao=cadastrar-->
                                 </div>
                                 <div class="col-1"><!-- margem visual --></div>
                             </div>
@@ -117,7 +113,7 @@
         </div>
 
     </div>
-    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../../js/bootstrap.bundle.js"></script>
 </body>
 </html>
 

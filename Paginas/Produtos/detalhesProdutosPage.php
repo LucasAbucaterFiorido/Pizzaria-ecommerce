@@ -1,8 +1,8 @@
 <?php
     include_once("../../conexao.php");
     session_start();
+    include_once("../../Formularios/Login/validar_login.php");
     include_once("../Cart/validar_carrinho.php");
-    //include_once("../../Formularios/Login/validar_teste.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -103,7 +103,7 @@
                                         <span class="input-group-text bttMenos" id="bttMenos"><a href="" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
                                     </div>
                                 </div>
-                                <form action="../Cart/Carrinho.php" method="post">
+                                <form action="" method="post"  onsubmit="return false;">
                                     <div id="bttComprar_carrinho" class="mt-5">
                                         <input type="hidden" id="txtCodProduto" name="txtCodProduto" value="<?= $codProduto ?>">    <!-- input codigo produto -->
                                         <button type="submit" class='btn btt-addCart_dp' id='btt-comprar'>Comprar</button>
@@ -157,6 +157,7 @@
             </div>
         </div>
     </div>
+    
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.1.js"></script>
     <script>
@@ -170,15 +171,40 @@
                 teste ++;
                 $("#txtqtd").val(teste);
             });
-
+            
+            action = '../Cart/delete_carrinho.php'
+            $.ajax({
+                url:            action,
+                data:{
+                    codProduto: $("#txtCodProduto").val()
+                }
+            });
+            
             //configuração botao comprar
-            //$("#btt-comprar").click(function(){
-                //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
-                //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
-                //$("#btt-comprar").val()
-                //$(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');
+            $("#btt-comprar").click(function(){
+                //javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
+                //jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
+                if(icone_cart.hasClass("ti-shopping-cart"))
+                {
+                    action = '../Cart/cadastrar_carrinho.php'
+                    $.ajax({
+                        type:           'POST',
+                        beforeSend:     carregando,
+                        url:            action,
+                        data:{
+                            codProduto: $("#txtCodProduto").val(),
+                            qtdProduto: $("#txtqtd").val()
+                        },
+                        success:    $(location).attr('href', 'http://localhost/n7/php/github/Pizzaria-ecommerce/Paginas/Cart/Carrinho.php'),
+                        error:      alert("erro botao comprar")      
+                    });
+                }
+                else if(icone_cart.hasClass("ti-shopping-cart-full"))
+                {
+                    $(location).attr('href', 'http://localhost/n7/php/github/Pizzaria-ecommerce/Paginas/Cart/Carrinho.php');
+                }
+            });
 
-            //});
             
             var icone_cart = $("#icone_carrinho");
 

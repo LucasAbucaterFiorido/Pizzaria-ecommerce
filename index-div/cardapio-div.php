@@ -62,7 +62,7 @@
                                                     <div class='card-group'>
                                                         <div class='card catalogo_mid'>
                                                             <a href='Paginas/Produtos/detalhesProdutosPage.php?codigoProduto=".$linha['codigo_produto']."'>
-                                                                <img src='" .$linha['imagem_produto']."' class='card-img-top' alt='...'>
+                                                                <img src='".$linha['imagem_produto']."' class='card-img-top' alt='...'>
                                                             </a>
                                                             <div class='card-body'>
                                                                 <a href='Paginas/Produtos/detalhesProdutosPage.php?codigoProduto=".$linha['codigo_produto']."'>
