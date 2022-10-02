@@ -33,7 +33,7 @@
                         <div class="col-6 p-0" style="height: 700px;"> <!-- Imagem do produto -->
                             <div class="img_pos_dp"> 
                                 <label for="">IMAGEM Principal</label>
-                                <img src="" alt="">
+                                <img class="w-100" alt="imagem do produto" id="img-1">
                             </div>
                             <div class="imgs-list_dp">
                                 <label for="">IMAGEM</label>
@@ -55,14 +55,14 @@
 
                         <div class="col-6" style="height: 600px;"> <!-- Detalhes do produto -->
                             <div>
-                                <div id="nome_produto">
-                                    <h2>Nome Produto</h2>
+                                <div>
+                                    <h2 id="nome-produto">Nome Produto</h2>
                                 </div>
-                                <div id="preco_produto" class="mt-1">
-                                    <h4>R$:Preço Produto</h4>
+                                <div class="mt-1">
+                                    <h4>R$:<span id="valor-produto">Preço Produto</span></h4>
                                 </div>
-                                <div id="estoque" class="mt-2">
-                                    <p class="titulo_dp">ESTOQUE</p>
+                                <div class="mt-2">
+                                    <p class="titulo_dp" id="estoque-produto">ESTOQUE</p>
                                 </div>
                                 <div id="avaliacao_estrelas" class="mt-2">
                                     <a href="#" class="estrelas_dp">
@@ -161,10 +161,34 @@
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.1.js"></script>
     <script>
-        //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
-        //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
+        function sucessoDetalhes(datas)
+        {
+            $("#resposta").empty().html(datas);
+
+            var img = document.getElementById("img-1");
+            img.src = $("#imagem_pesquisa").html();
+            $('#nome-produto').html($('#nome_pesquisa').html());
+            $('#valor-produto').html($('#valor_pesquisa').html());
+        }
         $(function()
         {
+            //quando o site carregar, buscar informações do produto ->
+            action = 'detalhesProdutos.php'
+            $.ajax({
+                type:           'POST',
+                beforeSend:     carregando,
+                error:          erro_enviar,
+                url:            action,
+                data:{
+                    codProduto: $("#txtCodProduto").val()
+                },
+                success:        sucessoDetalhes  
+            });
+
+
+
+            //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
+            //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
             //configuração botoes mais e menos
             $("#bttMais").click(function(){
                 teste = $("#txtqtd").val();
@@ -195,13 +219,13 @@
                             codProduto: $("#txtCodProduto").val(),
                             qtdProduto: $("#txtqtd").val()
                         },
-                        success:    $(location).attr('href', 'http://localhost/n7/php/github/Pizzaria-ecommerce/Paginas/Cart/Carrinho.php'),
+                        success:    $(location).attr('href', 'http://localhost/projetos/php/github/Pizzaria-ecommerce/Paginas/Cart/Carrinho.php'),
                         error:      alert("erro botao comprar")      
                     });
                 }
                 else if(icone_cart.hasClass("ti-shopping-cart-full"))
                 {
-                    $(location).attr('href', 'http://localhost/n7/php/github/Pizzaria-ecommerce/Paginas/Cart/Carrinho.php');
+                    $(location).attr('href', 'http://localhost/projetos/php/github/Pizzaria-ecommerce/Paginas/Cart/Carrinho.php');
                 }
             });
 
@@ -237,11 +261,12 @@
                 success:           sucesso
             });
 
-            $("#btt-cart").click(function()
+            $("#btt-cart").click(function()     //quando o botao 'Adicionar ao carrinho' for apertado
             {
 
-                if(icone_cart.hasClass("ti-shopping-cart"))
+                if(icone_cart.hasClass("ti-shopping-cart"))     //se a classe do icone é de 'carrinho' ou 'carrinho-cheio'
                 {
+                    //se o carrinho não estiver cheio então apenas cadastrar produto na lista do carrinho
                     action = '../Cart/cadastrar_carrinho.php'
                     $.ajax({
                         url:            action,
@@ -251,8 +276,9 @@
                         }
                     });
                 }
-                else if(icone_cart.hasClass("ti-shopping-cart-full"))
+                else if(icone_cart.hasClass("ti-shopping-cart-full"))       //se a classe do icone é de 'carrinho' ou 'carrinho-cheio'
                 {
+                    //se o carrinho estiver cheio então apenas deletar o produto da lista do carrinho
                     action = '../Cart/delete_carrinho.php'
                     $.ajax({
                         url:            action,

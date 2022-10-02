@@ -1,10 +1,12 @@
 <?php
-    session_start();
-    
+
     if($_SESSION)
     {
         $codUser_sessao = $_SESSION['codUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
         $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+        
+        // echo '<pre> codVenda '; print_r($codVenda_sessao); echo '</pre>'; 
+        // echo '<pre> codUsuario '; print_r($codUser_sessao); echo '</pre>'; 
 
         if(isset($_GET['codigoProduto']))   // verifica se há uma variavel especifica de get
         {
@@ -29,7 +31,7 @@
 
         if(isset($_POST['txtvalorTotal']) && isset($_POST['txtqtdTotal']))
         {
-            echo "<pre> get:"; print_r($_POST); echo "</pre>";   //linha de teste
+            echo "<pre> post:"; print_r($_POST); echo "</pre>";   //linha de teste
             $qtdTotal = $_POST['txtqtdTotal'];     //declara variavel com os dados da quantidade total de produtos
             $valorTotal = $_POST['txtvalorTotal'];       //declara variavel com os dados da valor total de produtos
 
@@ -69,9 +71,14 @@
                     ));
                     // FIM após a finalização de uma venda, criar 1 venda automaticamente
 
-                    if($cadastroV->rowCount() == 1)    //if existente apenas para manter a variavel session atualizada caso o usuario deseje fazer + de 1 compra enquanto esteja logado.
+                    if($cadastroV->rowCount() == 1)    //if existente para manter a variavel session atualizada caso o usuario deseje fazer + de 1 compra enquanto esteja logado. E retornar o callback de conclusao ou reclusao da compra
                     {
                         $_SESSION['codVenda_sessao'] = $cone->lastInsertId(); //atualizar variavel de sessao com o codigo de venda. codigo 'lastInsertId' chama o ultimo Id criado na tabela
+                        $callback = 1;
+                    }
+                    else if($cadastroV->rowCount() != 1)    //if existente para manter a variavel session atualizada caso o usuario deseje fazer + de 1 compra enquanto esteja logado. E retornar o callback de conclusao ou reclusao da compra
+                    {
+                        $callback = 0;
                     }
                 }
             }
@@ -80,5 +87,11 @@
                 echo "Erro: 'Não há produtos no carrinho.'";
             }
         }
-    }    
+    }
+    else
+    {
+        //header('location:   ../../Formularios/Login/frm_login.php');
+        // print_r($codUser_sessao);
+        // print_r($codVenda_sessao);
+    }
 ?>

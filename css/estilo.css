@@ -231,7 +231,7 @@ h1,h2,h3,h4,h5,h6
     /* height: 500px; */
     /* width: 635px;*/
     max-width: 635px;   /*impedir que a imagem ultrapasse das limitações da div */
-    max-height: 500px;  /*impedir que a imagem ultrapasse das limitações da div */
+    max-height: auto;  /*impedir que a imagem ultrapasse das limitações da div */
 }
 .imgs-list_dp
 {

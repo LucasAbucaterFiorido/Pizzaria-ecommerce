@@ -1,5 +1,6 @@
 <?php 
     include_once('../../conexao.php');
+    session_start();
     include_once("validar_carrinho.php");
     // echo "<pre>";print_r($_POST);echo "</pre>";
 ?>
@@ -96,11 +97,12 @@
                                         <p>Total: R$<?= $valorTotal;?></p>
                                         <p>Quantidade de Produtos: <?= $qtdTotal;?></p>
                                     </h3>
-                                    <form action='validar_carrinho.php' method='POST'>
+                                    <form action='finalizarCompra.php' method='POST'>
                                         <input type='hidden' name='txtvalorTotal' id='txtvalorTotal' value='<?= $valorTotal;?>'>
                                         <input type='hidden' name='txtqtdTotal' id='txtqtdTotal' value='<?= $qtdTotal;?>'>
                                         <button class="btn btn-primary" type='submit'>Comprar</button>
                                     </form>
+                                    <br>
                                     <a class='btn btn-success' href='../../index.php'>Continuar comprando</a> <!-- ?acao=cadastrar-->
                                 </div>
                                 <div class="col-1"><!-- margem visual --></div>
