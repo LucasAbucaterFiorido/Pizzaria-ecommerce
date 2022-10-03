@@ -76,9 +76,9 @@
                                 <div id="Opcoes_tipo" class="btt-opcoes_dp mt-5">
                                     <p class="titulo_dp">Opções/Tipo:</p> <!--  Opçoes de tamanhos ou tipos de sabores -->
                                     <ul>
-                                        <li><a href="#">Broto</a></li>
-                                        <li><a href="#">Média</a></li>
-                                        <li><a href="#">Grande</a></li>
+                                        <li><a href="">Broto</a></li>
+                                        <li><a href="">Média</a></li>
+                                        <li><a href="">Grande</a></li>
                                     </ul>
                                 </div>
                                 

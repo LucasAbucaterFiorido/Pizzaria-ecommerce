@@ -64,7 +64,7 @@
                         <nav class="navbar navbar-expand justify-content-center top_nav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" id="">
+                                    <a class="nav-link" href="" id="">
                                         <div class="cart_quantity">
                                             <span style="font-size: 10px;">
                                                 Nº  
@@ -77,14 +77,41 @@
                                     </a>
                                 </li>
                             </ul>
+                            
+                            <!-- <div class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" id="" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="icone_login"><i class="ti-user"></i></div>
+                                </a>
+                                <ul class="navbar-nav dropdown-menu dropdown-menu-dark">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="">
+                                            <div class="icone_login dropdown-item active"><i class="ti-user"></i>Log-out</div>
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="">
+                                            <div class="icone_login dropdown-item active"><i class="ti-user"></i>teste</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div> -->
                         <!-- Login-top -->
-                            <ul class="navbar-nav">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown" href="#" role="button" id="login-list" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="icone_login"><i class="ti-user"></i></div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="login-list">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" id="">
-                                        <div class="icone_login"><i class="ti-user"></i></div>
+                                    <a class="nav-link dropdown-item" href="http://localhost/projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Login/log-off.php">
+                                        <div class="text-center py-2 icone_logoff"><i class=" ti-power-off"></i> Desconectar</div>     <!--   ti-shift-right  //  ti-power-off   -->
                                     </a>
                                 </li>
+                                <li class="nav-item"><hr class="dropdown-divider"></li>
                             </ul>
+                        </div>
+                            
+
                         </nav>
                     </div>
 

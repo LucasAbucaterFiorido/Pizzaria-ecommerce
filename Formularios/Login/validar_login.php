@@ -58,4 +58,4 @@
         header("location: Formularios/Login/frm_login.php");
     }
 ?>
-<a href="Formularios/Login/log-off.php" class="btn btn-danger">Sair</a>
+<!-- <a href="Formularios/Login/log-off.php" class="btn btn-danger">Sair</a> -->

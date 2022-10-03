@@ -59,6 +59,12 @@ h1,h2,h3,h4,h5,h6
 .icone_carrinho
 {
     font-size: 20px;
+    color: #fff;
+    height: 20px;
+    position: absolute;
+    text-align: center;
+    left: 35px;
+    width: 20px;
     
     /* 
     link de tags:
@@ -72,15 +78,20 @@ h1,h2,h3,h4,h5,h6
 
     */
 }
-.icone_login
+.icone_login i
 {
     font-size: 25px;
 }
-.icone_logoff
+.icone_logoff /* texto */
 {
-    font-size: 30px;
+    font-size: 14px;
+    font-weight: 600;
 }
-.icone_redes
+.icone_logoff i
+{
+    font-size: 16px;
+}
+.icone_redes i
 {
     font-size: 20px;
     margin-right: -100px;
@@ -188,6 +199,92 @@ h1,h2,h3,h4,h5,h6
 {
     margin-top: 40px;
 }
+
+/* classes do rodapé */
+.pos_rodape
+{
+    height: 300px;
+    background-color: #3f292f;  /* ff084e */
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.divisao_rodape
+{
+    height: 5px;
+    background-color: #b61241;  /* ff084e */
+}
+.img_pos_rodape /* posicionamento da imagem do produto */
+{
+    /* background: #3a3a3a; */
+    max-width: 100px;   /*impedir que a imagem ultrapasse das limitações da div */
+    max-height: auto;  /*impedir que a imagem ultrapasse das limitações da div */
+    margin: auto;
+}
+.pos-redes_rodape
+{
+    line-height: 90px;
+}
+.input-email_rodape
+{
+    position: absolute;
+    z-index: 1;
+    bottom: -513px;
+    right: 355px;
+
+    height: 50px;
+    width: 424px;
+    border-radius: 0%;
+}
+
+
+
+.titulo_rodape
+{
+    color: #bdbdbd;
+    font-size: 18px;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+    margin-top: 50px;
+}
+.btt-email_rodape 
+{
+    position: absolute;
+    z-index: 1;
+    bottom: -514px;
+    right: 355px;
+    
+    background-color: #3a3a3a;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 9px; 
+    padding-left: 40px; 
+    padding-right: 40px;
+    text-align: center;
+    line-height: 33px;
+    text-decoration: none;
+    font-weight: 600;
+    color: inherit;
+    color: #d6d3d3;
+}
+.btt-email_rodape:hover, btt-email_rodape:focus
+{
+    background-color: #ff084e;
+    /* color: rgb(26, 26, 26); */
+    transition: 500ms;
+    border-radius: 2px;
+    color: inherit;
+    color: #d6d3d3;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* classes do mid-cardapio */
 .mid
@@ -490,6 +587,7 @@ h1,h2,h3,h4,h5,h6
 
 
 .cart_quantity {
+    z-index: 1;
     background-color: #ff084e;
     border-radius: 50%;
     color: #fff;
