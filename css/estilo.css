@@ -56,6 +56,17 @@ h1,h2,h3,h4,h5,h6
 }
 
 /* classes de Icones */
+.icone-whats        /* redimensionar o icone do whats */
+{
+    width: 70px;
+    height: 70px;
+}
+.pos-icone-whats        /* posicionar o icone do whats */
+{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+}
 .icone_carrinho
 {
     font-size: 20px;
@@ -97,6 +108,20 @@ h1,h2,h3,h4,h5,h6
     margin-right: -100px;
     padding: 0 10px;
 }
+.icones_rodape
+{
+    margin-top: 40px;
+    color: #d4d4d4;
+    font-size: 28px;
+}
+.icones_rodape:hover, icones_rodape:focus 
+{
+    color: #ff084e;
+    transition: 300ms;
+}
+
+
+
 
 /* classes de Login */
 .pos_login
@@ -204,19 +229,19 @@ h1,h2,h3,h4,h5,h6
 .pos_rodape
 {
     height: 300px;
-    background-color: #3f292f;  /* ff084e */
+    /* background-color: #3f292f;  ff084e */
     margin-left: 200px;
     margin-right: 200px;
 }
 .divisao_rodape
 {
-    height: 5px;
+    height: 2px;
     background-color: #b61241;  /* ff084e */
 }
 .img_pos_rodape /* posicionamento da imagem do produto */
 {
     /* background: #3a3a3a; */
-    max-width: 100px;   /*impedir que a imagem ultrapasse das limitações da div */
+    max-width: 150px;   /*impedir que a imagem ultrapasse das limitações da div */
     max-height: auto;  /*impedir que a imagem ultrapasse das limitações da div */
     margin: auto;
 }
@@ -228,8 +253,8 @@ h1,h2,h3,h4,h5,h6
 {
     position: absolute;
     z-index: 1;
-    bottom: -513px;
-    right: 355px;
+    /* bottom: -530px;
+    right: 355px; */
 
     height: 50px;
     width: 424px;
@@ -237,21 +262,28 @@ h1,h2,h3,h4,h5,h6
 }
 
 
-
 .titulo_rodape
+{
+    color: #d8d8d8;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+.titulo_rodape h6
 {
     color: #bdbdbd;
     font-size: 18px;
     font-weight: 600;
     /* text-transform: uppercase; */
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .btt-email_rodape 
 {
     position: absolute;
     z-index: 1;
-    bottom: -514px;
-    right: 355px;
+    /* bottom: -530px;
+    right: 355px; */
+    right: 131px; 
     
     background-color: #3a3a3a;
     font-size: 14px;
@@ -274,6 +306,10 @@ h1,h2,h3,h4,h5,h6
     border-radius: 2px;
     color: inherit;
     color: #d6d3d3;
+}
+.pos-contato-rodape
+{
+    margin-top: 80px;
 }
 
 
