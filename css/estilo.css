@@ -7,8 +7,9 @@ cores->
 
 */
 /* Configuração inicial */
-@import '../css/font-awesome.min.css';
-@import '../css/themify-icons.css';
+@import 'font-awesome.min.css';
+@import 'themify-icons.css';
+
 *
 {
     margin: 0px;
@@ -58,14 +59,15 @@ h1,h2,h3,h4,h5,h6
 /* classes de Icones */
 .icone-whats        /* redimensionar o icone do whats */
 {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 }
 .pos-icone-whats        /* posicionar o icone do whats */
 {
     position: fixed;
+    z-index: 999;
     right: 40px;
-    bottom: 40px;
+    bottom: 20px;
 }
 .icone_carrinho
 {
@@ -110,7 +112,7 @@ h1,h2,h3,h4,h5,h6
 }
 .icones_rodape
 {
-    margin-top: 40px;
+    /* margin-top: 20px; */
     color: #d4d4d4;
     font-size: 28px;
 }
@@ -119,7 +121,32 @@ h1,h2,h3,h4,h5,h6
     color: #ff084e;
     transition: 300ms;
 }
+.background-overlay,
+.background-overlay-white {
+    position: relative;
+    z-index: 2;
+    background-position: center center;
+    background-size: cover;
+}
 
+.background-overlay:before,
+.background-overlay-white:before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
+.background-overlay:before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.background-overlay-white:before {
+    background-color: rgba(255, 255, 255, 0.9);
+}
 
 
 
@@ -309,7 +336,7 @@ h1,h2,h3,h4,h5,h6
 }
 .pos-contato-rodape
 {
-    margin-top: 80px;
+    margin-top: 95px;
 }
 
 
