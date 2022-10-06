@@ -349,6 +349,22 @@ h1,h2,h3,h4,h5,h6
 
 
 
+/* classes do mid-slider */
+.cropped-img-slider /* Usei o 'crop' para formatar a imagem */
+{
+    width: 100%; /* width of container */
+    height: 700px; /* height of container */
+    overflow: hidden;
+    /* border: 5px solid black; */
+}
+/* Caso precise personalizar a posição da imagem no Slider*/
+/* .cropped img 
+{
+    margin: -0px 0px 0px -0px;
+} */
+
+
+
 /* classes do mid-cardapio */
 .mid
 {

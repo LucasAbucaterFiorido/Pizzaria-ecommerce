@@ -27,8 +27,52 @@
 
         <?php include_once('index-div/descontos-div.php'); ?> <!-- DESCONTOS -->
 
+            
+        <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+
+        <script src="assets/vendors/jquery.min.js"></script>
+        <script src="assets/owlcarousel/owl.carousel.js"></script>
+        
+        <!-- body -->
+        <div class="home-demo">
+            <div class="row">
+                <div class="col-12 p-0 cropped-img-slider">
+                    <h3>Demo</h3>
+                    <div class="owl-carousel">
+                        <div class="item">
+                            <img src="img/produtos/pizza6.jpg" class="d-block" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="img/produtos/pizza5.jpg" class="d-block" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="img/produtos/pizza4.jpg" class="d-block" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            margin: 0,
+            loop: true,
+            rtl:true,
+            loop:true,
+            nav:true,
+            responsive:{
+                0: {
+                    items: 1
+                }
+            }
+        })
+        </script>
+
+
+
         <!-- ****** Area dos Slides ****** -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12 p-0">
                 <div id="carouselExampleCaptions" class="carousel slide background-overlay" data-bs-ride="false">
                     <div class="carousel-indicators">
@@ -36,10 +80,12 @@
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    <div class="carousel-inner filtro" style="height: 800px;">
-                        <div class="carousel-item active">
-                            <!-- <div style="background-image: url('img/produtos/pizza6.jpg');"></div> -->
-                            <img src="img/produtos/pizza6.jpg" class="d-block w-100 " alt="...">
+                    <div class="carousel-inner" style="height: 800px;">
+                        <div class="carousel-item active"> -->
+
+                            //<!-- <div style="background-image: url('img/produtos/pizza6.jpg');"></div> -->
+
+                            <!-- <img src="img/produtos/pizza6.jpg" class="d-block w-100 " alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>First slide label</h5>
                                 <p>Some representative placeholder content for the first slide.</p>
@@ -70,7 +116,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- ****** FIM Area dos Slides ****** -->
 
         <?php include_once('index-div/cardapio-div.php'); ?> <!-- CARDAPIO -->
