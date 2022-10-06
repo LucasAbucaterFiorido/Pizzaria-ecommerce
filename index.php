@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-12 p-0 cropped-img-slider">
                     <h3>Demo</h3>
-                    <div class="owl-carousel">
+                    <div class="owl-carousel owl-theme">
                         <div class="item">
                             <img src="img/produtos/pizza6.jpg" class="d-block" alt="...">
                         </div>
