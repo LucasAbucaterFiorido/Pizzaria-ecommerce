@@ -31,8 +31,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 p-0" style="height: 700px;"> <!-- Imagem do produto -->
-                            <div class="img_pos_dp"> 
-                                <label for="">IMAGEM Principal</label>
+                            <div class="img_pos_dp">
                                 <img class="w-100" alt="imagem do produto" id="img-1">
                             </div>
                             <div class="imgs-list_dp">

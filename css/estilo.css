@@ -121,32 +121,6 @@ h1,h2,h3,h4,h5,h6
     color: #ff084e;
     transition: 300ms;
 }
-.background-overlay,
-.background-overlay-white {
-    position: relative;
-    z-index: 2;
-    background-position: center center;
-    background-size: cover;
-}
-
-.background-overlay:before,
-.background-overlay-white:before {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-}
-
-.background-overlay:before {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.background-overlay-white:before {
-    background-color: rgba(255, 255, 255, 0.9);
-}
 
 
 
@@ -353,15 +327,52 @@ h1,h2,h3,h4,h5,h6
 .cropped-img-slider /* Usei o 'crop' para formatar a imagem */
 {
     width: 100%; /* width of container */
-    height: 700px; /* height of container */
+    height: 770px; /* height of container */
     overflow: hidden;
     /* border: 5px solid black; */
 }
-/* Caso precise personalizar a posição da imagem no Slider*/
-/* .cropped img 
+/* overlay é para aplicar filtro escuro no slider e owl-dots é as configurações do OWL-CAROUSEL */
+/* .overlay:before 
 {
-    margin: -0px 0px 0px -0px;
-} */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.owl-dots
+{
+    position: absolute;
+    top: 20%;
+    left: 1%;
+    z-index: 4;
+    width: 30px;
+    background-color: transparent;
+    height: auto;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+.owl-carousel .owl-dot {
+    top: 20%;
+    left: 1%;
+    border: 2px solid #9f9f9f;
+    border-radius: 50%;
+    display: block;
+    width: 9px;
+    height: 9px;
+    margin: 5px 10px;
+}
+
+.owl-carousel .owl-dot.active {
+    background-color: #ff084e;
+    border-color: #ff084e;
+}  */
 
 
 
