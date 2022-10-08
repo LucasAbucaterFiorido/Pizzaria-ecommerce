@@ -1,6 +1,14 @@
 <!-- ****** top ****** -->
+<?php
+    $codUser_sessao = $_SESSION['codUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+    $nomeUser_sessao = $_SESSION['nomeUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+    $loginUser_sessao = $_SESSION['loginUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+    $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
+?>
     <div class="row">
         <div class="col-12">
+            <input type="hidden" id="txtcodVenda" value="<?= $codVenda_sessao ?>">
+            <input type="hidden" id="txtcodUser" value="<?= $codUser_sessao ?>">
             <div class="container top">
                 <div class="row">
 
@@ -77,25 +85,22 @@
                                     </a>
                                 </li>
                             </ul> -->
-                            <div class="dropdown">
-                                <a class="nav-link dropdown" href="#" role="button" id="login-list" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="icone_login"><i class="ti-user"></i></div>
-                                </a>
+                            <div class="dropdown" style="position: relative;">
                                 <a class="nav-link dropdown" href="#" role="button" id="cart-list" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="cart_quantity">
                                         <span style="font-size: 10px;">
-                                            Nº 
-                                        </span> 
+                                            Nº
+                                        </span>
                                     </div>
-                                    <div>
-                                        <i class="ti-shopping-cart icone_carrinho" style="font-size: 24px;"></i>
-                                        <span style="font-size: 15px;">R$</span>
+                                    <div style="position: relative;">
+                                        <i class="ti-shopping-cart icone_carrinho"></i>
+                                        <span style="font-size: 15px; margin-right: 34px;">R$:<span id="valorTotalIcone"></span></span>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="login-list">
                                     <li class="nav-item">
                                         <a class="nav-link dropdown-item" href="http://localhost/projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Login/log-off.php">
-                                            <div class="text-center py-2 icone_logoff"><i class=" ti-power-off"></i> fodase</div>     <!--   ti-shift-right  //  ti-power-off   -->
+                                            <div class="text-center py-2 icone_logoff"><i class=" ti-power-off"></i> fodase </div>     <!--   ti-shift-right  //  ti-power-off   -->
                                         </a>
                                     </li>
                                     <li class="nav-item"><hr class="dropdown-divider"></li>
@@ -135,9 +140,9 @@
                             </div>
                         </nav>
                     </div>
-
+                    
                     <div class="col-1">  <!-- style="background-color: lightgray;" -->
-                        <!-- margem visual -->
+                        <!-- margem visual --> <div id="resposta"></div>
                     </div> 
                     
                 </div>
@@ -145,3 +150,37 @@
         </div>
     </div>
 <!-- ****** FIM top ****** -->
+    <script src="http://localhost/n7/php/github/Pizzaria-ecommerce/js/jquery-3.6.1.js"></script>
+    <script>
+        $(function()
+        {
+            function sucessoCabecalho(datas)
+            {
+                $("#resposta").empty().html(datas);
+            }
+            function carregando(datas) //$("");
+            {
+                $("#resposta").empty().html("Carregando..");
+            }
+            function erro_enviar()
+            {
+                $("#resposta").empty().html("Erro ao enviar");
+            }
+            $.ajaxSetup({
+                type:           'POST',
+                success:        sucessoCabecalho,
+                error:          erro_enviar,
+                beforeSend:     carregando
+            });
+            
+                //http://localhost/n7/php/github/Pizzaria-ecommerce/Paginas/Cart/Carrinho.php 
+            action = '../Paginas/Cart/validar_carrinho.php';
+            $.ajax({
+                url:        action,
+                data:{
+                    codVenda:       $('#txtcodVenda').val(),
+                    codUsuario:     $('#txtcodUser').val()
+                }
+            });
+        });
+    </script>

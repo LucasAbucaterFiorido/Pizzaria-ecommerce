@@ -5,8 +5,8 @@
         $codUser_sessao = $_SESSION['codUser_sessao']; //declara variavel de sessao em variavel local para melhor utilização
         $codVenda_sessao = $_SESSION['codVenda_sessao']; //declara variavel de sessao em variavel local para melhor utilização
         
-        // echo '<pre> codVenda '; print_r($codVenda_sessao); echo '</pre>'; 
-        // echo '<pre> codUsuario '; print_r($codUser_sessao); echo '</pre>'; 
+        // echo '<pre> codVenda '; print_r($codVenda_sessao); echo '</pre>';
+        // echo '<pre> codUsuario '; print_r($codUser_sessao); echo '</pre>';
 
         if(isset($_GET['codigoProduto']))   // verifica se há uma variavel especifica de get
         {

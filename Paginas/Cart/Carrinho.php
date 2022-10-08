@@ -52,6 +52,8 @@
                                                     $valorTotal = 0; //declarando variavel do valor total da Compra
                                                     $qtdTotal = 0; //declarando variavel do quantidade total da Compra
 
+                                                    echo "<pre>"; print_r($_POST); echo "</pre>";
+
                                                     foreach ($dadosI as $linhaI) 
                                                     {
                                                         // echo "<pre>"; print_r($linhaI); echo "</pre>";
@@ -93,6 +95,8 @@
                                             ?>
                                         </tbody>
                                     </table>
+                                    <span id="txtvalorTotal"><?php $valorTotal;?></span>
+                                    <span id="txtqtdTotal"><?php $qtdTotal;?></span>
                                     <h3>
                                         <p>Total: R$<?= $valorTotal;?></p>
                                         <p>Quantidade de Produtos: <?= $qtdTotal;?></p>
