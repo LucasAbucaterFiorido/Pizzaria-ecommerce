@@ -625,16 +625,65 @@ h1,h2,h3,h4,h5,h6
 
 
 
-/* classes dos Formulario produto*/
-.input_formP 
+/* classes gerais dos Formularios*/
+.form
 {
     background-color: #3a3a3a;
 }
-.input_formP input, textarea, select
+.form input
 {
-    background-color: #989898;
-    border-color: #a30935;
+    background-color: #c7c7c7;
+    border-color: #e00040;
 }
+.form input:hover:focus
+{
+    background-color: #c7c7c7;
+    border-color: #e00040;
+}
+.form textarea
+{
+    background-color: #c7c7c7;
+    border-color: #e00040;
+}
+.form textarea:hover:focus
+{
+    background-color: #c7c7c7;
+    border-color: #e00040;
+}
+.form select
+{
+    background-color: #c7c7c7;
+    border-color: #e00040;
+}
+.form select:hover:focus
+{
+    background-color: #c7c7c7;
+    border-color: #e00040;
+}
+.pos-preimg_form
+{
+    width: 318px; 
+    height: 207px;
+    overflow: hidden;
+    line-height: 207px;
+    margin-left: 12px;
+}
+.preimg_form
+{
+    max-width: 250px; 
+    max-height: 250px;
+}
+.btt-pesquisa_form
+{
+    line-height: 100px;
+}
+
+
+/* classes dos Formulario produto*/
+
+
+
+
 
 
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/estilo.css">
     <link rel="icon" type="img/png" href="../../img/logo/pizzalogo.png">
-    <title>Produto</title>
+    <title>Usuário</title>
 </head>
 <body class="body_config">
     <div class="container-fluid">
@@ -16,12 +16,12 @@
                 <div class="container form">
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <h1 class="card-title"><u>Formulário Produto</u></h1>
+                            <h1 class="card-title"><u>Formulário Usuário</u></h1>
                             <hr>
                             <br>
                         </div>
                     </div>
-                    <form action="" method="POST" id="form_produto" name="form_produto" onsubmit="return false;">
+                    <form action="" class="" method="POST" id="form_produto" name="form_produto" onsubmit="return false;">
                         <div class="row">
                             <div class="col-sm-3">
                                 <label class="form-label" for="txtcod">Código:</label>
@@ -29,7 +29,8 @@
                                 <input class="form-control" type="text" id="txtcod" name="txtcod">
                             </div>
                             <div class="col-sm-2 btt-pesquisa_form">
-                                <p><button id="btt_pesquisar" class="btn btn-secondary">&#128269;</button></p>
+                                <!-- <p>&nbsp;</p> -->
+                                <button id="btt_pesquisar" class="btn btn-secondary">&#128269;</button>
                             </div>
                             <div class="col-sm-3">
                             </div>
@@ -41,22 +42,12 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-9">
                                 <label class="form-label" for="txtnome">Nome:</label>
                                 <br>
                                 <input class="form-control" type="text" id="txtnome" name="txtnome">   
                             </div>
-                            <div class="col-sm-2">
-                                <label class="form-label" for="txtqtd">Quantidade:</label>
-                                <br>
-                                <input class="form-control" type="number" id="txtqtd" name="txtqtd">   
-                            </div>
-                            <div class="col-sm-2">
-                                <label class="form-label" for="txtvalor">Valor:</label>
-                                <br>
-                                <input class="form-control" type="number" id="txtvalor" name="txtvalor">   
-                            </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-3 testi">
                                 <label for="selectsts">Status:</label>
                                 <br>
                                 <select class="form-control mt-2" name="selectsts" id="selectsts">
@@ -67,10 +58,15 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-sm-12">
-                                <label class="form-label" for="txtdesc">Descrição:</label>
+                            <div class="col-sm-6">
+                                <label class="form-label" for="txtlogin">Login:</label>
                                 <br>
-                                <textarea class="form-control" id="txtdesc" name="txtdesc" cols="20" rows="6"></textarea>
+                                <input class="form-control" type="text" id="txtlogin" name="txtlogin">   
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label" for="txtsenha">Senha:</label>
+                                <br>
+                                <input class="form-control" type="text" id="txtsenha" name="txtsenha">   
                             </div>
                         </div>
                         <br>
@@ -80,21 +76,23 @@
                                 <br>
                                 <input class="form-control" type="file" id="arquivoimg" name="arquivoimg" onchange="previewImg(this)">
                             </div>
+                            
                             <div class="col-sm-4">
-                                <label for="selectcateg">Categoria:</label>
+                                <label for="selectcateg">Cargo:</label>
                                 <br>
-                                <select class='form-control mt-2' name='selectcateg' id='selectcateg'>
+                                <select class='form-control mt-2' name='selectcargo' id='selectcargo'>
                                     <?php
                                         include_once('../../conexao.php');
                                         try
                                         {
-                                            $consulta = $cone->query('SELECT * FROM categoria');
+                                            $consultaC = $cone->query('SELECT * FROM Cargo');
 
-                                            if($consulta->rowCount() >= 1)
+                                            if($consultaC->rowCount() >= 1)
                                             {
-                                                foreach ($consulta as $linha) 
+                                                foreach ($consultaC as $linhaC) 
                                                 {
-                                                    echo "<option value=".$linha[0].">".$linha[1]."</option>";
+                                                    // echo '<pre>';print_r($linhaC);echo '</pre>';
+                                                    echo "<option value=".$linhaC[0].">".$linhaC[1]."</option>";
                                                 }
                                             }
                                         }
@@ -108,8 +106,8 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-sm-3 border pos-preimg_form">
-                                <img class="preimg_form" src="" alt="" id="preImg" style="max-width: 200px; max-height: 200px;">     
+                            <div class="col-sm-3 border pos-preimg_form text-center">
+                                <img class="preimg_form" src="" alt="" id="preImg">     
                             </div>
                             <div class="col-sm-9">
                                 <label class="form-label" for="base64Code">Base 64:</label>
@@ -146,10 +144,7 @@
                 </div>
             </div>
         </div>
-    </div>    
-
-
-
+    </div>
 
     <script src="../../js/jquery-3.6.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -191,124 +186,101 @@
         }, false)
     </script>
 
-
-
-
-
-    <script> //FORMULARIO
+    <script>    //formulario
         $(function()
         {
+            // alert('teste');  //linha de teste
             var callback = $("#callback");
-            var action = "";
 
             function carregando(datas)
             {
                 callback.empty().html('Carregando..');
-            };
-
+            }
             function sucesso(datas)
             {
+                // alert('tesasad');    //linha de teste
                 callback.empty().html(datas); //se obtiver sucesso, ele mostrará os dados puxados
-                //callback.empty().html('aksdjlkajskldjklasjlkdjaslkjdklasjklsda');
-                //$('#txtcod').val($("#cod_pesquisa").html()); //ja organiza a informação trazida para seu input
+                // callback.empty().html('<pre>'+datas+'</pre>');
             }
-            
             function erro_enviar()
             {
                 callback.empty().html("Erro ao enviar");
             }
-
             function sucessoPesquisa(datas)
             {
-                callback.empty().html('<pre>'+datas+'</pre>');
-
-                $("#txtcod").val($("#cod_pesquisa").html());
+                // alert('aoba');   //linha de teste
+                callback.empty().html('<pre>'+datas+'</pre>');   //linha de teste
+                $("#txtdata").val($("#cadastro_pesquisa").html());
                 $("#txtnome").val($("#nome_pesquisa").html());
-                $('#txtdata').val($('#cadastro_pesquisa').html());
-                $('#base64Code').val($('#imagem_pesquisa').html());
-                // $("#arquivoimg").val($("#imagem_pesquisa").html());
-                $("#txtdesc").val($("#descricao_pesquisa").html());
-                $("#txtqtd").val($("#quantidade_pesquisa").html());
-                $("#txtvalor").val($("#valor_pesquisa").html());
-                $("#selectcateg").val($("#codCategoria_pesquisa").html());
-                $("#txtobs").val($("#obs_pesquisa").html());
                 $("#selectsts").val($("#status_pesquisa").html());
+                $("#txtlogin").val($("#login_pesquisa").html());
+                $("#txtsenha").val($("#senha_pesquisa").html());
+                $("#arquivoimg").val($("#imagem_pesquisa").html());
+                $("#selectcargo").val($("#cargo_pesquisa").html());
+                $("#txtobs").val($("#obs_pesquisa").html());
 
-                var preview = document.getElementById("preImg")
+                var preview = document.getElementById("preImg");
 
                 $("#base64Code").val($("#imagem_pesquisa").html());
                 preview.src = $("#imagem_pesquisa").html();
             }
-
             $.ajaxSetup({
-                type:       'POST',
-                beforeSend: carregando,
-                error:      erro_enviar,
-                success:    sucesso
+                type:           'POST',
+                beforeSend:     carregando,
+                error:          erro_enviar,
+                success:        sucesso
             });
 
             $("#btt_pesquisar").click(function()
             {
-                action = 'pesquisar_produto.php';
-                // console.log('teste');
+                // alert('teste');  //linha de teste
+                action='pesquisar_usuario.php';
+
                 $.ajax({
-                    url:        action,
+                    url:            action,
                     data:{
-                        txtcod: $("#txtcod").val()
+                        txtcod:     $("#txtcod").val()
                     },
-                    success:    sucessoPesquisa
-                });
+                    success:         sucessoPesquisa
+                });  
             });
 
             $("#btt_cadastrar").click(function()
             {
-                action = 'cadastrar_produto.php';
-                // console.log("teste");
+                // alert('teste');  //linha de teste
+                action='cadastrar_usuario.php';
+
                 $.ajax({
-                    url:        action,
+                    url:            action,
                     data:{
-                        txtnome: $("#txtnome").val(),
-                        arquivoimg: $("#base64Code").val(),
-                        txtdesc: $("#txtdesc").val(),
-                        txtqtd: $("#txtqtd").val(),
-                        txtvalor: $("#txtvalor").val(),
-                        selectcateg: $("#selectcateg").val(),
-                        txtobs: $("#txtobs").val(),
-                        selectsts: $("#selectsts").val()
+                        txtnome:     $("#txtnome").val(),
+                        selectsts:     $("#selectsts").val(),
+                        txtlogin:     $("#txtlogin").val(),
+                        txtsenha:     $("#txtsenha").val(),
+                        arquivoimg:     $("#arquivoimg").val(),
+                        selectcargo:     $("#selectcargo").val(),
+                        txtobs:     $("#txtobs").val()
                     }
-                });
+                });  
             });
-
-
             $("#btt_alterar").click(function()
             {
-                action = 'alterar_produto.php';
+                // alert('teste');  //linha de teste
+                action='alterar_usuario.php';
 
                 $.ajax({
-                    URL:        action,
+                    url:            action,
                     data:{
-                        txtcod: $("#txtcod").val()
-                    },
-                    success:    sucessoPesquisa
-                });
-            });
-
-            $("#btt_limpar").click(function()
-            {
-                
-            });
-
-            $("#btt_excluir").click(function()
-            {
-                action = 'deletar_produto.php';                
-                // console.log("alalal");
-
-                $.ajax({
-                    url:        action,
-                    data:{
-                        txtcod: $('#txtcod').val()
-                    }                
-                });
+                        txtcod: $("#txtcod").val(),
+                        txtnome:     $("#txtnome").val(),
+                        selectsts:     $("#selectsts").val(),
+                        txtlogin:     $("#txtlogin").val(),
+                        txtsenha:     $("#txtsenha").val(),
+                        arquivoimg:     $("#arquivoimg").val(),
+                        selectcargo:     $("#selectcargo").val(),
+                        txtobs:     $("#txtobs").val()
+                    }
+                });  
             });
         });
     </script>

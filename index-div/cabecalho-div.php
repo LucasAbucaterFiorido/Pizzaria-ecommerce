@@ -150,10 +150,11 @@
         </div>
     </div>
 <!-- ****** FIM top ****** -->
-    <script src="http://localhost/n7/php/github/Pizzaria-ecommerce/js/jquery-3.6.1.js"></script>
+    <script src="http://localhost/projetos/php/github/Pizzaria-ecommerce/js/jquery-3.6.1.js"></script>
     <script>
         $(function()
         {
+            // alert("teste");  //linha de teste
             function sucessoCabecalho(datas)
             {
                 $("#resposta").empty().html(datas);
@@ -166,21 +167,22 @@
             {
                 $("#resposta").empty().html("Erro ao enviar");
             }
-            $.ajaxSetup({
-                type:           'POST',
-                success:        sucessoCabecalho,
-                error:          erro_enviar,
-                beforeSend:     carregando
-            });
+            // $.ajaxSetup({
+            //     type:           'POST',
+            //     success:        sucessoCabecalho,
+            //     error:          erro_enviar,
+            //     beforeSend:     carregando
+            // });
             
                 //http://localhost/n7/php/github/Pizzaria-ecommerce/Paginas/Cart/Carrinho.php 
-            action = '../Paginas/Cart/validar_carrinho.php';
-            $.ajax({
-                url:        action,
-                data:{
-                    codVenda:       $('#txtcodVenda').val(),
-                    codUsuario:     $('#txtcodUser').val()
-                }
-            });
+            // action = 'Paginas/Cart/validar_carrinho.php';
+            // $.ajax({
+            //     url:        action,
+            //     data:{
+            //         codVenda:       $('#txtcodVenda').val(),
+            //         codUsuario:     $('#txtcodUser').val()
+            //     }
+            // });
+            //usar .load ao invés de ajax, pois não há necessidade de enviar e depois puxar informação. Apenas puxar.
         });
     </script>
