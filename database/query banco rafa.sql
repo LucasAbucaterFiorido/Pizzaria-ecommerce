@@ -9,9 +9,11 @@ create table Usuario
     login_usuario varchar(25) unique not null,
     senha_usuario varchar(255) not null,
 	imagem_usuario longblob not null,
+    nome_cargo varchar(25) not null,
     cadastro_usuario timestamp not null,
     obs_usuario varchar(255) null,
-    status_usuario varchar(10) not null
+    status_usuario varchar(10) not null,
+    constraint FK_nome_cargo_usuario foreign key (nome_cargo) references Cargo (nome_cargo)
 );
 
 select * from Usuario;
@@ -20,7 +22,7 @@ create table Venda
 (
 	codigo_venda int auto_increment primary key not null,
     cadastro_venda timestamp not null,
-	qtdTotal_venda int not null,
+    qtdTotal_venda int not null,
     valorTotal_venda decimal(10,2),
 	status_venda varchar(10) not null,
     codigo_usuario int not null,
@@ -40,7 +42,7 @@ create table Item
     constraint FK_codigo_venda_item foreign key (codigo_venda) references Venda (codigo_venda)
 );
 
-select * from Item;
+select * FROM Item;
 
 create table Categoria
 (
@@ -57,23 +59,36 @@ select * FROM Categoria;
 insert into Categoria
 (
 nome_categoria,
-localArmaz_categoria,
-descricao_categoria,
+login_categoria,
+senha_categoria,
 obs_categoria,
 status_categoria
 )
 values 
-('teste','localteste','desc teste','obs teste','Ativo'),
-('Pizza','localpizza','desc pizza','obs pizza','Ativo'),
-('Bebida','localbebida','desc bebida','obs bebida','Ativo'),
-('Promocoes','localpromocao','desc promocao','obs promocao','Ativo');
+('Administrador','admin','123','','Ativo'),
+('Selena','selena','123','','Ativo'),
+('Fernando','fernado','123','','Ativo'),
+('Debora','debh','123','','Ativo'),
+('Janaine','jana','123','','Ativo');
+
+create table Cargo
+(
+	codigo_cargo int auto_increment primary key not null,
+    nome_cargo varchar(25) not null unique,
+    local_cargo varchar(255) not null,
+    descricao_cargo varchar(200) not null,
+    obs_cargo varchar(255) null,
+    status_cargo varchar(10) not null
+);
+
+select * FROM Cargo;
 
 create table Produto
 (
 	codigo_produto int auto_increment primary key not null,
     nome_produto varchar(25) not null,
 	cadastro_produto timestamp not null,
-    imagem_produto longblob not null,
+    imagem_produto blob not null,
     descricao_produto varchar(200) not null,
     qtd_produto int not null,
     valor_produto int not null,
@@ -84,20 +99,3 @@ create table Produto
 );
 
 select * from Produto;
-
-insert into Produto
-(
-    nome_produto, 
-
-    imagem_produto,
-    descricao_produto,
-    qtd_produto,
-    valor_produto,
-    codigo_categoria,
-    obs_produto, 
-    status_produto
-)
-values 
-('teste','gdgsgsetseg','desc teste',10,25,1,'obs teste','Ativo'),
-('frango e catupiry','fafafawf','desc frango',5,50,2,'obs frango','Ativo');
-

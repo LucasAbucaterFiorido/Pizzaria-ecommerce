@@ -30,7 +30,7 @@
         }
         else
         {
-            echo "Erro!";
+            print_r("<p id='resposta'>Não há Produto com este código.</p>");
         }
     }
     catch(PDOException $erro)

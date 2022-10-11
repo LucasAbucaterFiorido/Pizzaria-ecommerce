@@ -30,7 +30,7 @@
             }
             else
             {
-                print_r("<p id=''></p>");
+                print_r("<p id='resposta'>Não há Usuario com este código.</p>");
             }
         } 
         catch (PDOException $erro) 

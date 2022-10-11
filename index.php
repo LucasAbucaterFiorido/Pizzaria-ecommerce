@@ -35,7 +35,6 @@
         <script src="assets/owlcarousel/owl.carousel.js"></script>
 
 
-
         <!-- ****** Area dos Slides ****** -->
         <div class="row">
             <div class="col-12 p-0">
