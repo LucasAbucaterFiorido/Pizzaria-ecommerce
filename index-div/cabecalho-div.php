@@ -28,16 +28,16 @@
                         <nav class="navbar navbar-expand top_nav"> <!-- 'justify-content-center' centraliza a nav-bar -->
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" id="btt_cardapio">
+                                    <a class="nav-link" href="#cardapioAncora" id="btt_cardapio">
                                         <span class="msg" id="msg_hot">hot</span>
                                         Cardápio
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" id="btt_quemsomos">Quem Somos ?</a>
+                                    <a class="nav-link" href="#qmSomosAncora" id="btt_quemsomos">Quem Somos ?</a>
                                 </li>
                                 <li class='nav-item'>
-                                    <a class='nav-link' href='#' id='btt_contato'>Contato</a>
+                                    <a class='nav-link' href='#contatoAncora' id='btt_contato'>Contato</a>
                                 </li>
                                 
                                 <li class="nav-item">
@@ -108,18 +108,18 @@
                             </div>
                             <!-- <div class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" id="" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="icone_login"><i class="ti-user"></i></div>
+                                    <div class="icone_config"><i class="ti-user"></i></div>
                                 </a>
                                 <ul class="navbar-nav dropdown-menu dropdown-menu-dark">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_login dropdown-item active"><i class="ti-user"></i>Log-out</div>
+                                            <div class="icone_config dropdown-item active"><i class="ti-user"></i>Log-out</div>
                                         </a>
                                     </li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="">
-                                            <div class="icone_login dropdown-item active"><i class="ti-user"></i>teste</div>
+                                            <div class="icone_config dropdown-item active"><i class="ti-user"></i>teste</div>
                                         </a>
                                     </li>
                                 </ul>
@@ -127,15 +127,20 @@
                             <!-- Login-top -->
                             <div class="dropdown">
                                 <a class="nav-link dropdown" href="#" role="button" id="login-list" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="icone_login"><i class="ti-user"></i></div>
+                                    <div class="icone_config"><i class="ti-settings"></i></div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="login-list">
                                     <li class="nav-item">
-                                        <a class="nav-link dropdown-item" href="http://localhost/projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Login/log-off.php">
-                                            <div class="text-center py-2 icone_logoff"><i class=" ti-power-off"></i> Desconectar</div>     <!--   ti-shift-right  //  ti-power-off   -->
+                                        <a class="nav-link dropdown-item" href="http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Paginas/Usuario/perfil.php">
+                                            <div class="text-center py-2 icone_logoff"><i class="ti-user"></i> Perfil</div>     <!--   ti-shift-right  //  ti-power-off   -->
                                         </a>
                                     </li>
                                     <li class="nav-item"><hr class="dropdown-divider"></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-item" href="http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Formularios/Login/log-off.php">
+                                            <div class="text-center py-2 icone_logoff"><i class=" ti-power-off"></i> Desconectar</div>     <!--   ti-shift-right  //  ti-power-off   -->
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>

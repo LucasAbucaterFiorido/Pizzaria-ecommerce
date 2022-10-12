@@ -62,24 +62,41 @@
                         <div class="row">
                             <form action="" method="POST" class="text-center">
                                 <div class="col-12">
-                                    <div class="input-group mb-3">
+                                    <div class="input-group mb-3 input_login">
                                         <span class="input-group-text"><i class="ti-user"></i></span>
-                                        <input type="text" class="form-control" placeholder="Login" id="txtlogin" name="txtlogin">
+                                        <input type="text" class="form-control " placeholder="Login" id="txtlogin" name="txtlogin">
                                     </div>
-                                    <div class="input-group mb-3">
+                                    <div class="input-group mb-3 input_login">
                                         <span class="input-group-text"><i class="ti-lock"></i></span>
                                         <input type="text" class="form-control" placeholder="Senha" id="txtsenha" name="txtsenha">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-success col-3">Entrar</button>
+                                <button type="submit" class="btn btn-primary col-9 btt-entrar_login">Entrar</button>
                             </form>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center mt-3" style="">
+                                <a href="">Esqueceu a senha ?</a>
+                            </div>                            
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-9" style="margin: auto;">
+                                <div class="divisao_rodape"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center mt-3">
+                                <a href="" class="btn btn-success btt-criaconta_login">Criar nova conta</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <div class="container-fluid">
+        <?php include_once('../../index-div/rodape-div.php'); ?> <!-- ****** Rodapé ****** -->
+    </div>
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.0.js"></script>
     <script>

@@ -18,6 +18,7 @@
                     <div class="col-10">
                         <nav class="navbar navbar-expand justify-content-center titulo-cardapio_mid">
                             <ul class="navbar-nav">
+                                <a name="cardapioAncora"></a>
                                 <?php
                                     try 
                                     {

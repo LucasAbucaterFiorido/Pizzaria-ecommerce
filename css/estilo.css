@@ -91,9 +91,9 @@ h1,h2,h3,h4,h5,h6
 
     */
 }
-.icone_login i
+.icone_config i
 {
-    font-size: 25px;
+    font-size: 27px;
 }
 .icone_logoff /* texto */
 {
@@ -133,9 +133,26 @@ h1,h2,h3,h4,h5,h6
     margin: auto;
     margin-top: 80px;
 }
-.pos-input-login
+.input_login, input
 {
-    margin-left: 20px;
+    margin: auto;
+    height: 45px;
+    width: 350px;
+}
+.input_login span
+{
+    height: 45px;
+    width: 40px;
+}
+.btt-entrar_login
+{
+    font-size: 21px;    
+    height: 45px;
+}
+.btt-criaconta_login
+{
+    font-size: 21px;    
+    height: 45px;
 }
 
 
