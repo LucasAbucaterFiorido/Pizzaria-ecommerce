@@ -18,23 +18,18 @@
 </head>
 <body class="body_config">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <h1><p class="text-center">Cabeçalho</p></h1>
-                <br>
-                <hr>
-            </div>
-        </div>
+
+        <?php include_once('../../index-div/cabecalho-div.php'); ?> <!-- CABEÇALHO -->
 
         <div class="row">
             <div class="col-12">
                 <div class="container">
                     <div class="row">
-                        <div class="col-6 p-0" style="height: 700px;"> <!-- Imagem do produto -->
+                        <div class="col-6 p-0" style="height: 800px;"> <!-- Imagem do produto -->
                             <div class="img_pos_dp">
                                 <img class="w-100" alt="imagem do produto" id="img-1">
                             </div>
-                            <div class="imgs-list_dp">
+                            <div class="imgs-list-first_dp">
                                 <label for="">IMAGEM</label>
                                 <img src="" alt="">
                             </div>
@@ -52,7 +47,7 @@
                             </div>
                         </div>
 
-                        <div class="col-6" style="height: 600px;"> <!-- Detalhes do produto -->
+                        <div class="col-6" style="height: 800px;"> <!-- Detalhes do produto -->
                             <div>
                                 <div>
                                     <h2 id="nome-produto">Nome Produto</h2>
@@ -75,9 +70,9 @@
                                 <div id="Opcoes_tipo" class="btt-opcoes_dp mt-5">
                                     <p class="titulo_dp">Opções/Tipo:</p> <!--  Opçoes de tamanhos ou tipos de sabores -->
                                     <ul>
-                                        <li><a href="">Broto</a></li>
-                                        <li><a href="">Média</a></li>
-                                        <li><a href="">Grande</a></li>
+                                        <li><a href="" id="aba_broto" class="btt-active_menu">Broto</a></li>
+                                        <li><a href="" id="aba_media">Média</a></li>
+                                        <li><a href="" id="aba_grande">Grande</a></li>
                                     </ul>
                                 </div>
                                 
@@ -104,11 +99,11 @@
                                     <p class="titulo_dp">Quantidade:</p>
                                     <div class="input-group quantidade-config_dp">
                                         <span class="input-group-text bttMais" onclick="var effect = document.getElementById('txtqtd'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                            <a href=""><i class="fa fa-plus" aria-hidden="true"></i></a>
                                         </span>
                                         <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="" value="1" readonly>  <!-- input quantidade produto -->
                                         <span class="input-group-text bttMenos" onclick="var effect = document.getElementById('txtqtd'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                            <a href=""><i class="fa fa-minus" aria-hidden="true"></i></a>
                                         </span>
                                     </div>
                                 </div>
@@ -132,9 +127,7 @@
                         </div>
                     </div>
 
-
-
-                    <!-- <div class="row">
+                    <div class="row">
                         <div class="col-12 p-0" style="height: auto;">
                             <div class="accordion accordion-flush" id="acordeao">
 
@@ -161,14 +154,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
+
+        <?php include_once('../../index-div/rodape-div.php'); ?> <!-- ****** Rodapé ****** -->
+
     </div>
     
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.1.js"></script>
     <script src="../../js/scriptDetalhesProduto.js"></script>
+    <script src="../../js/detalhesProduto-menu-config.js"></script>
 </body>
 </html>

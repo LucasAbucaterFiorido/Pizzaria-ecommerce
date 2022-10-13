@@ -45,12 +45,12 @@
                             <div class="col-sm-9">
                                 <label class="form-label" for="txtnome">Nome:</label>
                                 <br>
-                                <input class="form-control" type="text" id="txtnome" name="txtnome">   
+                                <input class="form-control" type="text" id="txtnome" name="txtnome" required>   
                             </div>
                             <div class="col-sm-3 testi">
                                 <label for="selectsts">Status:</label>
                                 <br>
-                                <select class="form-control mt-2" name="selectsts" id="selectsts">
+                                <select class="form-control mt-2" name="selectsts" id="selectsts" required>
                                     <option value="Ativo">Ativo</option>
                                     <option value="Desativo">Desativo</option>
                                 </select> 
@@ -61,12 +61,12 @@
                             <div class="col-sm-6">
                                 <label class="form-label" for="txtlogin">Login:</label>
                                 <br>
-                                <input class="form-control" type="text" id="txtlogin" name="txtlogin">   
+                                <input class="form-control" type="text" id="txtlogin" name="txtlogin" required>   
                             </div>
                             <div class="col-sm-6">
                                 <label class="form-label" for="txtsenha">Senha:</label>
                                 <br>
-                                <input class="form-control" type="text" id="txtsenha" name="txtsenha">   
+                                <input class="form-control" type="text" id="txtsenha" name="txtsenha" required>   
                             </div>
                         </div>
                         <br>
@@ -80,12 +80,12 @@
                             <div class="col-sm-4">
                                 <label for="selectcateg">Cargo:</label>
                                 <br>
-                                <select class='form-control mt-2' name='selectcargo' id='selectcargo'>
+                                <select class='form-control mt-2' name='selectcargo' id='selectcargo' required>
                                     <?php
                                         include_once('../../conexao.php');
                                         try
                                         {
-                                            $consultaC = $cone->query('SELECT * FROM Cargo');
+                                            $consultaC = $cone->query("SELECT * FROM Cargo WHERE status_cargo = 'Ativo'");
 
                                             if($consultaC->rowCount() >= 1)
                                             {
@@ -107,9 +107,10 @@
                         <br>
                         <div class="row">
                             <div class="col-sm-3 border pos-preimg_form text-center">
-                                <img class="preimg_form" src="" alt="" id="preImg">     
+                                <img class="preimg_form" src="" alt="" id="preImg">   
+                                <div class="output"></div>  
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <label class="form-label" for="base64Code">Base 64:</label>
                                 <br>
                                 <textarea class="form-control" id="base64Code" name="base64Code" cols="140" rows="6"></textarea>
@@ -145,7 +146,7 @@
             </div>
         </div>
     </div>
-
+    
     <script src="../../js/jquery-3.6.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://compressjs.herokuapp.com/compress.js"></script>
@@ -186,101 +187,134 @@
         }, false)
     </script>
 
-    <script>    //formulario
+
+
+
+
+    <script> //FORMULARIO
         $(function()
         {
-            // alert('teste');  //linha de teste
             var callback = $("#callback");
+            var action = "";
 
             function carregando(datas)
             {
                 callback.empty().html('Carregando..');
-            }
+            };
+
             function sucesso(datas)
             {
-                // alert('tesasad');    //linha de teste
                 callback.empty().html(datas); //se obtiver sucesso, ele mostrará os dados puxados
-                // callback.empty().html('<pre>'+datas+'</pre>');
+                //callback.empty().html('aksdjlkajskldjklasjlkdjaslkjdklasjklsda');
+                //$('#txtcod').val($("#cod_pesquisa").html()); //ja organiza a informação trazida para seu input
             }
+            
             function erro_enviar()
             {
                 callback.empty().html("Erro ao enviar");
             }
+
             function sucessoPesquisa(datas)
             {
-                // alert('aoba');   //linha de teste
-                callback.empty().html('<pre>'+datas+'</pre>');   //linha de teste
-                $("#txtdata").val($("#cadastro_pesquisa").html());
+                callback.empty().html('<pre>'+datas+'</pre>');
+
+                $("#txtcod").val($("#cod_pesquisa").html());
                 $("#txtnome").val($("#nome_pesquisa").html());
-                $("#selectsts").val($("#status_pesquisa").html());
-                $("#txtlogin").val($("#login_pesquisa").html());
-                $("#txtsenha").val($("#senha_pesquisa").html());
-                $("#arquivoimg").val($("#imagem_pesquisa").html());
-                $("#selectcargo").val($("#cargo_pesquisa").html());
+                $('#base64Code').val($('#imagem_pesquisa').html());
+                // $("#arquivoimg").val($("#imagem_pesquisa").html());
+                $('#selectsts').val($('#cadastro_pesquisa').html());
+                $("#txtlogin").val($("#descricao_pesquisa").html());
+                $("#txtsenha").val($("#quantidade_pesquisa").html());
+                $("#selectcargo").val($("#valor_pesquisa").html());
                 $("#txtobs").val($("#obs_pesquisa").html());
 
-                var preview = document.getElementById("preImg");
+                var preview = document.getElementById("preImg")
 
                 $("#base64Code").val($("#imagem_pesquisa").html());
                 preview.src = $("#imagem_pesquisa").html();
             }
+
             $.ajaxSetup({
-                type:           'POST',
-                beforeSend:     carregando,
-                error:          erro_enviar,
-                success:        sucesso
+                type:       'POST',
+                beforeSend: carregando,
+                error:      erro_enviar,
+                success:    sucesso
             });
 
             $("#btt_pesquisar").click(function()
             {
-                // alert('teste');  //linha de teste
-                action='pesquisar_usuario.php';
+                // alert($("#txtcod").val());
+                action="http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/pesquisar_produto.php";
 
                 $.ajax({
-                    url:            action,
+                    url:        action,
                     data:{
-                        txtcod:     $("#txtcod").val()
+                        txtcod: $("#txtnome").val()
                     },
-                    success:         sucessoPesquisa
-                });  
+                    success:    sucessoPesquisa
+                });
             });
-
             $("#btt_cadastrar").click(function()
             {
-                // alert('teste');  //linha de teste
-                action='cadastrar_usuario.php';
-
+                action = 'http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/cadastrar_produto.php';
+                // console.log("teste");
                 $.ajax({
-                    url:            action,
+                    url:        action,
                     data:{
-                        txtnome:     $("#txtnome").val(),
-                        selectsts:     $("#selectsts").val(),
-                        txtlogin:     $("#txtlogin").val(),
-                        txtsenha:     $("#txtsenha").val(),
-                        arquivoimg:     $("#arquivoimg").val(),
-                        selectcargo:     $("#selectcargo").val(),
-                        txtobs:     $("#txtobs").val()
+                        txtnome: $("#txtnome").val(),
+                        arquivoimg: $("#base64Code").val(),
+                        txtdesc: $("#txtdesc").val(),
+                        txtqtd: $("#txtqtd").val(),
+                        txtvalor: $("#txtvalor").val(),
+                        selectcateg: $("#selectcateg").val(),
+                        txtobs: $("#txtobs").val(),
+                        selectsts: $("#selectsts").val()
                     }
-                });  
+                });
             });
+
+
             $("#btt_alterar").click(function()
             {
-                // alert('teste');  //linha de teste
-                action='alterar_usuario.php';
+                action = 'http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/alterar_produto.php';
 
                 $.ajax({
-                    url:            action,
+                    URL:        action,
                     data:{
-                        txtcod: $("#txtcod").val(),
-                        txtnome:     $("#txtnome").val(),
-                        selectsts:     $("#selectsts").val(),
-                        txtlogin:     $("#txtlogin").val(),
-                        txtsenha:     $("#txtsenha").val(),
-                        arquivoimg:     $("#arquivoimg").val(),
-                        selectcargo:     $("#selectcargo").val(),
-                        txtobs:     $("#txtobs").val()
-                    }
-                });  
+                        txtcod: $("#txtcod").val()
+                    },
+                    success:    sucessoPesquisa
+                });
+            });
+            function limpar()
+            {
+                $("#txtcod").val(""),
+                $("#arquivoimg").val(""),
+                $("#txtnome").val(""),
+                $("#base64Code").val(""),
+                $("#txtdesc").val(""),
+                $("#txtqtd").val(""),
+                $("#txtvalor").val(""),
+                $("#selectcateg").val(""),
+                $("#txtobs").val(""),
+                $("#selectsts").val(""),
+                callback.html("");
+                
+            }
+
+            $("#btt_limpar").click(limpar);
+
+            $("#btt_excluir").click(function()
+            {
+                action = 'http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/deletar_produto.php';                
+                // console.log("alalal");
+
+                $.ajax({
+                    url:        action,
+                    data:{
+                        txtcod: $('#txtcod').val()
+                    }                
+                });
             });
         });
     </script>

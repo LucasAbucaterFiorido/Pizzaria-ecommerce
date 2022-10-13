@@ -39,7 +39,7 @@
                 }
                 else
                 {
-                    echo "Login ou senha inválido";
+                    echo "<script>alert('Login ou senha inválido')</script>";
                 }
             } 
             catch (PDOException $erro) 
@@ -69,11 +69,11 @@
                                 <div class="col-12">
                                     <div class="input-group mb-3 input_login">
                                         <span class="input-group-text"><i class="ti-user"></i></span>
-                                        <input type="text" class="form-control " placeholder="Login" id="txtlogin" name="txtlogin">
+                                        <input type="text" class="form-control " placeholder="Login" id="txtlogin" name="txtlogin" required>
                                     </div>
                                     <div class="input-group mb-3 input_login">
                                         <span class="input-group-text"><i class="ti-lock"></i></span>
-                                        <input type="password" class="form-control" placeholder="Senha" id="txtsenha" name="txtsenha">
+                                        <input type="password" class="form-control" placeholder="Senha" id="txtsenha" name="txtsenha" required>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary col-9 btt-entrar_login">Entrar</button>
@@ -91,7 +91,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 text-center mt-3">
-                                <a href="" class="btn btn-success btt-criaconta_login">Criar nova conta</a>
+                                <a href="frm_cadastrar.php" class="btn btn-success btt-criaconta_login">Criar nova conta</a>
                             </div>
                         </div>
                     </div>
@@ -141,9 +141,6 @@
         <!-- ****** FIM Rodapé ****** -->
     </div>
     <script src="../../js/bootstrap.bundle.js"></script>
-    <script src="../../js/jquery-3.6.0.js"></script>
-    <script>
-        
-    </script>
+    <script src="../../js/jquery-3.6.1.js"></script>
 </body>
 </html>

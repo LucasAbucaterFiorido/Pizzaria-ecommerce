@@ -12,78 +12,203 @@
     <title>Pizzaria</title>
 </head>
 <body class="body_config">
-    <?php
-        if($_POST)
-        {
-            //echo "<pre>"; print_r($_POST); echo "</pre>";
-            
-            $login = $_POST['txtlogin'];
-            $senha = $_POST['txtsenha'];
-
-            try 
-            {
-                $dadosU = $cone->query("SELECT * FROM Usuario WHERE login_usuario = '$login' and senha_usuario = $senha"); //valida se as o login está correto
-
-                if($dadosU->rowCount() == 1)
-                {
-                    session_start();
-
-                    foreach ($dadosU as $linhaU) 
-                    {
-                        $_SESSION['codUser_sessao'] = $linhaU['codigo_usuario']; //declarando codigo do usuario em variavel de sessao
-                        $_SESSION['nomeUser_sessao'] = $linhaU['nome_usuario']; //declarando nome do usuario em variavel de sessao
-                        $_SESSION['loginUser_sessao'] = $linhaU['login_usuario']; //declarando login do usuario em variavel de sessao
-
-                        header("location: ../../index.php");
-                    }
-                }
-                else
-                {
-                    echo "Login ou senha inválido";
-                }
-            } 
-            catch (PDOException $erro) 
-            {
-                echo "Erro: ".$erro->getMessage();
-            }
-        }
-    ?>
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Login</h1>
                 <div class="pos_login">
                     <div class="container">
                         <div class="row"> <!-- lôgo -->
-                            <div class="col-12 text-center">
+                            <div class="col-3" style="line-height: 150px; margin-left: 16px;">
                                 <img class="pos_logo" src="../../img/logo/pizzalogo.png" alt="">
+                            </div>
+                            <div class="col-1" style="margin-top: 25px;">
+                                <div class="divisao-vertical_login"></div>
+                            </div>
+                            <div class="col-3">
+                                <h1 style="line-height: 150px;">Cadastrar</h1>
                             </div>
                         </div>
                         <div class="row">
                             <form action="" method="POST" class="text-center">
-                                <div class="col-12">
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text"><i class="ti-user"></i></span>
-                                        <input type="text" class="form-control" placeholder="Login" id="txtlogin" name="txtlogin">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="input-group mb-3 input_login">
+                                                <input class="form-control" type="file" id="arquivoimg" name="arquivoimg" onchange="previewImg(this)" required>
+                                            </div>
+                                            <div class="input-group mb-3 input_login">
+                                                <span class="input-group-text"><i class="ti-user"></i></span>
+                                                <input type="text" class="form-control " placeholder="Nome" id="txtnome" name="txtnome" required>
+                                            </div>
+                                            <div class="input-group mb-3 input_login">
+                                                <span class="input-group-text"><i class="ti-user"></i></span>
+                                                <input type="email" class="form-control " placeholder="Email" id="txtemail" name="txtemail" required>
+                                            </div>
+                                            <div class="input-group mb-3 input_login">
+                                                <span class="input-group-text"><i class="ti-user"></i></span>
+                                                <input type="text" class="form-control " placeholder="Login" id="txtlogin" name="txtlogin" required>
+                                            </div>
+                                            <div class="input-group mb-3 input_login">
+                                                <span class="input-group-text"><i class="ti-lock"></i></span>
+                                                <input type="password" class="form-control" placeholder="Senha" id="txtsenha" name="txtsenha" required>
+                                            </div>
+                                            <input type="hidden" id="selectcargo" value="Comum">
+                                            <input type="hidden" id="selectsts" value="Ativo">
+                                            <input type="hidden" id="txtobs" value="conta criada por usuario">
+                                        </div>
                                     </div>
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text"><i class="ti-lock"></i></span>
-                                        <input type="text" class="form-control" placeholder="Senha" id="txtsenha" name="txtsenha">
+                                    <div class="row">
+                                        <div class="col-12">
+                                        <button type="submit" class="btn btn-primary col-10 btt-entrar_cadastrar" id="btt_cadastrar">Cadastrar</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="callback"></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-success col-3">Entrar</button>
                             </form>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-9" style="margin: auto;">
+                                <div class="divisao_rodape"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <!-- ****** Rodapé ****** -->
+        <a name ='contatoAncora'></a>
+        <div class="row text-white "> <!-- divisao_rodape -->
+            <!-- linha -->
+        </div>
 
+        <div class="row text-white"> <!-- pos_rodape -->
+            <div class="col-12">
+                <div class="container">
+
+                    <div class="row divisao_rodape">
+                        <!-- linha -->
+                    </div>
+
+                    <div class="row pos-redes_rodape text-center">
+                        <div class="col-4"><!-- coluna visual --></div>
+                        <div class="col-1">
+                            <a href=""><i class="icones_rodape fa fa-pinterest" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-1">
+                            <a href=""><i class="icones_rodape fa fa-facebook" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-1">
+                            <a href=""><i class="icones_rodape fa fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-1">
+                            <a href=""><i class="icones_rodape fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-4"><!-- coluna visual --></div>
+                        <div class="col-12">
+                            <div><!-- style="position: relative;" -->
+                                <h6 class="titulo_rodape" style="margin: 0px;">Copyright ©2022 Todos os direitos reservados | Produzido por Lucas Abucater Fiorido</h6> <!-- style="position: absolute; margin: 0;" -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ****** FIM Rodapé ****** -->
+    </div>
     <script src="../../js/bootstrap.bundle.js"></script>
-    <script src="../../js/jquery-3.6.0.js"></script>
+    <script src="../../js/jquery-3.6.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://compressjs.herokuapp.com/compress.js"></script>
     <script>
-        
+        const compress = new Compress()
+        const preview = document.getElementById('preImg')
+        const output = document.getElementById('output')
+        const txtbase64 = document.getElementById('base64Code')
+
+        const upload = document.getElementById('arquivoimg')
+
+        upload.addEventListener('change', (evt) => {
+        const files = [...evt.target.files]
+        compress.compress(files, {
+            size: 4, // the max size in MB, defaults to 2MB
+            quality: 0.75, // the quality of the image, max is 1,
+            maxWidth: 1920, // the max width of the output image, defaults to 1920px
+            maxHeight: 1920, // the max height of the output image, defaults to 1920px
+            resize: true // defaults to true, set false if you do not want to resize the image width and height
+        }).then((images) => {
+
+            const img = images[0]
+            // returns an array of compressed images
+            preview.src = `${img.prefix}${img.data}`
+            txtbase64.value = `${img.prefix}${img.data}`
+
+            const {
+            endSizeInMb,
+            initialSizeInMb,
+            iterations,
+            sizeReducedInPercent,
+            elapsedTimeInSeconds,
+            alt
+            } = img
+
+            output.innerHTML = `<b>Start Size:</b> ${initialSizeInMb} MB <br/><b>End Size:</b> ${endSizeInMb} MB <br/><b>Compression Cycles:</b> ${iterations} <br/><b>Size Reduced:</b> ${sizeReducedInPercent} % <br/><b>File Name:</b> ${alt}`
+        })
+        }, false)
+    </script>
+
+    <script>    //formulario
+        $(function()
+        {
+            // alert('teste');  //linha de teste
+            var callback = $("#callback");
+
+            function carregando(datas)
+            {
+                callback.empty().html('Carregando..');
+            }
+            function sucesso(datas)
+            {
+                // alert('tesasad');    //linha de teste
+                callback.empty().html(datas); //se obtiver sucesso, ele mostrará os dados puxados
+                $(location).attr('href', 'http://localhost/n7/php/github/Pizzaria-ecommerce/index.php');
+                // callback.empty().html('<pre>'+datas+'</pre>');
+            }
+            function erro_enviar()
+            {
+                callback.empty().html("Erro ao enviar");
+            }
+            $.ajaxSetup({
+                type:           'POST',
+                beforeSend:     carregando,
+                error:          erro_enviar,
+                success:        sucesso
+            });
+
+            $("#btt_cadastrar").click(function()
+            {
+                // alert('teste');  //linha de teste
+                action='cadastrar_usuario-login.php';
+
+                $.ajax({
+                    url:            action,
+                    data:{
+                        txtnome:     $("#txtnome").val(),
+                        selectsts:     $("#selectsts").val(),
+                        txtlogin:     $("#txtlogin").val(),
+                        txtsenha:     $("#txtsenha").val(),
+                        arquivoimg:     $("#arquivoimg").val(),
+                        selectcargo:     $("#selectcargo").val(),
+                        txtobs:     $("#txtobs").val()
+                    }
+                });  
+            });
+        });
     </script>
 </body>
 </html>

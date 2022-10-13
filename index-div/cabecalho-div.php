@@ -19,7 +19,7 @@
                     <div class="col-1"> <!-- style="background-color: salmon;"-->
                         <!-- logo -->
                         <a href="#" id="top_logotipo">
-                            <img class="pos_logo" src="img/logo/pizzalogo.png" alt="Logotipo Ouroborus">
+                            <img class="pos_logo" src="http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/img/logo/pizzalogo.png">
                         </a>
                     </div>
 
@@ -133,6 +133,11 @@
                                     <li class="nav-item">
                                         <a class="nav-link dropdown-item" href="http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Paginas/Usuario/perfil.php">
                                             <div class="text-center py-2 icone_logoff"><i class="ti-id-badge"></i> Perfil</div>     <!--   ti-shift-right  //  ti-power-off   -->
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-item" href="http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/adm/controlPanel.php">
+                                            <div class="text-center py-2 icone_logoff"><i class="ti-panel"></i> Area Admin</div>     <!--   ti-star  //  ti-panel   -->
                                         </a>
                                     </li>
                                     <li class="nav-item"><hr class="dropdown-divider"></li>

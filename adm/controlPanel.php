@@ -27,7 +27,7 @@
                                 <li class="nav-item mt-4 mb-3">
                                     <h5>
                                         <div class="divisao_adm"></div>
-                                        Formularios
+                                        <i class="ti-clipboard"></i> Formularios
                                         <div class="divisao_adm"></div>
                                     </h5>
                                 </li>
@@ -46,7 +46,7 @@
                                 <li class="nav-item mt-4 mb-3">
                                     <h5>
                                         <div class="divisao_adm"></div>
-                                        Consultas
+                                         <i class="ti-server"></i> Consultas
                                         <div class="divisao_adm"></div>
                                     </h5>
                                 </li>

@@ -255,7 +255,7 @@
                 $.ajax({
                     url:        action,
                     data:{
-                        txtcod: $("#txtnome").val()
+                        txtcod: $("#txtcod").html()
                     },
                     success:    sucessoPesquisa
                 });

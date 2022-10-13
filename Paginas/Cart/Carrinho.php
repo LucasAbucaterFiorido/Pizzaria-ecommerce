@@ -17,13 +17,9 @@
 </head>
 <body class="body_config">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <h1><p class="text-center">Cabeçalho</p></h1>
-                <br>
-                <hr>
-            </div>
-        </div>
+
+        <?php include_once('../../index-div/cabecalho-div.php'); ?> <!-- CABEÇALHO -->
+        
         <div class="row">
             <div class="col-12">
                 <div class="row">
@@ -77,9 +73,10 @@
                                                                 <td>
                                                                     <div class='input-group'>
                                                                         <span class='input-group-text btt-qtd_cart' id='bttMais'><a href='#' class='btt-MaisMenos_dp'><i class='fa fa-plus'></i></a></span>
-                                                                        <input type='number' class='input-qtd_cart' id='txtqtd' names='txtqtd' step='1' min='1' max=''>
+                                                                        <input type='number' class='input-qtd_cart' id='txtqtd' names='txtqtd' step='1' min='1' max='' value='".$linhaI['qtdProd_item']."'>
                                                                         <span class='input-group-text btt-qtd_cart' id='bttMenos'><a href='#' class='btt-MaisMenos_dp'><i class='fa fa-minus'></i></a></span>
                                                                     </div>
+
                                                                 </td>   
                                                                 <td>" .$linhaI['qtdProd_item'] ."</td>   
                                                             </tr>";
@@ -95,8 +92,8 @@
                                             ?>
                                         </tbody>
                                     </table>
-                                    <span id="txtvalorTotal"><?php $valorTotal;?></span>
-                                    <span id="txtqtdTotal"><?php $qtdTotal;?></span>
+                                    <span id='txtvalorTotal'><?php $valorTotal;?></span>
+                                    <span id='txtqtdTotal'><?php $qtdTotal;?></span>
                                     <h3>
                                         <p>Total: R$<?= $valorTotal;?></p>
                                         <p>Quantidade de Produtos: <?= $qtdTotal;?></p>
@@ -117,9 +114,10 @@
                 </div>
             </div>
         </div>
-
     </div>
     <script src="../../js/bootstrap.bundle.js"></script>
+    <script src="../../js/jquery-3.6.1.js"></script>
+
 </body>
 </html>
 

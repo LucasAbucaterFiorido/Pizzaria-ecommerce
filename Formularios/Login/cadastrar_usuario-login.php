@@ -1,7 +1,6 @@
 <?php
     include_once('../../conexao.php');
 
-    echo "<pre>";print_r($_POST);echo "</pre>";
     if($_POST)
     {
         $nomeU = $_POST['txtnome'];

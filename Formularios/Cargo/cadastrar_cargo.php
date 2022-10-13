@@ -27,9 +27,9 @@
             $cadastrarCarg->execute(array(
                 ':local_cargo' => $localCarg,
                 ':nome_cargo' => $nomeCarg,
-                ':descricao_cargo' => $statusCarg,
-                ':obs_cargo' => $descricaoCarg,
-                ':status_cargo' => $obsCarg
+                ':descricao_cargo' => $descricaoCarg,
+                ':obs_cargo' => $obsCarg,
+                ':status_cargo' => $statusCarg
             ));
             if($cadastrarCarg->rowCount() == 1)
             {

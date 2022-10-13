@@ -7,7 +7,9 @@
 $(window).on("load", function()
 {
     // alert('teste');  //linha de teste
-
+    $("#aba_usuario").addClass("btt-active_menu ");
+    $("#telas").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Usuario/frm_Usuario.php");
+    
     $("#aba_usuario").click(function()
     {
         // alert('teste');  //linha de teste
@@ -18,6 +20,12 @@ $(window).on("load", function()
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").removeClass("btt-active_menu ");
         $("#aba_cargo").removeClass("btt-active_menu ");
+
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
 
     $("#aba_produto").click(function()
@@ -29,17 +37,12 @@ $(window).on("load", function()
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").removeClass("btt-active_menu ");
         $("#aba_cargo").removeClass("btt-active_menu ");
-    });
 
-    $("#aba_fornecedor").click(function()
-    {
-        $("#telas").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusCartoes.php");
-        
-        $("#aba_usuario").removeClass("btt-active_menu ");
-        $("#aba_produto").removeClass("btt-active_menu ");
-        $("#aba_fornecedor").removeClass("btt-active_menu ");
-        $("#aba_categoria").addClass("btt-active_menu ");
-        $("#aba_cargo").removeClass("btt-active_menu ");
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
 
     $("#aba_favoritos").click(function()
@@ -51,6 +54,12 @@ $(window).on("load", function()
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").addClass("btt-active_menu ");
         $("#aba_cargo").removeClass("btt-active_menu ");
+
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
 
     $("#aba_categoria").click(function()
@@ -62,6 +71,12 @@ $(window).on("load", function()
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").addClass("btt-active_menu ");
         $("#aba_cargo").removeClass("btt-active_menu ");
+
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
 
     $("#aba_cargo").click(function()
@@ -73,6 +88,12 @@ $(window).on("load", function()
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").removeClass("btt-active_menu ");
         $("#aba_cargo").addClass("btt-active_menu ");
+
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
 
 
@@ -84,7 +105,13 @@ $(window).on("load", function()
         $("#aba_produto").removeClass("btt-active_menu ");
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").removeClass("btt-active_menu ");
-        $("#aba_cargo").addClass("btt-active_menu ");
+        $("#aba_cargo").removeClass("btt-active_menu ");
+
+        $("#aba_usuarios").addClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
     $("#aba_pedidos").click(function()
     {
@@ -94,7 +121,13 @@ $(window).on("load", function()
         $("#aba_produto").removeClass("btt-active_menu ");
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").removeClass("btt-active_menu ");
-        $("#aba_cargo").addClass("btt-active_menu ");
+        $("#aba_cargo").removeClass("btt-active_menu ");
+
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").addClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
     $("#aba_produtos").click(function()
     {
@@ -104,7 +137,13 @@ $(window).on("load", function()
         $("#aba_produto").removeClass("btt-active_menu ");
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").removeClass("btt-active_menu ");
-        $("#aba_cargo").addClass("btt-active_menu ");
+        $("#aba_cargo").removeClass("btt-active_menu ");
+
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").addClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
     $("#aba_categorias").click(function()
     {
@@ -114,7 +153,13 @@ $(window).on("load", function()
         $("#aba_produto").removeClass("btt-active_menu ");
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").removeClass("btt-active_menu ");
-        $("#aba_cargo").addClass("btt-active_menu ");
+        $("#aba_cargo").removeClass("btt-active_menu ");
+
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").addClass("btt-active_menu ");
+        $("#aba_cargos").removeClass("btt-active_menu ");
     });
     $("#aba_cargos").click(function()
     {
@@ -124,7 +169,13 @@ $(window).on("load", function()
         $("#aba_produto").removeClass("btt-active_menu ");
         $("#aba_fornecedor").removeClass("btt-active_menu ");
         $("#aba_categoria").removeClass("btt-active_menu ");
-        $("#aba_cargo").addClass("btt-active_menu ");
+        $("#aba_cargo").removeClass("btt-active_menu ");
+
+        $("#aba_usuarios").removeClass("btt-active_menu ");
+        $("#aba_pedidos").removeClass("btt-active_menu ");
+        $("#aba_produtos").removeClass("btt-active_menu ");
+        $("#aba_categorias").removeClass("btt-active_menu ");
+        $("#aba_cargos").addClass("btt-active_menu ");
     });
 
 });
