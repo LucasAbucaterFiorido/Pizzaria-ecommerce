@@ -48,15 +48,20 @@
             }
         }
     ?>
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Login</h1>
                 <div class="pos_login">
                     <div class="container">
                         <div class="row"> <!-- lôgo -->
-                            <div class="col-12 text-center">
+                            <div class="col-3" style="line-height: 150px; margin-left: 16px;">
                                 <img class="pos_logo" src="../../img/logo/pizzalogo.png" alt="">
+                            </div>
+                            <div class="col-1" style="margin-top: 25px;">
+                                <div class="divisao-vertical_login"></div>
+                            </div>
+                            <div class="col-3">
+                                <h1 style="line-height: 150px;">Login</h1>
                             </div>
                         </div>
                         <div class="row">
@@ -68,7 +73,7 @@
                                     </div>
                                     <div class="input-group mb-3 input_login">
                                         <span class="input-group-text"><i class="ti-lock"></i></span>
-                                        <input type="text" class="form-control" placeholder="Senha" id="txtsenha" name="txtsenha">
+                                        <input type="password" class="form-control" placeholder="Senha" id="txtsenha" name="txtsenha">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary col-9 btt-entrar_login">Entrar</button>
@@ -95,7 +100,45 @@
         </div>
     </div>
     <div class="container-fluid">
-        <?php include_once('../../index-div/rodape-div.php'); ?> <!-- ****** Rodapé ****** -->
+        <!-- ****** Rodapé ****** -->
+        <a name ='contatoAncora'></a>
+        <div class="row text-white "> <!-- divisao_rodape -->
+            <!-- linha -->
+        </div>
+
+        <div class="row text-white"> <!-- pos_rodape -->
+            <div class="col-12">
+                <div class="container">
+
+                    <div class="row divisao_rodape">
+                        <!-- linha -->
+                    </div>
+
+                    <div class="row pos-redes_rodape text-center">
+                        <div class="col-4"><!-- coluna visual --></div>
+                        <div class="col-1">
+                            <a href=""><i class="icones_rodape fa fa-pinterest" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-1">
+                            <a href=""><i class="icones_rodape fa fa-facebook" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-1">
+                            <a href=""><i class="icones_rodape fa fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-1">
+                            <a href=""><i class="icones_rodape fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-4"><!-- coluna visual --></div>
+                        <div class="col-12">
+                            <div><!-- style="position: relative;" -->
+                                <h6 class="titulo_rodape" style="margin: 0px;">Copyright ©2022 Todos os direitos reservados | Produzido por Lucas Abucater Fiorido</h6> <!-- style="position: absolute; margin: 0;" -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ****** FIM Rodapé ****** -->
     </div>
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/jquery-3.6.0.js"></script>

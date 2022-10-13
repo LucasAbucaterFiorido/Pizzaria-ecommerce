@@ -73,7 +73,7 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>" .$linhaP['nome_produto'] ."</td>
-                                                                <td>" .$linhaP['valor_produto'] ."</td>  
+                                                                <td>R$ " .$linhaP['valor_produto'] ."</td>  
                                                                 <td>
                                                                     <div class='input-group'>
                                                                         <span class='input-group-text btt-qtd_cart' id='bttMais'><a href='#' class='btt-MaisMenos_dp'><i class='fa fa-plus'></i></a></span>

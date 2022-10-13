@@ -249,20 +249,20 @@
 
             $("#btt_pesquisar").click(function()
             {
-                action = 'pesquisar_produto.php';
-                // console.log('teste');
+                // alert($("#txtcod").val());
+                action="http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/pesquisar_produto.php";
+
                 $.ajax({
                     url:        action,
                     data:{
-                        txtcod: $("#txtcod").val()
+                        txtcod: $("#txtnome").val()
                     },
                     success:    sucessoPesquisa
                 });
             });
-
             $("#btt_cadastrar").click(function()
             {
-                action = 'cadastrar_produto.php';
+                action = 'http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/cadastrar_produto.php';
                 // console.log("teste");
                 $.ajax({
                     url:        action,
@@ -282,7 +282,7 @@
 
             $("#btt_alterar").click(function()
             {
-                action = 'alterar_produto.php';
+                action = 'http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/alterar_produto.php';
 
                 $.ajax({
                     URL:        action,
@@ -292,15 +292,27 @@
                     success:    sucessoPesquisa
                 });
             });
-
-            $("#btt_limpar").click(function()
+            function limpar()
             {
+                $("#txtcod").val(""),
+                $("#arquivoimg").val(""),
+                $("#txtnome").val(""),
+                $("#base64Code").val(""),
+                $("#txtdesc").val(""),
+                $("#txtqtd").val(""),
+                $("#txtvalor").val(""),
+                $("#selectcateg").val(""),
+                $("#txtobs").val(""),
+                $("#selectsts").val(""),
+                callback.html("");
                 
-            });
+            }
+
+            $("#btt_limpar").click(limpar);
 
             $("#btt_excluir").click(function()
             {
-                action = 'deletar_produto.php';                
+                action = 'http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/deletar_produto.php';                
                 // console.log("alalal");
 
                 $.ajax({

@@ -127,22 +127,23 @@ h1,h2,h3,h4,h5,h6
 /* classes de Login */
 .pos_login
 {
-    background-color: #585656;
+    background-color: #2c2c2c;
     height: 500px;
     width: 500px;
     margin: auto;
     margin-top: 80px;
 }
-.input_login, input
+.input_login
 {
     margin: auto;
     height: 45px;
-    width: 350px;
+    width: 355px;
 }
 .input_login span
 {
     height: 45px;
     width: 40px;
+    background-color: #b3b3b3;
 }
 .btt-entrar_login
 {
@@ -153,6 +154,12 @@ h1,h2,h3,h4,h5,h6
 {
     font-size: 21px;    
     height: 45px;
+}
+.divisao-vertical_login
+{
+    background-color: #fff;
+    width: 2px;
+    height: 100px;
 }
 
 
@@ -410,6 +417,10 @@ h1,h2,h3,h4,h5,h6
 {
     background-color: #383333;
 } 
+.img_mid
+{
+    height: 100px;
+}
 
 
 
@@ -519,17 +530,16 @@ h1,h2,h3,h4,h5,h6
     background-color: #e00040;
     color: #fff;
 }
-
-.btt-opcoes_dp
-{
-    font-size: 14px;
-    text-transform: uppercase;
-}
 .titulo_dp
 {
     color: #bdbdbd;
     font-size: 15px;
     font-weight: 600;
+    text-transform: uppercase;
+}
+.btt-opcoes_dp
+{
+    font-size: 14px;
     text-transform: uppercase;
 }
 .btt-opcoes_dp ul
@@ -677,7 +687,83 @@ h1,h2,h3,h4,h5,h6
 }
 
 
-/* classes dos Formulario produto*/
+/* classes do Formulario produto*/
+
+
+
+
+
+/* classes da area administrativa*/
+.divisao_adm
+{
+    background-color: #b61241;
+    width: 150px;
+    height: 2px;
+}
+.img-table_adm
+{
+    background-color: blue;
+    max-width: 150px;
+    max-height: auto;
+}
+
+
+
+
+
+
+
+/* classes da area administrativa do usuario*/
+.btts_perfil
+{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.btts_perfil li
+{
+    line-height: 35px;
+    margin-bottom: 5px;
+}
+.btt_menu
+{
+    color: inherit;
+    color: #d6d3d3;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: inherit;
+    color: #d6d3d3;
+    border: 2px solid #b3b3b3;
+}
+.btt_menu:hover, .btt_menu:focus
+{
+    background-color: #ff084e;
+    color: rgb(26, 26, 26);
+    border-color: #ff084e;
+    transition: 500ms;
+    border-radius: 2px;
+}
+.btt-active_menu
+{
+    background-color: #ff084e;
+    color: rgb(26, 26, 26);
+    border-color: #ff084e;
+    border-radius: 2px;
+}
+.pos-menu_perfil
+{
+    /* background-color: darkred; */
+    margin-left: 2px; 
+}
+.pos-tela_perfil
+{
+    /* background-color: darkred; */
+    margin-left: 50px;
+}
+.icones
+{
+    color: rgb(16, 16, 16);
+}
 
 
 

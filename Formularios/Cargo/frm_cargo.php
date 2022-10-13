@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/bootstrap.css">
-    <link rel="stylesheet" href="../../css/estilo.css">
-    <link rel="icon" type="img/png" href="../../img/logo/pizzalogo.png">
-    <title>Categoria</title>
-</head>
 <body class="body_config">
     <div class="container-fluid">
         <div class="row">
@@ -16,7 +5,7 @@
                 <div class="container form">
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <h1 class="card-title"><u>Formulário Categoria</u></h1>
+                            <h1 class="card-title"><u>Formulário Cargo</u></h1>
                             <hr>
                             <br>
                         </div>
@@ -35,9 +24,9 @@
                             <div class="col-sm-1">
                             </div>
                             <div class="col-sm-5">
-                                <label class="form-label" for="txtlocal">Local de Armazenagem:</label>
+                                <label class="form-label" for="txtlocal">Local de Atuação:</label>
                                 <br>
-                                <input class="form-control" type="text" id="txtlocal" name="txtlocal" required>
+                                <input class="form-control" type="text" id="txtlocal" name="txtlocal">
                             </div>
                         </div>
                         <br>
@@ -45,7 +34,7 @@
                             <div class="col-sm-9">
                                 <label class="form-label" for="txtnome">Nome:</label>
                                 <br>
-                                <input class="form-control" type="text" id="txtnome" name="txtnome" required>   
+                                <input class="form-control" type="text" id="txtnome" name="txtnome">   
                             </div>
                             <div class="col-sm-3 testi">
                                 <label for="selectsts">Status:</label>
@@ -61,7 +50,7 @@
                             <div class="col-sm-12">
                                 <label class="form-label" for="txtdesc">Descrição:</label>
                                 <br>
-                                <textarea class="form-control" id="txtdesc" name="txtdesc" cols="20" rows="6" required></textarea>
+                                <textarea class="form-control" id="txtdesc" name="txtdesc" cols="20" rows="6"></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -110,6 +99,7 @@
                 // alert('tesasad');    //linha de teste
                 callback.empty().html(datas); //se obtiver sucesso, ele mostrará os dados puxados
                 // callback.empty().html('<pre>'+datas+'</pre>');
+                // $("#txtcod").html($("#CodCadastrado"));
             }
             function erro_enviar()
             {
@@ -144,10 +134,11 @@
 
             $("#btt_pesquisar").click(function()
             {
-                // alert('teste');  //linha de teste 
+                // alert('teste');  //linha de teste
+
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Categoria/pesquisar_categoria.php';
+                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Cargo/pesquisar_cargo.php';
 
                     $.ajax({
                         url:            action,
@@ -155,7 +146,7 @@
                             txtcod:     $("#txtcod").val()
                         },
                         success:        sucessoPesquisa
-                    });  
+                    });   
                 }
                 else
                 {
@@ -166,8 +157,7 @@
             $("#btt_cadastrar").click(function()
             {
                 // alert('teste');  //linha de teste
-
-                action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Categoria/cadastrar_categoria.php';
+                action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Cargo/cadastrar_cargo.php';
 
                 $.ajax({
                     url:            action,
@@ -179,7 +169,6 @@
                         txtobs:         $("#txtobs").val()
                     }
                 });  
-                
             });
             $("#btt_alterar").click(function()
             {
@@ -187,7 +176,7 @@
 
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Categoria/alterar_categoria.php';
+                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Cargo/alterar_cargo.php';
 
                     $.ajax({
                         url:            action,
@@ -209,9 +198,10 @@
             $("#btt_excluir").click(function()
             {
                 // alert('teste');  //linha de teste
+
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Categoria/deletar_categoria.php';
+                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Cargo/deletar_cargo.php';
 
                     $.ajax({
                         url:            action,

@@ -5,11 +5,11 @@
     {
         echo "<pre>";print_r($_POST);echo "</pre>";
         $codCategoria = $_POST['txtcod'];
-        $localC = $_POST['txtlocal'];
-        $nomeC = $_POST['txtnome'];
-        $statusC = $_POST['selectsts'];
-        $descricaoC = $_POST['txtdesc'];
-        $obsC = $_POST['txtobs'];
+        $localCat = $_POST['txtlocal'];
+        $nomeCat = $_POST['txtnome'];
+        $statusCat = $_POST['selectsts'];
+        $descricaoCat = $_POST['txtdesc'];
+        $obsCat = $_POST['txtobs'];
 
         try 
         {
@@ -22,11 +22,11 @@
                 WHERE codigo_categoria = $codCategoria
             ");
             $alterarC->execute(array(
-                ':localArmaz_categoria' => $localC,
-                ':nome_categoria' => $nomeC,
-                ':descricao_categoria' => $descricaoC,
-                ':obs_categoria' => $obsC,
-                ':status_categoria' => $statusC
+                ':localArmaz_categoria' => $localCat,
+                ':nome_categoria' => $nomeCat,
+                ':descricao_categoria' => $descricaoCat,
+                ':obs_categoria' => $obsCat,
+                ':status_categoria' => $statusCat
             ));
             if($alterarC->rowCount() == 1)
             {

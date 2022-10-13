@@ -1,3 +1,5 @@
+
+
 function sucessoDetalhes(datas)
 {
     $("#resposta").empty().html(datas);
@@ -22,15 +24,27 @@ $(function()
         success:        sucessoDetalhes  
     });
 
+{/*             <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </span>
+                <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
+                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>*/}
 
 
     //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
     //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
     //configuração botoes mais e menos
     $("#bttMais").click(function(){
-        teste = $("#txtqtd").val();
-        teste ++;
-        $("#txtqtd").val(teste);
+        quantidade = $("#txtqtd").val();
+        quantidade ++;
+        $("#txtqtd").val(quantidade);
+    });
+    $("#bttMenos").click(function(){
+        quantidade = $("#txtqtd").val();
+        quantidade --;
+        $("#txtqtd").val(quantidade);
     });
     
     action = '../Cart/delete_carrinho.php'

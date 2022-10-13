@@ -99,8 +99,8 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="login-list">
                                     <li class="nav-item">
-                                        <a class="nav-link dropdown-item" href="http://localhost/projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Login/log-off.php">
-                                            <div class="text-center py-2 icone_logoff"><i class=" ti-power-off"></i> fodase </div>     <!--   ti-shift-right  //  ti-power-off   -->
+                                        <a class="nav-link dropdown-item" href="http://localhost/projetos/php/GitHub/Pizzaria-Ecommerce/Paginas/Cart/carrinho.php">
+                                            <div class="text-center py-2 icone_logoff"><i class="ti-shopping-cart"></i> Carrinho </div>     <!--   ti-shift-right  //  ti-power-off   -->
                                         </a>
                                     </li>
                                     <li class="nav-item"><hr class="dropdown-divider"></li>
@@ -131,13 +131,13 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="login-list">
                                     <li class="nav-item">
-                                        <a class="nav-link dropdown-item" href="http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Paginas/Usuario/perfil.php">
-                                            <div class="text-center py-2 icone_logoff"><i class="ti-user"></i> Perfil</div>     <!--   ti-shift-right  //  ti-power-off   -->
+                                        <a class="nav-link dropdown-item" href="http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Paginas/Usuario/perfil.php">
+                                            <div class="text-center py-2 icone_logoff"><i class="ti-id-badge"></i> Perfil</div>     <!--   ti-shift-right  //  ti-power-off   -->
                                         </a>
                                     </li>
                                     <li class="nav-item"><hr class="dropdown-divider"></li>
                                     <li class="nav-item">
-                                        <a class="nav-link dropdown-item" href="http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Formularios/Login/log-off.php">
+                                        <a class="nav-link dropdown-item" href="http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Formularios/Login/log-off.php">
                                             <div class="text-center py-2 icone_logoff"><i class=" ti-power-off"></i> Desconectar</div>     <!--   ti-shift-right  //  ti-power-off   -->
                                         </a>
                                     </li>

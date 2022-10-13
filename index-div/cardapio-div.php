@@ -17,81 +17,83 @@
                     <div class="col-1"><!-- margem visual --></div>
                     <div class="col-10">
                         <nav class="navbar navbar-expand justify-content-center titulo-cardapio_mid">
-                            <ul class="navbar-nav">
-                                <a name="cardapioAncora"></a>
-                                <?php
-                                    try 
-                                    {
-                                        $data = $cone->query('SELECT * FROM Categoria');
-                                        
-                                        foreach($data as $linha)
+                                <ul class="navbar-nav">
+                                    <a name="cardapioAncora"></a> 
+                                    <?php
+                                        try 
                                         {
-                                            echo "
-                                                <li class='nav-item'>
-                                                    <a class='nav-link' href='#' id='filtro_tudo'>".$linha['nome_categoria']."</a>
-                                                </li>";
+                                            $data = $cone->query("SELECT * FROM Categoria WHERE obs_categoria = 'cardapio' AND status_categoria = 'Ativo'");
+                                            
+                                            foreach($data as $linha)
+                                            {
+                                                echo "
+                                                    <li class='nav-item'>
+                                                        <form action='' method='post' onsubmit='return false;'>
+                                                            <a class='nav-link' id='btt-filtro'>".$linha['nome_categoria']."</a>
+                                                            <input type='hidden' id='cod-filtro' value='".$linha['codigo_categoria']."'>
+                                                        </form>
+                                                    </li>";
+                                            }
                                         }
-                                    }
-                                    catch ( PDOException $erro) 
-                                    {
-                                        echo 'Erro: ' .$erro->getMessage();
-                                    }
-                                ?>
-                            </ul>
+                                        catch ( PDOException $erro) 
+                                        {
+                                            echo 'Erro: ' .$erro->getMessage();
+                                        }
+                                    ?>
+                                </ul>
                         </nav>
                     </div> 
                     <div class="col-1"><!-- margem visual --></div>  
                 </div>
-
-                <div class="row mt-5">
-                    <div class="col-1"><!-- Coluna visual --></div>
-                    <div class="col-10">
-                        <div class="container">
-                            <div class="row row-cols-3">
-                                <?php
-                                    try 
-                                    {
-                                        // echo "<pre>"; print_r($_SESSION);echo "</pre>";
-                                        // echo "<pre>"; print_r($_POST);echo "</pre>";
-
-                                        $dadosP = $cone->query("SELECT * FROM Produto WHERE status_produto = 'Ativo' ");
-
-                                        foreach($dadosP as $linha)
-                                        {
-                                            echo "
-                                                <div class='col mt-5 mb-5'>
-                                                    <div class='card-group'>
-                                                        <div class='card catalogo_mid'>
-                                                            <a href='Paginas/Produtos/detalhesProdutosPage.php?codigoProduto=".$linha['codigo_produto']."'>
-                                                                <img src='".$linha['imagem_produto']."' class='card-img-top' alt='...'>
-                                                            </a>
-                                                            <div class='card-body'>
-                                                                <a href='Paginas/Produtos/detalhesProdutosPage.php?codigoProduto=".$linha['codigo_produto']."'>
-                                                                    <h5 class='card-title'>".$linha['nome_produto']."</h5>
-                                                                </a>
-                                                                <a href='Paginas/Produtos/detalhesProdutosPage.php?codigoProduto=".$linha['codigo_produto']."'>
-                                                                    <p class='card-text'>R$:".$linha['valor_produto']."</p>
-                                                                </a>
-                                                                <br>
-                                                                <a href='Paginas/Produtos/detalhesProdutosPage.php?codigoProduto=".$linha['codigo_produto']."' class='btn btn-danger'><i class='ti-bag'></i> Comprar</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ";
-                                        }
-                                    }
-                                    catch ( PDOException $erro) 
-                                    {
-                                        echo 'Erro: ' .$erro->getMessage();
-                                    }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-1"><!-- Coluna visual --></div>
+                <div id="callback"></div>
+                <div class="row mt-5" id="teste">
+                    
                 </div>
             </div>
         </div>
     </div>
 <!-- ****** FIM Cardápio Pizzas ****** -->
+<script>
+    $(function()
+    {
+        // alert('teste');  //linha de teste
+        var callback = $("#callback");
+
+        $("#teste").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/index-div/catalogo.php");
+
+        function carregando(datas)
+        {
+            callback.empty().html('Carregando..');
+        }
+        function sucesso(datas)
+        {
+            // alert('tesasad');    //linha de teste
+            callback.empty().html(datas); //se obtiver sucesso, ele mostrará os dados puxados
+            // callback.empty().html('<pre>'+datas+'</pre>');
+        }
+        function erro_enviar()
+        {
+            callback.empty().html("Erro ao enviar");
+        }
+        $.ajaxSetup({
+            type:           'POST',
+            beforeSend:     carregando,
+            error:          erro_enviar,
+            success:        sucesso
+        });
+
+        $("#btt-filtro").click(function()
+        {
+            // alert('teste');  //linha de teste
+            $("#teste").html("");
+            action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/index-div/catalogo.php';
+
+            $.ajax({
+                url:            action,
+                data:{
+                    txtcod:     $("#cod-filtro").val()
+                }
+            });  
+        });
+    });
+</script>

@@ -1,10 +1,13 @@
 <?php
     include_once ("../../conexao.php");
     
-    $cod = $_POST['txtcod'];
+    
+    print_r($_POST);
+    $codCategoria = $_POST['txtcod'];
+
     try
     {
-        $consultaP = $cone->query("SELECT * FROM Produto WHERE codigo_produto = $cod");  //PDO::FETCH_ASSOC
+        $consultaP = $cone->query("SELECT * FROM Produto WHERE codigo_produto = $codCategoria");  //PDO::FETCH_ASSOC
 
         if($consultaP->rowCount() == 1)
         {

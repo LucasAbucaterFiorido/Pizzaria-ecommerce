@@ -4,18 +4,18 @@
     if($_POST)
     {
         // echo "<pre>";print_r($_POST);echo "</pre>";
-        $codCategoria = $_POST['txtcod'];
+        $codCargo = $_POST['txtcod'];
 
         try 
         {
-            $alterarCat = $cone->prepare("UPDATE Categoria SET
-                status_categoria = :status_categoria
-                WHERE codigo_categoria = $codCategoria
+            $alterarCarg = $cone->prepare("UPDATE Cargo SET
+                status_cargo = :status_cargo
+                WHERE codigo_cargo = $codCargo
             ");
-            $alterarCat->execute(array(
-                ':status_categoria' => "Desativo"
+            $alterarCarg->execute(array(
+                ':status_cargo' => "Desativo"
             ));
-            if($alterarCat->rowCount() == 1)
+            if($alterarCarg->rowCount() == 1)
             {
                 echo "<p>Deletado com sucesso!!</p>";
             }

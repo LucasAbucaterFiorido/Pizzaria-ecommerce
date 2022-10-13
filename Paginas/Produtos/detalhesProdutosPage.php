@@ -81,25 +81,35 @@
                                     </ul>
                                 </div>
                                 
-
-                                <!-- <span class="qty-minus" 
-                                onclick="var effect = document.getElementById('qty'); 
-                                var qty = effect.value; 
-                                if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;">
-                                <i class="fa fa-minus" aria-hidden="true"></i></span>
+ 
+                                <!--<span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </span>
                                 <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
-                                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span> -->
 
-                                    
+                                <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </span> -->
+                                
+                                
+                                <!-- <div class="input-group quantidade-config_dp">
+                                    <span class="input-group-text bttMais" id="bttMais"><a id="bttMais" href="" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
+                                    <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="" value="1" readonly>  
+                                    <span class="input-group-text bttMenos" id="bttMenos"><a href="" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
+                                </div> -->
                               
                                <!--  onsubmit="return false;" /// "../Cart/cadastrar_carrinho.php" -->  
                                
                                 <div class="mt-5">                                   
                                     <p class="titulo_dp">Quantidade:</p>
                                     <div class="input-group quantidade-config_dp">
-                                        <span class="input-group-text bttMais" id="bttMais"><a id="bttMais" class="btt-MaisMenos_dp"><i class="fa fa-plus"></i></a></span>
+                                        <span class="input-group-text bttMais" onclick="var effect = document.getElementById('txtqtd'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </span>
                                         <input type="number" class="form-control testInput text-center" id="txtqtd" name="txtqtd" step="1" min="1" max="" value="1" readonly>  <!-- input quantidade produto -->
-                                        <span class="input-group-text bttMenos" id="bttMenos"><a href="" class="btt-MaisMenos_dp"><i class="fa fa-minus"></i></a></span>
+                                        <span class="input-group-text bttMenos" onclick="var effect = document.getElementById('txtqtd'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </span>
                                     </div>
                                 </div>
                                 <form action="" method="post"  onsubmit="return false;">
