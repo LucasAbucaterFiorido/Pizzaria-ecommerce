@@ -115,7 +115,7 @@
 
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Consultas/categorias.php';
+                    action='http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Consultas/categorias.php';
 
                     $.ajax({
                         url:            action,

@@ -33,8 +33,8 @@ $(function()
                 </span>*/}
 
 
-    //  javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
-    //  jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
+    //  javascript    window.location="http://localhost/n7/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
+    //  jquery        $(location).attr('href', 'http://localhost/n7/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
     //configuração botoes mais e menos
     $("#bttMais").click(function(){
         quantidade = $("#txtqtd").val();
@@ -57,8 +57,8 @@ $(function()
     
     //configuração botao comprar
     $("#btt-comprar").click(function(){
-        //javascript    window.location="http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
-        //jquery        $(location).attr('href', 'http://localhost/projetos/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
+        //javascript    window.location="http://localhost/n7/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php";
+        //jquery        $(location).attr('href', 'http://localhost/n7/php/arquivo/arquivo-resposta/Backup/Pizzaria-ecommerce-antigo/Pizzaria-ecommerce-antigo/Paginas/Cart/Carrinho.php');  
         if(icone_cart.hasClass("ti-shopping-cart"))
         {
             action = 'http://localhost/n7/php/github/Pizzaria-ecommerce/Paginas/Cart/cadastrar_carrinho.php'

@@ -45,7 +45,7 @@
                     </div> 
                     <div class="col-1"><!-- margem visual --></div>  
                 </div>
-                <div id="callback"></div>
+                <div id="callback" style="display: none;"></div>
                 <div class="row mt-5" id="teste">
                     
                 </div>
@@ -59,7 +59,7 @@
         // alert('teste');  //linha de teste
         var callback = $("#callback");
 
-        $("#teste").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/index-div/catalogo.php");
+        $("#teste").load("http://localhost/n7/php/GitHub/Pizzaria-ecommerce/index-div/catalogo.php");
 
         function carregando(datas)
         {
@@ -86,7 +86,7 @@
         {
             // alert('teste');  //linha de teste
             $("#teste").html("");
-            action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/index-div/catalogo.php';
+            action='http://localhost/n7/php/GitHub/Pizzaria-ecommerce/index-div/catalogo.php';
 
             $.ajax({
                 url:            action,

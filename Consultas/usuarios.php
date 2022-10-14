@@ -123,7 +123,7 @@
 
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/Projetos/php/GitHub/Pizzaria-Ecommerce/Consultas/usuarios.php';
+                    action='http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Consultas/usuarios.php';
 
                     $.ajax({
                         url:            action,
