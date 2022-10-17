@@ -2,6 +2,18 @@ create database bd_rafael;
 
 use bd_rafael;
 
+create table Cargo
+(
+	codigo_cargo int auto_increment primary key not null,
+    nome_cargo varchar(25) not null unique,
+    local_cargo varchar(255) not null,
+    descricao_cargo varchar(200) not null,
+    obs_cargo varchar(255) null,
+    status_cargo varchar(10) not null
+);
+
+select * FROM Cargo;
+
 create table Usuario
 (
 	codigo_usuario int auto_increment primary key not null,
@@ -70,18 +82,6 @@ values
 ('Fernando','fernado','123','','Ativo'),
 ('Debora','debh','123','','Ativo'),
 ('Janaine','jana','123','','Ativo');
-
-create table Cargo
-(
-	codigo_cargo int auto_increment primary key not null,
-    nome_cargo varchar(25) not null unique,
-    local_cargo varchar(255) not null,
-    descricao_cargo varchar(200) not null,
-    obs_cargo varchar(255) null,
-    status_cargo varchar(10) not null
-);
-
-select * FROM Cargo;
 
 create table Produto
 (

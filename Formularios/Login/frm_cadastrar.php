@@ -15,7 +15,7 @@
     <div class="container mb-5">
         <div class="row">
             <div class="col-12">
-                <div class="pos_login">
+                <div class="pos_cadastrar">
                     <div class="container">
                         <div class="row"> <!-- lôgo -->
                             <div class="col-3" style="line-height: 150px; margin-left: 16px;">
@@ -111,6 +111,7 @@
                         </div>
                         <div class="col-4"><!-- coluna visual --></div>
                         <div class="col-12">
+                            <div id="output"></div>
                             <div><!-- style="position: relative;" -->
                                 <h6 class="titulo_rodape" style="margin: 0px;">Copyright ©2022 Todos os direitos reservados | Produzido por Lucas Abucater Fiorido</h6> <!-- style="position: absolute; margin: 0;" -->
                             </div>

@@ -163,13 +163,13 @@ h1,h2,h3,h4,h5,h6
 }
 
 /* classes de Cadastrar */
-.pos_login
+.pos_cadastrar
 {
     background-color: #2c2c2c;
-    height: 500px;
+    height: 580px;
     width: 500px;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 80px;   
 }
 .input_login
 {
