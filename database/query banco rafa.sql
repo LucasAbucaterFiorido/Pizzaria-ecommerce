@@ -20,7 +20,7 @@ create table Usuario
     nome_usuario varchar(25) not null,
     login_usuario varchar(25) unique not null,
     senha_usuario varchar(255) not null,
-	imagem_usuario longblob not null,
+	imagem_usuario longblob null,
     nome_cargo varchar(25) not null,
     cadastro_usuario timestamp not null,
     obs_usuario varchar(255) null,

@@ -29,6 +29,16 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-12">
+                                
+                                <div class="input_cadastrar text-center">
+                                    <i class="ti-pencil-alt icone-editar_cadastrar"></i>
+                                    <img src="../../img/usuario/images.png" alt="" class="img_cadastrar">
+                                </div>
+                                <input class="form-control img_cadastrar" type="file" id="arquivoimg" name="arquivoimg">
+                            </div>
+                        </div>
+                        <div class="row">
                             <form action="" method="POST" class="text-center">
                                 <div class="container">
                                     <div class="row">

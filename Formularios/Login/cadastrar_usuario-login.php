@@ -4,6 +4,10 @@
     if($_POST)
     {
         echo '<pre>';print_r($_POST); echo '</pre>';
+        if()
+        {
+            
+        }
         // $nomeU = $_POST['txtnome'];
         // $loginU = $_POST['txtlogin'];
         // $senhaU = $_POST['txtsenha'];
