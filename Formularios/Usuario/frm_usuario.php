@@ -244,7 +244,7 @@
             $("#btt_pesquisar").click(function()
             {
                 // alert($("#txtcod").val());
-                action="http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/pesquisar_produto.php";
+                action="http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Formularios/Produto/pesquisar_produto.php";
 
                 $.ajax({
                     url:        action,
@@ -256,7 +256,7 @@
             });
             $("#btt_cadastrar").click(function()
             {
-                action = 'http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/cadastrar_produto.php';
+                action = 'http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Formularios/Produto/cadastrar_produto.php';
                 // console.log("teste");
                 $.ajax({
                     url:        action,
@@ -276,7 +276,7 @@
 
             $("#btt_alterar").click(function()
             {
-                action = 'http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/alterar_produto.php';
+                action = 'http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Formularios/Produto/alterar_produto.php';
 
                 $.ajax({
                     URL:        action,
@@ -306,7 +306,7 @@
 
             $("#btt_excluir").click(function()
             {
-                action = 'http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Formularios/Produto/deletar_produto.php';                
+                action = 'http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Formularios/Produto/deletar_produto.php';                
                 // console.log("alalal");
 
                 $.ajax({

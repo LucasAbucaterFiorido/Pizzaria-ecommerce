@@ -37,14 +37,11 @@
                         header("location: ../../index.php");
                     }
                 }
-                else
-                {
-                    echo "<script>alert('Login ou senha inválido')</script>";
-                }
             } 
             catch (PDOException $erro) 
             {
-                echo "Erro: ".$erro->getMessage();
+                echo "<script> alert('Login ou senha inválido') </script>";
+                //echo "Erro: ".$erro->getMessage();
             }
         }
     ?>
@@ -99,6 +96,7 @@
             </div>
         </div>
     </div>
+    
     <div class="container-fluid">
         <!-- ****** Rodapé ****** -->
         <a name ='contatoAncora'></a>

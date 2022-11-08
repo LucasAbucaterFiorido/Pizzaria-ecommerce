@@ -59,7 +59,7 @@
         // alert('teste');  //linha de teste
         var callback = $("#callback");
 
-        $("#teste").load("http://localhost/n7/php/GitHub/Pizzaria-ecommerce/index-div/catalogo.php");
+        $("#teste").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/index-div/catalogo.php");
 
         function carregando(datas)
         {
@@ -86,7 +86,7 @@
         {
             // alert('teste');  //linha de teste
             $("#teste").html("");
-            action='http://localhost/n7/php/GitHub/Pizzaria-ecommerce/index-div/catalogo.php';
+            action='http://localhost/projetos/GitHub/Pizzaria-ecommerce/index-div/catalogo.php';
 
             $.ajax({
                 url:            action,

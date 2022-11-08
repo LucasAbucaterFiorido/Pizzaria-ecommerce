@@ -115,7 +115,7 @@
 
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/n7/php/GitHub/Pizzaria-Ecommerce/Consultas/cargos.php';
+                    action='http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Consultas/cargos.php';
 
                     $.ajax({
                         url:            action,

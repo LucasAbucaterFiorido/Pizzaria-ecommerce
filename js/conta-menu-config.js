@@ -11,7 +11,7 @@ $(window).on("load", function()
     $("#aba_dados").click(function()
     {
         // alert('teste');  //linha de teste
-        $("#telas").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusDados.php");
+        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusDados.php");
 
         $("#aba_dados").addClass("btt-active_perfil ");
         $("#aba_pedidos").removeClass("btt-active_perfil ");
@@ -22,7 +22,7 @@ $(window).on("load", function()
 
     $("#aba_pedidos").click(function()
     {
-        $("#telas").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusPedidos.php");
+        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusPedidos.php");
         
         $("#aba_dados").removeClass("btt-active_perfil ");
         $("#aba_pedidos").addClass("btt-active_perfil ");
@@ -33,7 +33,7 @@ $(window).on("load", function()
 
     $("#aba_cartoes").click(function()
     {
-        $("#telas").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusCartoes.php");
+        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusCartoes.php");
         
         $("#aba_dados").removeClass("btt-active_perfil ");
         $("#aba_pedidos").removeClass("btt-active_perfil ");
@@ -44,7 +44,7 @@ $(window).on("load", function()
 
     $("#aba_favoritos").click(function()
     {
-        $("#telas").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusFavoritos.php");
+        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusFavoritos.php");
         
         $("#aba_dados").removeClass("btt-active_perfil ");
         $("#aba_pedidos").removeClass("btt-active_perfil ");
@@ -55,7 +55,7 @@ $(window).on("load", function()
 
     $("#aba_ajuda").click(function()
     {
-        $("#telas").load("http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Paginas/Usuario/ajuda.php");
+        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Paginas/Usuario/ajuda.php");
         
         $("#aba_dados").removeClass("btt-active_perfil ");
         $("#aba_pedidos").removeClass("btt-active_perfil ");

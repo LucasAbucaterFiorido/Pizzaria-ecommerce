@@ -1,6 +1,8 @@
 <?php
     include_once('../../conexao.php');
     
+    echo "<pre>"; print_r($_POST); echo "</pre>";
+
     $nome_produto = $_POST['txtnome'];
     $imagem_produto = $_POST['arquivoimg'];
     $descricao_produto = $_POST['txtdesc'];
