@@ -1,9 +1,10 @@
 <?php
     include_once ("../../conexao.php");
-    
-    
-    print_r($_POST);
-    $codCategoria = $_POST['txtcod'];
+    // echo '<pre>';print_r($_POST);echo '</pre>';  //linha de teste
+    if($_POST)
+    {
+        $codCategoria = $_POST['txtcod'];
+    }
 
     try
     {

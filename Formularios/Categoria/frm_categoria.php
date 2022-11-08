@@ -88,6 +88,11 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">   <!-- linha para ajuste visual-->
+                            <div class="col-12">
+                                <br>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

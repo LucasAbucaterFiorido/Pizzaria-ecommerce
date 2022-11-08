@@ -22,18 +22,22 @@
                                     <?php
                                         try 
                                         {
-                                            $data = $cone->query("SELECT * FROM Categoria WHERE obs_categoria = 'cardapio' AND status_categoria = 'Ativo'");
+                                            $data = $cone->query("SELECT * FROM Categoria WHERE obs_categoria = 'c' AND status_categoria = 'Ativo'");
                                             
                                             foreach($data as $linha)
                                             {
                                                 echo "
                                                     <li class='nav-item'>
-                                                        <form action='' method='post' onsubmit='return false;'>
-                                                            <a class='nav-link' id='btt-filtro'>".$linha['nome_categoria']."</a>
-                                                            <input type='hidden' id='cod-filtro' value='".$linha['codigo_categoria']."'>
-                                                        </form>
+                                                        <a href='#' class='nav-link' id='btt-filtro' onclick='var a = ".$linha['codigo_categoria'].";teste(a)'>".$linha['nome_categoria']."</a>
                                                     </li>";
                                             }
+                                            //primeira versao do filtro de categoria
+                                            // <li class='nav-item'>
+                                            //     <form action='' method='post'>
+                                            //         <input type='hidden' id='cod-filtro' value='".$linha['codigo_categoria']."'>
+                                            //         <button class='nav-link' id='btt-filtro'>".$linha['nome_categoria']."</button>
+                                            //     </form>
+                                            // </li>";
                                         }
                                         catch ( PDOException $erro) 
                                         {
@@ -45,7 +49,7 @@
                     </div> 
                     <div class="col-1"><!-- margem visual --></div>  
                 </div>
-                <div id="callback" style="display: none;"></div>
+                <div id="callback"></div> <!-- style="display: none;" -->
                 <div class="row mt-5" id="teste">
                     
                 </div>
@@ -53,7 +57,8 @@
         </div>
     </div>
 <!-- ****** FIM Cardápio Pizzas ****** -->
-<script>
+
+<!-- <script> //primeira versao do filtro de categoria do ecommerce
     $(function()
     {
         // alert('teste');  //linha de teste
@@ -96,4 +101,51 @@
             });  
         });
     });
+</script> -->
+<script>    //segunda versao do filtro de categoria do ecommerce
+        $(function()
+    {
+        // alert("teste");
+        var callback = $("#callback");
+        var action = "";
+
+
+        function carregando(datas)
+        {
+            callback.empty().html("Carregando...");
+        }
+
+        function sucesso(datas)
+        {
+            callback.empty().html("<pre>"+ datas +"</pre>");
+            $("#txtcod").val($("#cod_pesquisa").html());
+        }
+
+        function erro_enviar(datas)
+        {
+            callback.empty().html("Erro ao enviar.");
+        }
+
+        $.ajaxSetup({
+            type:           'POST',
+            beforeSend:     carregando,
+            error:          erro_enviar,
+            success:        sucesso
+        })
+    });
+
+    function teste(cod) //pelo visto está função não funciona se estiver em um $funcion(){..}, não sei se é o evento onClick, pois com o evento onChange funciona
+    {
+        // alert("teste");
+        // $("#callback").html(cod);
+        action = "http://localhost/projetos/gitHub/Pizzaria-ecommerce/index-div/catalogo.php";
+        // action = "http://localhost/projetos/gitHub/Pizzaria-ecommerce/teste2.php";
+
+        $.ajax({
+            url:        action,
+            data:{
+                txtcod: cod
+            }
+        });
+    }
 </script>

@@ -111,7 +111,7 @@
                             <div class="col-sm-3 border pos-preimg_form">
                                 <img class="preimg_form" src="" alt="" id="preImg" style="max-width: 200px; max-height: 200px;">     
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <label class="form-label" for="base64Code">Base 64:</label>
                                 <br>
                                 <textarea class="form-control" id="base64Code" name="base64Code" cols="140" rows="6"></textarea>
@@ -140,6 +140,11 @@
                                     <button class="btn btn-warning" id="btt_limpar">Limpar</button>
                                     <button class="btn btn-danger" id="btt_excluir">Excluir</button>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">   <!-- linha para ajuste visual-->
+                            <div class="col-12">
+                                <br>
                             </div>
                         </div>
                     </form>
@@ -198,6 +203,7 @@
     <script> //FORMULARIO
         $(function()
         {
+            // alert("teste");  //linha de teste
             var callback = $("#callback");
             var action = "";
 
@@ -263,6 +269,7 @@
             });
             $("#btt_cadastrar").click(function()
             {
+                //alert("teste");  //linha de teste
                 action = 'http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Produto/cadastrar_produto.php';
                 // console.log("teste");
                 $.ajax({

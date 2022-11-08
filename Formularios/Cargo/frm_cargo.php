@@ -77,6 +77,11 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">   <!-- linha para ajuste visual-->
+                            <div class="col-12">
+                                <br>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -138,7 +143,7 @@
 
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Cargo/pesquisar_cargo.php';
+                    action='http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Cargo/pesquisar_cargo.php';
 
                     $.ajax({
                         url:            action,
@@ -157,7 +162,7 @@
             $("#btt_cadastrar").click(function()
             {
                 // alert('teste');  //linha de teste
-                action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Cargo/cadastrar_cargo.php';
+                action='http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Cargo/cadastrar_cargo.php';
 
                 $.ajax({
                     url:            action,
@@ -176,7 +181,7 @@
 
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Cargo/alterar_cargo.php';
+                    action='http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Cargo/alterar_cargo.php';
 
                     $.ajax({
                         url:            action,
@@ -201,7 +206,7 @@
 
                 if($("#txtcod").val())
                 {
-                    action='http://localhost/projetos/php/GitHub/Pizzaria-ecommerce/Formularios/Cargo/deletar_cargo.php';
+                    action='http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Cargo/deletar_cargo.php';
 
                     $.ajax({
                         url:            action,
