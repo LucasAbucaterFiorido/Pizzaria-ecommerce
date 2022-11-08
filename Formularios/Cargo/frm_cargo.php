@@ -10,7 +10,7 @@
                             <br>
                         </div>
                     </div>
-                    <form action="" class="" method="POST" id="form_produto" name="form_produto" onsubmit="return false;">
+                    <form action="" class="" method="POST" id="form_cargo" name="form_cargo" onsubmit="return false;">
                         <div class="row">
                             <div class="col-sm-4">
                                 <label class="form-label" for="txtcod">Código:</label>

@@ -256,13 +256,13 @@
 
             $("#btt_pesquisar").click(function()
             {
-                // alert($("#txtcod").val());
+                alert($("#txtcod").val());
                 action="http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Formularios/Produto/pesquisar_produto.php";
 
                 $.ajax({
                     url:        action,
                     data:{
-                        txtcod: $("#txtcod").html()
+                        txtcod: $("#txtcod").val()
                     },
                     success:    sucessoPesquisa
                 });
