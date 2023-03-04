@@ -43,6 +43,35 @@ create table Venda
 
 select * from Venda;
 
+create table Categoria
+(
+	codigo_categoria int auto_increment primary key not null,
+    nome_categoria varchar(25) not null,
+    localArmaz_categoria varchar(255) not null,
+    descricao_categoria varchar(200) not null,
+    obs_categoria varchar(255) null,
+    status_categoria varchar(10) not null
+);
+
+select * FROM Categoria;
+
+create table Produto
+(
+	codigo_produto int auto_increment primary key not null,
+    nome_produto varchar(25) not null,
+	cadastro_produto timestamp not null,
+    imagem_produto blob not null,
+    descricao_produto varchar(200) not null,
+    qtd_produto int not null,
+    valor_produto int not null,
+    codigo_categoria int not null,
+    obs_produto varchar(255) null,
+    status_produto varchar(10) not null,
+    constraint FK_codigo_categoria_produto foreign key (codigo_categoria) references Categoria (codigo_categoria)
+);
+
+select * from Produto;
+
 create table Item
 (
 	codigo_item int auto_increment primary key not null,
@@ -55,18 +84,6 @@ create table Item
 );
 
 select * FROM Item;
-
-create table Categoria
-(
-	codigo_categoria int auto_increment primary key not null,
-    nome_categoria varchar(25) not null,
-    localArmaz_categoria varchar(255) not null,
-    descricao_categoria varchar(200) not null,
-    obs_categoria varchar(255) null,
-    status_categoria varchar(10) not null
-);
-
-select * FROM Categoria;
 
 insert into Categoria
 (
@@ -82,20 +99,3 @@ values
 ('Fernando','fernado','123','','Ativo'),
 ('Debora','debh','123','','Ativo'),
 ('Janaine','jana','123','','Ativo');
-
-create table Produto
-(
-	codigo_produto int auto_increment primary key not null,
-    nome_produto varchar(25) not null,
-	cadastro_produto timestamp not null,
-    imagem_produto blob not null,
-    descricao_produto varchar(200) not null,
-    qtd_produto int not null,
-    valor_produto int not null,
-    codigo_categoria int not null,
-    obs_produto varchar(255) null,
-    status_produto varchar(10) not null,
-    constraint FK_codigo_categoria_produto foreign key (codigo_categoria) references categoria (codigo_categoria)
-);
-
-select * from Produto;
