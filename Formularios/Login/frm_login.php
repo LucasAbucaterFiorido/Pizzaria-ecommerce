@@ -26,7 +26,7 @@
 
                 if($dadosU->rowCount() == 1)
                 {
-                    session_start();
+                    //session_start();
 
                     foreach ($dadosU as $linhaU) 
                     {
