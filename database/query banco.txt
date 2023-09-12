@@ -82,7 +82,7 @@ create table Produto
     codigo_categoria int not null,
     obs_produto varchar(255) null,
     status_produto varchar(10) not null,
-    constraint FK_codigo_categoria_produto foreign key (codigo_categoria) references categoria (codigo_categoria)
+    constraint FK_codigo_categoria_produto foreign key (codigo_categoria) references Categoria (codigo_categoria)
 );
 
 select * from Produto;

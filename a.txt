@@ -3,7 +3,6 @@ Pizzaria-Ecommerce
 teste1234
 
 BANCO DE DADOS
-nome: testeraphaela		id20396865_testeraphaela
+nome: bd_pizzaria		id20396865_bd_pizzaria
 user: adm			id20396865_adm
 z@GQLn]]6+@r}ETt
-
