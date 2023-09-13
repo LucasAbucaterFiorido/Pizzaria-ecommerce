@@ -26,18 +26,18 @@
             else if(!$dadosV->rowCount()) //se  não houver 1 venda ativa, criar uma
             {
                 $cadastroV = $cone->prepare("INSERT INTO Venda(
-                    qtdTotal_venda,
+                    qtdProd_venda,
                     valorTotal_venda,
                     status_venda,
                     codigo_usuario
                 ) VALUES(
-                    :qtdTotal_venda,
+                    :qtdProd_venda,
                     :valorTotal_venda,
                     :status_venda,
                     :codigo_usuario
                 )");
                 $cadastroV->execute(array(
-                    ':qtdTotal_venda' => 0,
+                    ':qtdProd_venda' => 0,
                     ':valorTotal_venda' => 0,
                     ':status_venda' => 'Ativo',
                     ':codigo_usuario' => $codUser_sessao

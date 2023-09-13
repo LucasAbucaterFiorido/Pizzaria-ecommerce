@@ -1,3 +1,37 @@
+<?php 
+    include_once('../../conexao.php'); 
+    if($_POST)
+    {
+        //echo "<pre>"; print_r($_POST); echo "</pre>";
+        
+        $login = $_POST['txtlogin'];
+        $senha = $_POST['txtsenha'];
+
+        try 
+        {
+            $dadosU = $cone->query("SELECT * FROM Usuario WHERE login_usuario = '$login' And senha_usuario = $senha"); //valida se as o login está correto
+
+            if($dadosU->rowCount() == 1)
+            {
+                session_start();
+
+                foreach ($dadosU as $linhaU) 
+                {
+                    $_SESSION['codUser_sessao'] = $linhaU['codigo_usuario']; //declarando codigo do usuario em variavel de sessao
+                    $_SESSION['nomeUser_sessao'] = $linhaU['nome_usuario']; //declarando nome do usuario em variavel de sessao
+                    $_SESSION['loginUser_sessao'] = $linhaU['login_usuario']; //declarando login do usuario em variavel de sessao
+
+                    header("location: ../../index.php");
+                }
+            }
+        } 
+        catch (PDOException $erro) 
+        {
+            echo "<script> alert('Login ou senha inválido') </script>";
+            //echo "Erro: ".$erro->getMessage();
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,44 +41,10 @@
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/estilo.css">
     <link rel="stylesheet" href="../../css_Slider/core-style.css">
-    <link rel="icon" type="img/png" href="../../img/logo/pizzalogo.png">
-    <?php include_once('../../conexao.php'); ?>
+    <link rel="icon" type="img/png" href="../../img/logo/pizzalogo.png">    
     <title>Pizzaria</title>
 </head>
 <body class="body_config">
-    <?php
-        if($_POST)
-        {
-            //echo "<pre>"; print_r($_POST); echo "</pre>";
-            
-            $login = $_POST['txtlogin'];
-            $senha = $_POST['txtsenha'];
-
-            try 
-            {
-                $dadosU = $cone->query("SELECT * FROM Usuario WHERE login_usuario = '$login' and senha_usuario = $senha"); //valida se as o login está correto
-
-                if($dadosU->rowCount() == 1)
-                {
-                    //session_start();
-
-                    foreach ($dadosU as $linhaU) 
-                    {
-                        $_SESSION['codUser_sessao'] = $linhaU['codigo_usuario']; //declarando codigo do usuario em variavel de sessao
-                        $_SESSION['nomeUser_sessao'] = $linhaU['nome_usuario']; //declarando nome do usuario em variavel de sessao
-                        $_SESSION['loginUser_sessao'] = $linhaU['login_usuario']; //declarando login do usuario em variavel de sessao
-
-                        header("location: ../../index.php");
-                    }
-                }
-            } 
-            catch (PDOException $erro) 
-            {
-                echo "<script> alert('Login ou senha inválido') </script>";
-                //echo "Erro: ".$erro->getMessage();
-            }
-        }
-    ?>
     <div class="container mb-5">
         <div class="row">
             <div class="col-12">

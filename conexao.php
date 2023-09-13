@@ -1,8 +1,8 @@
 <?php
     $host = "localhost";
-    $bd = "bd_rafael";
-    $user = "root";
-    $pass = "";
+    $bd = "id20396865_bd_pizzaria";
+    $user = "id20396865_adm";
+    $pass = "z@GQLn]]6+@r}ETt";
 
     try 
     {

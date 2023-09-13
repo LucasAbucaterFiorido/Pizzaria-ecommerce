@@ -19,7 +19,7 @@
                     <div class="col-1"> <!-- style="background-color: salmon;"-->
                         <!-- logo -->
                         <a href="#" id="top_logotipo">
-                            <img class="pos_logo" src="http://localhost/projetos/GitHub/Pizzaria-Ecommerce/img/logo/pizzalogo.png">
+                            <img class="pos_logo" src="../../img/logo/pizzalogo.png">
                         </a>
                     </div>
 
@@ -142,7 +142,7 @@
                                     </li>
                                     <li class="nav-item"><hr class="dropdown-divider"></li>
                                     <li class="nav-item">
-                                        <a class="nav-link dropdown-item" href="http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Formularios/Login/log-off.php">
+                                        <a class="nav-link dropdown-item" href="../Formularios/Login/log-off.php">
                                             <div class="text-center py-2 icone_logoff"><i class=" ti-power-off"></i> Desconectar</div>     <!--   ti-shift-right  //  ti-power-off   -->
                                         </a>
                                     </li>
