@@ -2,6 +2,15 @@ create database bd_rafael;
 
 use bd_rafael;
 
+create table Cargo
+(
+	codigo_cargo int auto_increment primary key not null,
+	local_cargo varchar(50) not null,
+    nome_cargo varchar(25) not null,
+    descricao_cargo varchar(200) not null,
+    obs_cargo varchar(255) null,
+    status_cargo varchar(10) not null
+);
 
 create table Usuario
 (
@@ -10,9 +19,11 @@ create table Usuario
     login_usuario varchar(25) unique not null,
     senha_usuario varchar(255) not null,
 	imagem_usuario longblob not null,
+	codigo_cargo int not null,
     cadastro_usuario timestamp not null,
     obs_usuario varchar(255) null,
-    status_usuario varchar(10) not null
+    status_usuario varchar(10) not null,
+	constraint FK_codigo_cargo_usuario foreign key (codigo_cargo) references Cargo (codigo_cargo)
 );
 
 select * from Usuario;
@@ -30,19 +41,6 @@ create table Venda
 
 select * from Venda;
 
-create table Item
-(
-	codigo_item int auto_increment primary key not null,
-	qtdProd_item int not null,
-    valorTotal_item decimal(10,2),
-    codigo_produto int not null,
-    codigo_venda int not null,
-	constraint FK_codigo_produto_item foreign key (codigo_produto) references Produto (codigo_produto),
-    constraint FK_codigo_venda_item foreign key (codigo_venda) references Venda (codigo_venda)
-);
-
-select * FROM Item;
-
 create table Categoria
 (
 	codigo_categoria int auto_increment primary key not null,
@@ -55,20 +53,6 @@ create table Categoria
 
 select * FROM Categoria;
 
-insert into Categoria
-(
-nome_categoria,
-login_categoria,
-senha_categoria,
-obs_categoria,
-status_categoria
-)
-values 
-('Administrador','admin','123','','Ativo'),
-('Selena','selena','123','','Ativo'),
-('Fernando','fernado','123','','Ativo'),
-('Debora','debh','123','','Ativo'),
-('Janaine','jana','123','','Ativo');
 
 create table Produto
 (
@@ -86,3 +70,33 @@ create table Produto
 );
 
 select * from Produto;
+
+create table Item
+(
+	codigo_item int auto_increment primary key not null,
+	qtdProd_item int not null,
+    valorTotal_item decimal(10,2),
+    codigo_produto int not null,
+    codigo_venda int not null,
+	constraint FK_codigo_produto_item foreign key (codigo_produto) references Produto (codigo_produto),
+    constraint FK_codigo_venda_item foreign key (codigo_venda) references Venda (codigo_venda)
+);
+
+select * FROM Item;
+
+
+insert into Categoria
+(
+nome_categoria,
+login_categoria,
+senha_categoria,
+obs_categoria,
+status_categoria
+)
+values 
+('Administrador','admin','123','','Ativo'),
+('Selena','selena','123','','Ativo'),
+('Fernando','fernado','123','','Ativo'),
+('Debora','debh','123','','Ativo'),
+('Janaine','jana','123','','Ativo');
+

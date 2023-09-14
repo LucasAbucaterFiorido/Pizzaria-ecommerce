@@ -8,12 +8,12 @@ $(window).on("load", function()
 {
     // alert('teste');  //linha de teste
     $("#aba_usuario").addClass("btt-active_menu ");
-    $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Usuario/frm_Usuario.php");
+    $("#telas").load("../Formularios/Usuario/frm_usuario.php");
     
     $("#aba_usuario").click(function()
     {
         // alert('teste');  //linha de teste
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Usuario/frm_Usuario.php");
+        $("#telas").load("../Formularios/Usuario/frm_usuario.php");
 
         $("#aba_usuario").addClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");
@@ -30,7 +30,7 @@ $(window).on("load", function()
 
     $("#aba_produto").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Produto/frm_produto.php");
+        $("#telas").load("../Formularios/Produto/frm_produto.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").addClass("btt-active_menu ");
@@ -47,7 +47,7 @@ $(window).on("load", function()
 
     $("#aba_favoritos").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Paginas/Usuario/meusFavoritos.php");
+        $("#telas").load("../Paginas/Usuario/meusFavoritos.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");
@@ -64,7 +64,7 @@ $(window).on("load", function()
 
     $("#aba_categoria").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Categoria/frm_categoria.php");
+        $("#telas").load("../Formularios/Categoria/frm_categoria.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");
@@ -81,7 +81,7 @@ $(window).on("load", function()
 
     $("#aba_cargo").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-ecommerce/Formularios/Cargo/frm_cargo.php");
+        $("#telas").load("../Formularios/Cargo/frm_cargo.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");
@@ -99,7 +99,7 @@ $(window).on("load", function()
 
     $("#aba_usuarios").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Consultas/usuarios.php");
+        $("#telas").load("../Consultas/usuarios.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");
@@ -115,7 +115,7 @@ $(window).on("load", function()
     });
     $("#aba_pedidos").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Consultas/pedidos.php");
+        $("#telas").load("../Consultas/pedidos.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");
@@ -131,7 +131,7 @@ $(window).on("load", function()
     });
     $("#aba_produtos").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Consultas/produtos.php");
+        $("#telas").load("../Consultas/produtos.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");
@@ -147,7 +147,7 @@ $(window).on("load", function()
     });
     $("#aba_categorias").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Consultas/categorias.php");
+        $("#telas").load("../Consultas/categorias.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");
@@ -163,7 +163,7 @@ $(window).on("load", function()
     });
     $("#aba_cargos").click(function()
     {
-        $("#telas").load("http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Consultas/cargos.php");
+        $("#telas").load("../Consultas/cargos.php");
         
         $("#aba_usuario").removeClass("btt-active_menu ");
         $("#aba_produto").removeClass("btt-active_menu ");

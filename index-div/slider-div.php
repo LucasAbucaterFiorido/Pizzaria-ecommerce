@@ -10,14 +10,14 @@
             <div class="carousel-inner" style="height: 800px;">
                 <div class="carousel-item active">
 
-                     <img src="img/produtos/pizza6.jpg" class="d-block w-100 " alt="...">
+                     <img src="img/produtos/pizza4.jpg" class="d-block w-100 " alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/produtos/pizza4.jpg" class="d-block w-100" alt="...">
+                    <img src="img/produtos/pizza1.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
                         <p>Some representative placeholder content for the second slide.</p>

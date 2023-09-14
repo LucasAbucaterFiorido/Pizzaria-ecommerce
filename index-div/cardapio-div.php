@@ -138,7 +138,7 @@
     {
         // alert("teste");
         // $("#callback").html(cod);
-        action = "http://localhost/projetos/gitHub/Pizzaria-ecommerce/index-div/catalogo.php";
+        action = "catalogo.php";
         // action = "http://localhost/projetos/gitHub/Pizzaria-ecommerce/teste2.php";
 
         $.ajax({

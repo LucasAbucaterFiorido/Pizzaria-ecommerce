@@ -99,7 +99,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="login-list">
                                     <li class="nav-item">
-                                        <a class="nav-link dropdown-item" href="http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Paginas/Cart/carrinho.php">
+                                        <a class="nav-link dropdown-item" href="../Paginas/Cart/carrinho.php">
                                             <div class="text-center py-2 icone_logoff"><i class="ti-shopping-cart"></i> Carrinho </div>     <!--   ti-shift-right  //  ti-power-off   -->
                                         </a>
                                     </li>
@@ -131,12 +131,12 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="login-list">
                                     <li class="nav-item">
-                                        <a class="nav-link dropdown-item" href="http://localhost/projetos/GitHub/Pizzaria-Ecommerce/Paginas/Usuario/perfil.php">
+                                        <a class="nav-link dropdown-item" href="../Paginas/Usuario/perfil.php">
                                             <div class="text-center py-2 icone_logoff"><i class="ti-id-badge"></i> Perfil</div>     <!--   ti-shift-right  //  ti-power-off   -->
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link dropdown-item" href="http://localhost/projetos/GitHub/Pizzaria-Ecommerce/adm/controlPanel.php">
+                                        <a class="nav-link dropdown-item" href="../adm/controlPanel.php">
                                             <div class="text-center py-2 icone_logoff"><i class="ti-panel"></i> Area Admin</div>     <!--   ti-star  //  ti-panel   -->
                                         </a>
                                     </li>
@@ -160,7 +160,7 @@
         </div>
     </div>
 <!-- ****** FIM top ****** -->
-    <script src="http://localhost/projetos/github/Pizzaria-ecommerce/js/jquery-3.6.1.js"></script>
+    <script src="../../js/jquery-3.6.1.js"></script>
     <script>
         $(function()
         {

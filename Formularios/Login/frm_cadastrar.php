@@ -1,3 +1,4 @@
+<?php include_once('../../conexao.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,7 +9,6 @@
     <link rel="stylesheet" href="../../css/estilo.css">
     <link rel="stylesheet" href="../../css_Slider/core-style.css">
     <link rel="icon" type="img/png" href="../../img/logo/pizzalogo.png">
-    <?php include_once('../../conexao.php'); ?>
     <title>Pizzaria</title>
 </head>
 <body class="body_config">
@@ -187,7 +187,7 @@
             {
                 // alert('tesasad');    //linha de teste
                 callback.empty().html(datas); //se obtiver sucesso, ele mostrará os dados puxados
-                $(location).attr('href', 'http://localhost/n7/php/github/Pizzaria-ecommerce/index.php');
+                $(location).attr('href', '../../index.php');
                 // callback.empty().html('<pre>'+datas+'</pre>');
             }
             function erro_enviar()

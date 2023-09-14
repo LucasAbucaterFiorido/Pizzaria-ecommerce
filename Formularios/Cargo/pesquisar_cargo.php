@@ -1,5 +1,6 @@
 <?php
     include_once('../../conexao.php');
+    // echo 'teste';
     // echo '<pre>';print_r($_POST);echo '</pre>';  //linha de teste
     if($_POST)
     {
