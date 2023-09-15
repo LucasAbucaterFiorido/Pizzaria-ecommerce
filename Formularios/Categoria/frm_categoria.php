@@ -152,7 +152,7 @@
                 // alert('teste');  //linha de teste 
                 if($("#txtcod").val())
                 {
-                    action='pesquisar_categoria.php';
+                    action='../Formularios/Categoria/pesquisar_categoria.php';
 
                     $.ajax({
                         url:            action,
@@ -172,7 +172,7 @@
             {
                 // alert('teste');  //linha de teste
 
-                action='cadastrar_categoria.php';
+                action='../Formularios/Categoria/cadastrar_categoria.php';
 
                 $.ajax({
                     url:            action,
@@ -192,7 +192,7 @@
 
                 if($("#txtcod").val())
                 {
-                    action='alterar_categoria.php';
+                    action='../Formularios/Categoria/alterar_categoria.php';
 
                     $.ajax({
                         url:            action,
@@ -216,7 +216,7 @@
                 // alert('teste');  //linha de teste
                 if($("#txtcod").val())
                 {
-                    action='deletar_categoria.php';
+                    action='../Formularios/Categoria/deletar_categoria.php';
 
                     $.ajax({
                         url:            action,

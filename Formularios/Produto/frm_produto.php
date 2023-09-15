@@ -203,9 +203,8 @@
     <script>
         $(function()
         {
-            // alert("teste");
+            //alert("teste");
             var callback = $("#callback");
-            var action = '';
             
             function carregando(datas)
             {
@@ -219,7 +218,35 @@
             {
                 callback.empty().html("Erro ao Enviar.");
             };
-
+            function sucessoPesquisa(datas)
+            {
+                alert('aoba');   //linha de teste
+                callback.empty().html('<pre>'+datas+'</pre>')   //linha de teste
+                $("#txtcod").val($("#cod_pesquisa").html());
+                $("#txtnome").val($("#nome_pesquisa").html());
+                $("#txtdata").val($("#cadastro_pesquisa").html());
+                $("#arquivoimg").val($("#imagem_pesquisa").html());
+                $("#txtdesc").val($("#descricao_pesquisa").html());
+                $("#txtqtd").val($("#quantidade_pesquisa").html());
+                $("#txtvalor").val($("#valor_pesquisa").html());
+                $("#selectcateg").val($("#codCategoria_pesquisa").html());
+                $("#txtobs").val($("#obs_pesquisa").html());
+                $("#selectsts").val($("#status_pesquisa").html());
+            }
+            function limpar()
+            {
+                $("#txtcod").val("");
+                $("#txtnome").val("");
+                $("#txtdata").val("");
+                $("#arquivoimg").val("");
+                $("#txtdesc").val("");
+                $("#txtqtd").val("");
+                $("#txtvalor").val("");
+                $("#selectcateg").val("");
+                $("#txtobs").val("");
+                $("#selectsts").val("");
+                callback.html("");
+            }
             $.ajaxSetup({
                 type:       'POST',
                 beforeSend: carregando,
@@ -227,10 +254,24 @@
                 success:    sucesso
             });
 
+            $("#btt_pesquisar").click(function()
+            {
+                alert("botao pesquisar");
+                action = '../Formularios/Produto/pesquisar_produto.php'
+
+                $.ajax({
+                    url:        action,
+                    data:{
+                        txtnome:    $("#txtcod").val()
+                    },
+                    success:    sucesso  //não funciona o Ajaxsetup
+                });
+            });
+            
             $("#btt_cadastrar").click(function()
             {
                 alert("botao cadastrar");
-                action = 'http://localhost/projetos/GitHub/Pizzaria-ecommerce/teste2.php'
+                action = '../Formularios/Produto/cadastrar_produto.php'
 
                 $.ajax({
                     url:        action,
@@ -240,6 +281,7 @@
                     success:    sucesso  //não funciona o Ajaxsetup
                 });
             });
+            $("#btt_limpar").click(limpar);
         });
     </script>
 </body>

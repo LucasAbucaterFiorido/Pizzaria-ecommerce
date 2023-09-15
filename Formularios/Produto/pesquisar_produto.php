@@ -1,6 +1,6 @@
 <?php
     include_once ("../../conexao.php");
-    echo '<pre>';print_r($_POST);echo '</pre>';  //linha de teste
+    echo '<pre> oi';print_r($_POST);echo '</pre>';  //linha de teste
     if($_POST)
     {
         $codCategoria = $_POST['txtcod'];
